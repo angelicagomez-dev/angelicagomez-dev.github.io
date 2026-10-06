@@ -6,7 +6,7 @@
 
     <meta
         name="description"
-        content="Angélica Gomez — WordPress & CMS Developer with 6+ years of professional experience building websites, e-commerce solutions and custom WordPress experiences."
+        content="Angélica Gomez — WordPress & CMS Developer with 6+ years of professional experience."
     >
 
     <meta name="author" content="Angélica Gomez">
@@ -46,8 +46,8 @@
             overflow-x: hidden;
         }
 
-        body::selection {
-            background: rgba(139, 92, 246, 0.45);
+        ::selection {
+            background: rgba(139, 92, 246, 0.5);
             color: white;
         }
 
@@ -56,31 +56,17 @@
             text-decoration: none;
         }
 
-        button,
-        a {
-            -webkit-tap-highlight-color: transparent;
-        }
-
-        /* =========================================================
-           VARIABLES
-        ========================================================= */
-
         :root {
             --bg: #08090d;
             --bg-soft: #0d0f15;
-
-            --card: rgba(255, 255, 255, 0.045);
-            --card-hover: rgba(255, 255, 255, 0.075);
-
-            --border: rgba(255, 255, 255, 0.09);
-
+            --card: rgba(255,255,255,0.045);
+            --card-hover: rgba(255,255,255,0.075);
+            --border: rgba(255,255,255,0.09);
             --text: #f5f5f7;
             --muted: #a7a9b4;
-
             --accent: #8b5cf6;
             --accent-2: #06b6d4;
             --accent-3: #ec4899;
-
             --max-width: 1180px;
         }
 
@@ -91,6 +77,8 @@
         .background-grid {
             position: fixed;
             inset: 0;
+            z-index: -10;
+            pointer-events: none;
 
             background-image:
                 linear-gradient(
@@ -108,90 +96,57 @@
             mask-image:
                 linear-gradient(
                     to bottom,
-                    black,
-                    transparent 85%
+                    black 0%,
+                    transparent 90%
                 );
 
-            pointer-events: none;
-            z-index: -5;
-
-            animation: gridMove 20s linear infinite;
+            animation:
+                gridMove 18s linear infinite;
         }
 
         .ambient-light {
             position: fixed;
-            width: 500px;
-            height: 500px;
-
+            width: 520px;
+            height: 520px;
             border-radius: 50%;
+
+            top: -250px;
+            left: -220px;
 
             background:
                 radial-gradient(
                     circle,
-                    rgba(139, 92, 246, 0.13),
+                    rgba(139,92,246,0.14),
                     transparent 68%
                 );
 
-            filter: blur(20px);
-
-            top: -220px;
-            left: -180px;
-
+            filter: blur(15px);
+            z-index: -9;
             pointer-events: none;
-            z-index: -4;
 
-            animation: ambientFloat 10s ease-in-out infinite alternate;
+            animation:
+                ambientFloat 11s ease-in-out infinite alternate;
         }
 
         .ambient-light.two {
-            width: 550px;
-            height: 550px;
+            width: 600px;
+            height: 600px;
 
             top: auto;
             left: auto;
 
-            right: -280px;
-            bottom: -250px;
+            right: -300px;
+            bottom: -300px;
 
             background:
                 radial-gradient(
                     circle,
-                    rgba(6, 182, 212, 0.10),
+                    rgba(6,182,212,0.10),
                     transparent 68%
                 );
 
             animation-delay: -4s;
-            animation-duration: 13s;
-        }
-
-        .cursor-glow {
-            position: fixed;
-
-            width: 300px;
-            height: 300px;
-
-            border-radius: 50%;
-
-            background:
-                radial-gradient(
-                    circle,
-                    rgba(139,92,246,0.07),
-                    transparent 70%
-                );
-
-            transform: translate(-50%, -50%);
-
-            pointer-events: none;
-
-            z-index: -2;
-
-            opacity: 0;
-
-            transition: opacity 0.4s ease;
-        }
-
-        body:hover .cursor-glow {
-            opacity: 1;
+            animation-duration: 14s;
         }
 
         /* =========================================================
@@ -200,41 +155,42 @@
 
         nav {
             position: fixed;
-
             top: 0;
             left: 0;
             right: 0;
 
             z-index: 1000;
 
-            padding: 18px 24px;
+            padding: 19px 24px;
+
+            background:
+                rgba(8,9,13,0.55);
 
             backdrop-filter: blur(18px);
             -webkit-backdrop-filter: blur(18px);
-
-            background: rgba(8, 9, 13, 0.62);
 
             border-bottom:
                 1px solid transparent;
 
             transition:
-                background 0.4s ease,
-                border-color 0.4s ease,
-                padding 0.4s ease,
-                box-shadow 0.4s ease;
+                padding 0.35s ease,
+                background 0.35s ease,
+                border-color 0.35s ease,
+                box-shadow 0.35s ease;
         }
 
         nav.scrolled {
-            padding-top: 13px;
-            padding-bottom: 13px;
+            padding-top: 12px;
+            padding-bottom: 12px;
 
-            background: rgba(8, 9, 13, 0.90);
+            background:
+                rgba(8,9,13,0.92);
 
-            border-bottom-color:
+            border-color:
                 rgba(255,255,255,0.08);
 
             box-shadow:
-                0 10px 40px rgba(0,0,0,0.22);
+                0 12px 40px rgba(0,0,0,0.28);
         }
 
         .nav-container {
@@ -242,21 +198,22 @@
             margin: auto;
 
             display: flex;
-            justify-content: space-between;
             align-items: center;
+            justify-content: space-between;
         }
 
         .logo {
             font-size: 1rem;
-            font-weight: 750;
-            letter-spacing: -0.03em;
+            font-weight: 800;
+            letter-spacing: -0.04em;
 
             transition:
                 transform 0.3s ease;
         }
 
         .logo:hover {
-            transform: translateY(-2px);
+            transform:
+                translateY(-2px);
         }
 
         .logo span {
@@ -273,7 +230,6 @@
         .nav-links {
             display: flex;
             gap: 28px;
-
             list-style: none;
         }
 
@@ -281,8 +237,7 @@
             position: relative;
 
             color: var(--muted);
-
-            font-size: 0.9rem;
+            font-size: 0.88rem;
 
             transition:
                 color 0.3s ease;
@@ -329,17 +284,18 @@
         ========================================================= */
 
         .container {
-            width: min(
-                100% - 48px,
-                var(--max-width)
-            );
+            width:
+                min(
+                    calc(100% - 48px),
+                    var(--max-width)
+                );
 
             margin: auto;
         }
 
         section {
-            padding: 110px 0;
             position: relative;
+            padding: 115px 0;
         }
 
         .section-label {
@@ -347,32 +303,32 @@
 
             text-transform: uppercase;
 
-            letter-spacing: 0.16em;
+            letter-spacing: 0.17em;
 
-            font-size: 0.75rem;
+            font-size: 0.73rem;
 
-            font-weight: 750;
+            font-weight: 800;
 
             margin-bottom: 14px;
         }
 
         .section-title {
             font-size:
-                clamp(2rem, 5vw, 3.2rem);
+                clamp(2rem,5vw,3.2rem);
 
             line-height: 1.08;
 
-            letter-spacing: -0.045em;
+            letter-spacing: -0.05em;
 
             margin-bottom: 18px;
         }
 
         .section-description {
+            max-width: 680px;
+
             color: var(--muted);
 
-            max-width: 650px;
-
-            font-size: 1.02rem;
+            font-size: 1rem;
         }
 
         /* =========================================================
@@ -385,7 +341,7 @@
             display: flex;
             align-items: center;
 
-            padding-top: 120px;
+            padding-top: 130px;
 
             position: relative;
         }
@@ -396,9 +352,7 @@
 
         .hero-badge {
             display: inline-flex;
-
             align-items: center;
-
             gap: 9px;
 
             padding: 8px 14px;
@@ -406,24 +360,22 @@
             border:
                 1px solid var(--border);
 
-            border-radius: 100px;
+            border-radius: 999px;
 
             background:
                 rgba(255,255,255,0.035);
 
             color: var(--muted);
 
-            font-size: 0.82rem;
+            font-size: 0.8rem;
 
             margin-bottom: 28px;
 
-            opacity: 0;
-
             animation:
-                heroReveal 0.9s
+                heroIn 0.8s
                 0.1s
-                cubic-bezier(.2,.8,.2,1)
-                forwards;
+                both
+                cubic-bezier(.2,.8,.2,1);
         }
 
         .status-dot {
@@ -435,52 +387,50 @@
             background: #4ade80;
 
             box-shadow:
-                0 0 12px
-                rgba(74,222,128,0.7);
+                0 0 14px
+                rgba(74,222,128,0.75);
 
             animation:
-                pulseDot 2s ease-in-out infinite;
+                pulse 2s ease-in-out infinite;
         }
 
         .hero h1 {
             font-size:
-                clamp(3.3rem, 9vw, 7rem);
+                clamp(3.2rem,9vw,7rem);
 
-            line-height: 0.95;
+            line-height: 0.94;
 
-            letter-spacing: -0.07em;
+            letter-spacing: -0.075em;
 
-            margin-bottom: 28px;
-
-            opacity: 0;
+            margin-bottom: 30px;
 
             animation:
-                heroReveal 1s
-                0.22s
-                cubic-bezier(.2,.8,.2,1)
-                forwards;
+                heroIn 0.9s
+                0.2s
+                both
+                cubic-bezier(.2,.8,.2,1);
         }
 
-        .hero h1 .gradient {
+        .gradient {
+            display: inline-block;
+
             background:
                 linear-gradient(
                     110deg,
-                    #ffffff 10%,
+                    #ffffff 5%,
                     #b7a4ff 45%,
-                    #67e8f9 85%
+                    #67e8f9 90%
                 );
+
+            background-size: 220% auto;
 
             -webkit-background-clip: text;
             background-clip: text;
 
             color: transparent;
 
-            background-size: 220% auto;
-
             animation:
-                gradientMove 6s
-                ease-in-out
-                infinite;
+                gradientMove 6s ease-in-out infinite;
         }
 
         .hero-description {
@@ -489,33 +439,27 @@
             color: var(--muted);
 
             font-size:
-                clamp(1rem, 2vw, 1.2rem);
+                clamp(1rem,2vw,1.18rem);
 
-            margin-bottom: 36px;
-
-            opacity: 0;
+            margin-bottom: 35px;
 
             animation:
-                heroReveal 0.9s
-                0.4s
-                cubic-bezier(.2,.8,.2,1)
-                forwards;
+                heroIn 0.9s
+                0.35s
+                both
+                cubic-bezier(.2,.8,.2,1);
         }
 
         .hero-buttons {
             display: flex;
-
             gap: 14px;
-
             flex-wrap: wrap;
 
-            opacity: 0;
-
             animation:
-                heroReveal 0.9s
-                0.55s
-                cubic-bezier(.2,.8,.2,1)
-                forwards;
+                heroIn 0.9s
+                0.5s
+                both
+                cubic-bezier(.2,.8,.2,1);
         }
 
         /* =========================================================
@@ -526,7 +470,6 @@
             position: relative;
 
             display: inline-flex;
-
             align-items: center;
             justify-content: center;
 
@@ -539,9 +482,8 @@
             border:
                 1px solid var(--border);
 
-            font-size: 0.9rem;
-
-            font-weight: 650;
+            font-size: 0.88rem;
+            font-weight: 700;
 
             transition:
                 transform 0.35s ease,
@@ -555,23 +497,24 @@
             position: absolute;
 
             top: 0;
-            left: -120%;
+            left: -130%;
 
-            width: 80%;
+            width: 75%;
             height: 100%;
 
             background:
                 linear-gradient(
                     100deg,
                     transparent,
-                    rgba(255,255,255,0.45),
+                    rgba(255,255,255,0.55),
                     transparent
                 );
 
-            transform: skewX(-20deg);
+            transform:
+                skewX(-20deg);
 
             transition:
-                left 0.7s ease;
+                left 0.65s ease;
         }
 
         .btn:hover::before {
@@ -579,24 +522,21 @@
         }
 
         .btn-primary {
-            background: #fff;
-
             color: #08090d;
-
-            border-color: #fff;
+            background: white;
+            border-color: white;
         }
 
         .btn-primary:hover {
-            transform: translateY(-4px);
+            transform:
+                translateY(-4px);
 
             box-shadow:
-                0 15px 40px
-                rgba(255,255,255,0.14);
+                0 18px 45px
+                rgba(255,255,255,0.15);
         }
 
         .btn-secondary {
-            color: var(--text);
-
             background:
                 rgba(255,255,255,0.035);
         }
@@ -609,7 +549,7 @@
                 translateY(-4px);
 
             box-shadow:
-                0 15px 40px
+                0 18px 45px
                 rgba(0,0,0,0.25);
         }
 
@@ -619,26 +559,22 @@
 
         .stats {
             display: grid;
-
             grid-template-columns:
-                repeat(3, 1fr);
+                repeat(3,1fr);
 
-            gap: 16px;
+            gap: 15px;
 
             margin-top: 80px;
 
-            opacity: 0;
-
             animation:
-                heroReveal 1s
-                0.7s
-                cubic-bezier(.2,.8,.2,1)
-                forwards;
+                heroIn 0.9s
+                0.65s
+                both
+                cubic-bezier(.2,.8,.2,1);
         }
 
         .stat-card {
             position: relative;
-
             overflow: hidden;
 
             padding: 25px;
@@ -646,82 +582,132 @@
             border:
                 1px solid var(--border);
 
+            border-radius: 16px;
+
             background:
                 rgba(255,255,255,0.045);
 
-            border-radius: 16px;
-
             transition:
                 transform 0.45s ease,
-                background 0.35s ease,
                 border-color 0.35s ease,
+                background 0.35s ease,
                 box-shadow 0.45s ease;
-        }
-
-        .stat-card::after {
-            content: "";
-
-            position: absolute;
-
-            width: 100px;
-            height: 100px;
-
-            right: -45px;
-            top: -45px;
-
-            border-radius: 50%;
-
-            background:
-                radial-gradient(
-                    circle,
-                    rgba(139,92,246,0.18),
-                    transparent 70%
-                );
-
-            transition:
-                transform 0.5s ease;
         }
 
         .stat-card:hover {
             transform:
-                translateY(-7px);
+                translateY(-8px);
 
             background:
-                var(--card-hover);
+                rgba(255,255,255,0.075);
 
             border-color:
-                rgba(139,92,246,0.38);
+                rgba(139,92,246,0.4);
 
             box-shadow:
-                0 20px 50px
-                rgba(0,0,0,0.25);
-        }
-
-        .stat-card:hover::after {
-            transform:
-                scale(1.8);
+                0 25px 60px
+                rgba(0,0,0,0.28);
         }
 
         .stat-number {
-            position: relative;
-            z-index: 2;
-
             font-size: 2rem;
+            font-weight: 800;
 
-            font-weight: 750;
-
-            letter-spacing: -0.04em;
-
-            margin-bottom: 5px;
+            letter-spacing: -0.05em;
         }
 
         .stat-label {
-            position: relative;
-            z-index: 2;
-
             color: var(--muted);
+            font-size: 0.82rem;
+        }
 
-            font-size: 0.85rem;
+        /* =========================================================
+           SCROLL ANIMATION SYSTEM
+        ========================================================= */
+
+        .scroll-reveal {
+            opacity: 0;
+
+            transform:
+                translateY(80px)
+                scale(0.94);
+
+            filter:
+                blur(8px);
+
+            transition:
+                opacity 0.9s
+                cubic-bezier(.2,.8,.2,1),
+
+                transform 0.9s
+                cubic-bezier(.2,.8,.2,1),
+
+                filter 0.9s ease;
+        }
+
+        .scroll-reveal.show {
+            opacity: 1;
+
+            transform:
+                translateY(0)
+                scale(1);
+
+            filter:
+                blur(0);
+        }
+
+        /* Direction variations */
+
+        .from-left {
+            transform:
+                translateX(-90px)
+                scale(0.95);
+
+            opacity: 0;
+            filter: blur(8px);
+        }
+
+        .from-left.show {
+            transform:
+                translateX(0)
+                scale(1);
+
+            opacity: 1;
+            filter: blur(0);
+        }
+
+        .from-right {
+            transform:
+                translateX(90px)
+                scale(0.95);
+
+            opacity: 0;
+            filter: blur(8px);
+        }
+
+        .from-right.show {
+            transform:
+                translateX(0)
+                scale(1);
+
+            opacity: 1;
+            filter: blur(0);
+        }
+
+        .scale-reveal {
+            transform:
+                scale(0.82);
+
+            opacity: 0;
+            filter: blur(6px);
+        }
+
+        .scale-reveal.show {
+            transform:
+                scale(1);
+
+            opacity: 1;
+            filter: blur(0);
         }
 
         /* =========================================================
@@ -744,20 +730,19 @@
 
             margin-bottom: 18px;
 
-            font-size: 1rem;
+            font-size: 0.98rem;
         }
 
         .about-highlight {
             position: relative;
-
             overflow: hidden;
 
             padding: 30px;
 
-            border-radius: 20px;
-
             border:
                 1px solid var(--border);
+
+            border-radius: 20px;
 
             background:
                 linear-gradient(
@@ -772,87 +757,47 @@
                 box-shadow 0.5s ease;
         }
 
-        .about-highlight::before {
-            content: "";
-
-            position: absolute;
-
-            width: 180px;
-            height: 180px;
-
-            top: -100px;
-            right: -70px;
-
-            border-radius: 50%;
-
-            background:
-                radial-gradient(
-                    circle,
-                    rgba(139,92,246,0.18),
-                    transparent 70%
-                );
-
-            transition:
-                transform 0.6s ease;
-        }
-
         .about-highlight:hover {
             transform:
-                translateY(-7px);
+                translateY(-8px);
 
             border-color:
-                rgba(139,92,246,0.32);
+                rgba(139,92,246,0.35);
 
             box-shadow:
-                0 25px 60px
-                rgba(0,0,0,0.24);
-        }
-
-        .about-highlight:hover::before {
-            transform:
-                scale(1.4);
-        }
-
-        .about-highlight h3,
-        .about-highlight p,
-        .industry-list {
-            position: relative;
-            z-index: 2;
+                0 30px 70px
+                rgba(0,0,0,0.27);
         }
 
         .about-highlight h3 {
-            margin-bottom: 14px;
-
+            margin-bottom: 13px;
             font-size: 1.15rem;
         }
 
         .about-highlight p {
             color: var(--muted);
-
-            font-size: 0.92rem;
+            font-size: 0.9rem;
         }
 
         .industry-list {
             display: flex;
-
             flex-wrap: wrap;
-
             gap: 9px;
 
             margin-top: 20px;
         }
 
         .industry {
+            padding: 7px 11px;
+
             border:
                 1px solid var(--border);
 
-            padding: 7px 11px;
-
-            border-radius: 100px;
+            border-radius: 999px;
 
             color: #c8c9d0;
 
-            font-size: 0.75rem;
+            font-size: 0.73rem;
 
             background:
                 rgba(255,255,255,0.03);
@@ -868,7 +813,7 @@
                 translateY(-3px);
 
             background:
-                rgba(255,255,255,0.07);
+                rgba(255,255,255,0.075);
 
             border-color:
                 rgba(139,92,246,0.35);
@@ -882,7 +827,7 @@
             display: grid;
 
             grid-template-columns:
-                repeat(4, 1fr);
+                repeat(4,1fr);
 
             gap: 14px;
 
@@ -891,7 +836,6 @@
 
         .skill {
             position: relative;
-
             overflow: hidden;
 
             padding: 20px;
@@ -899,69 +843,40 @@
             border:
                 1px solid var(--border);
 
+            border-radius: 14px;
+
             background:
                 var(--card);
 
-            border-radius: 14px;
-
             color: #d7d7dd;
 
-            font-size: 0.9rem;
+            font-size: 0.88rem;
 
             transition:
-                transform 0.4s
+                transform 0.45s
                 cubic-bezier(.2,.8,.2,1),
-                border-color 0.35s ease,
+
                 background 0.35s ease,
-                box-shadow 0.4s ease;
-        }
 
-        .skill::before {
-            content: "";
+                border-color 0.35s ease,
 
-            position: absolute;
-
-            width: 7px;
-            height: 7px;
-
-            border-radius: 50%;
-
-            background:
-                var(--accent);
-
-            left: 20px;
-            bottom: 13px;
-
-            opacity: 0;
-
-            transform:
-                scale(0);
-
-            transition:
-                opacity 0.3s ease,
-                transform 0.3s ease;
+                box-shadow 0.45s ease;
         }
 
         .skill:hover {
             transform:
-                translateY(-6px);
-
-            border-color:
-                rgba(139,92,246,0.38);
+                translateY(-7px)
+                scale(1.02);
 
             background:
                 var(--card-hover);
 
+            border-color:
+                rgba(139,92,246,0.4);
+
             box-shadow:
-                0 15px 40px
-                rgba(0,0,0,0.22);
-        }
-
-        .skill:hover::before {
-            opacity: 1;
-
-            transform:
-                scale(1);
+                0 18px 45px
+                rgba(0,0,0,0.25);
         }
 
         /* =========================================================
@@ -972,119 +887,80 @@
             display: grid;
 
             grid-template-columns:
-                repeat(2, 1fr);
+                repeat(2,1fr);
 
-            gap: 20px;
+            gap: 22px;
 
             margin-top: 50px;
         }
 
         .project-card {
-            --mouse-x: 50%;
-            --mouse-y: 50%;
-
             position: relative;
 
-            min-height: 360px;
+            min-height: 370px;
+
+            overflow: hidden;
 
             border:
                 1px solid var(--border);
 
             border-radius: 20px;
 
-            overflow: hidden;
-
             background:
-                var(--card);
+                rgba(255,255,255,0.045);
 
-            transform-style:
-                preserve-3d;
+            transform-style: preserve-3d;
 
             transition:
                 transform 0.5s
                 cubic-bezier(.2,.8,.2,1),
+
                 border-color 0.35s ease,
+
                 box-shadow 0.45s ease;
         }
 
-        /* Dynamic glow */
+        .project-card:hover {
+            transform:
+                translateY(-12px)
+                rotateX(var(--rx,0deg))
+                rotateY(var(--ry,0deg));
+
+            border-color:
+                rgba(139,92,246,0.45);
+
+            box-shadow:
+                0 35px 80px
+                rgba(0,0,0,0.38);
+        }
 
         .project-card::before {
             content: "";
 
             position: absolute;
-
             inset: 0;
 
             background:
                 radial-gradient(
-                    220px circle at
-                    var(--mouse-x)
-                    var(--mouse-y),
-                    rgba(139,92,246,0.14),
+                    250px circle at
+                    var(--mx,50%)
+                    var(--my,50%),
+                    rgba(139,92,246,0.17),
                     transparent 70%
                 );
 
             opacity: 0;
 
             transition:
-                opacity 0.4s ease;
+                opacity 0.35s ease;
 
             pointer-events: none;
 
             z-index: 5;
         }
 
-        .project-card::after {
-            content: "";
-
-            position: absolute;
-
-            inset: 0;
-
-            border-radius: 20px;
-
-            background:
-                linear-gradient(
-                    120deg,
-                    transparent 20%,
-                    rgba(255,255,255,0.04),
-                    transparent 80%
-                );
-
-            transform:
-                translateX(-120%);
-
-            transition:
-                transform 0.9s ease;
-
-            pointer-events: none;
-
-            z-index: 6;
-        }
-
-        .project-card:hover {
-            transform:
-                translateY(-10px)
-                perspective(900px)
-                rotateX(var(--rotate-x, 0deg))
-                rotateY(var(--rotate-y, 0deg));
-
-            border-color:
-                rgba(139,92,246,0.42);
-
-            box-shadow:
-                0 30px 80px
-                rgba(0,0,0,0.35);
-        }
-
         .project-card:hover::before {
             opacity: 1;
-        }
-
-        .project-card:hover::after {
-            transform:
-                translateX(120%);
         }
 
         /* =========================================================
@@ -1092,7 +968,7 @@
         ========================================================= */
 
         .project-visual {
-            height: 185px;
+            height: 190px;
 
             position: relative;
 
@@ -1100,24 +976,29 @@
 
             background:
                 radial-gradient(
-                    circle at 20% 20%,
-                    rgba(139,92,246,0.35),
+                    circle at 15% 25%,
+                    rgba(139,92,246,0.38),
+                    transparent 34%
+                ),
+                radial-gradient(
+                    circle at 85% 75%,
+                    rgba(6,182,212,0.18),
                     transparent 35%
                 ),
                 linear-gradient(
                     135deg,
-                    #151821,
+                    #161923,
                     #0d0f15
                 );
 
             transition:
-                transform 0.6s
+                transform 0.65s
                 cubic-bezier(.2,.8,.2,1);
         }
 
         .project-card:hover .project-visual {
             transform:
-                scale(1.06);
+                scale(1.07);
         }
 
         .project-visual::before {
@@ -1140,39 +1021,10 @@
 
         .project-card:hover
         .project-visual::before {
-            inset: 14px;
+            inset: 13px;
 
             border-color:
-                rgba(255,255,255,0.15);
-        }
-
-        .project-visual::after {
-            content: "";
-
-            position: absolute;
-
-            width: 150px;
-            height: 150px;
-
-            border-radius: 50%;
-
-            background:
-                rgba(6,182,212,0.12);
-
-            filter: blur(20px);
-
-            right: -40px;
-            bottom: -50px;
-
-            transition:
-                transform 0.7s ease;
-        }
-
-        .project-card:hover
-        .project-visual::after {
-            transform:
-                scale(1.45)
-                translate(-20px,-10px);
+                rgba(255,255,255,0.16);
         }
 
         .project-number {
@@ -1181,9 +1033,9 @@
             top: 18px;
             right: 20px;
 
-            font-size: 0.7rem;
+            color: #7d7f8a;
 
-            color: #747783;
+            font-size: 0.68rem;
 
             letter-spacing: 0.12em;
 
@@ -1199,7 +1051,7 @@
             color:
                 rgba(255,255,255,0.5);
 
-            font-size: 0.7rem;
+            font-size: 0.68rem;
 
             text-transform: uppercase;
 
@@ -1212,13 +1064,12 @@
                 transform 0.35s ease;
         }
 
-        .project-card:hover
-        .project-type {
+        .project-card:hover .project-type {
             color:
-                rgba(255,255,255,0.78);
+                rgba(255,255,255,0.82);
 
             transform:
-                translateX(5px);
+                translateX(6px);
         }
 
         /* =========================================================
@@ -1227,23 +1078,15 @@
 
         .project-content {
             position: relative;
-
             z-index: 7;
 
             padding: 25px;
-
-            background:
-                linear-gradient(
-                    to bottom,
-                    rgba(8,9,13,0.1),
-                    rgba(8,9,13,0.4)
-                );
         }
 
         .project-content h3 {
-            font-size: 1.35rem;
+            font-size: 1.32rem;
 
-            letter-spacing: -0.025em;
+            letter-spacing: -0.03em;
 
             margin-bottom: 9px;
 
@@ -1254,15 +1097,15 @@
         .project-card:hover
         .project-content h3 {
             transform:
-                translateX(3px);
+                translateX(4px);
         }
 
         .project-content p {
             color: var(--muted);
 
-            font-size: 0.85rem;
+            font-size: 0.84rem;
 
-            min-height: 48px;
+            min-height: 50px;
         }
 
         .project-meta {
@@ -1276,29 +1119,29 @@
         }
 
         .tag {
-            font-size: 0.68rem;
-
-            color: #b9bac4;
+            padding: 5px 9px;
 
             border:
                 1px solid var(--border);
 
-            border-radius: 100px;
+            border-radius: 999px;
 
-            padding: 5px 9px;
+            color: #b9bac4;
 
             background:
                 rgba(255,255,255,0.025);
 
+            font-size: 0.67rem;
+
             transition:
                 transform 0.3s ease,
-                background 0.3s ease,
-                border-color 0.3s ease;
+                border-color 0.3s ease,
+                background 0.3s ease;
         }
 
         .project-card:hover .tag {
             background:
-                rgba(255,255,255,0.045);
+                rgba(255,255,255,0.05);
         }
 
         .tag:hover {
@@ -1306,7 +1149,7 @@
                 translateY(-2px);
 
             border-color:
-                rgba(139,92,246,0.35);
+                rgba(139,92,246,0.4);
         }
 
         .project-link {
@@ -1316,13 +1159,13 @@
 
             color: #b9a8ff;
 
-            font-size: 0.78rem;
+            font-size: 0.77rem;
 
-            font-weight: 650;
+            font-weight: 700;
 
             transition:
-                color 0.3s ease,
-                transform 0.3s ease;
+                transform 0.3s ease,
+                color 0.3s ease;
         }
 
         .project-link:hover {
@@ -1352,20 +1195,18 @@
             display: grid;
 
             grid-template-columns:
-                repeat(2, 1fr);
+                repeat(2,1fr);
 
             gap: 10px;
         }
 
         .project-list-item {
             position: relative;
-
             overflow: hidden;
 
             display: flex;
 
             justify-content: space-between;
-
             align-items: center;
 
             gap: 20px;
@@ -1375,10 +1216,10 @@
             border:
                 1px solid var(--border);
 
+            border-radius: 12px;
+
             background:
                 rgba(255,255,255,0.025);
-
-            border-radius: 12px;
 
             transition:
                 transform 0.35s ease,
@@ -1387,67 +1228,30 @@
                 box-shadow 0.35s ease;
         }
 
-        .project-list-item::before {
-            content: "";
-
-            position: absolute;
-
-            left: 0;
-            top: 0;
-
-            width: 2px;
-            height: 100%;
-
-            background:
-                linear-gradient(
-                    to bottom,
-                    var(--accent),
-                    var(--accent-2)
-                );
-
-            transform:
-                scaleY(0);
-
-            transform-origin:
-                bottom;
-
-            transition:
-                transform 0.35s ease;
-        }
-
         .project-list-item:hover {
-            background:
-                rgba(255,255,255,0.055);
-
             transform:
-                translateX(6px);
+                translateX(7px);
+
+            background:
+                rgba(255,255,255,0.06);
 
             border-color:
-                rgba(139,92,246,0.3);
+                rgba(139,92,246,0.32);
 
             box-shadow:
-                0 12px 35px
-                rgba(0,0,0,0.18);
-        }
-
-        .project-list-item:hover::before {
-            transform:
-                scaleY(1);
-
-            transform-origin:
-                top;
+                0 15px 40px
+                rgba(0,0,0,0.2);
         }
 
         .project-list-name {
-            font-weight: 600;
-
-            font-size: 0.9rem;
+            font-weight: 650;
+            font-size: 0.88rem;
         }
 
         .project-list-type {
             color: #777984;
 
-            font-size: 0.72rem;
+            font-size: 0.7rem;
 
             margin-top: 3px;
         }
@@ -1455,7 +1259,7 @@
         .project-list-link {
             color: #a99aff;
 
-            font-size: 0.75rem;
+            font-size: 0.74rem;
 
             white-space: nowrap;
 
@@ -1479,10 +1283,10 @@
         .experience-wrapper {
             margin-top: 50px;
 
+            padding-left: 30px;
+
             border-left:
                 1px solid var(--border);
-
-            padding-left: 30px;
         }
 
         .experience-item {
@@ -1499,17 +1303,17 @@
             width: 9px;
             height: 9px;
 
+            left: -35px;
+            top: 8px;
+
             border-radius: 50%;
 
             background:
                 var(--accent);
 
-            left: -35px;
-            top: 8px;
-
             box-shadow:
                 0 0 20px
-                rgba(139,92,246,0.6);
+                rgba(139,92,246,0.65);
 
             transition:
                 transform 0.35s ease,
@@ -1518,45 +1322,43 @@
 
         .experience-item:hover::before {
             transform:
-                scale(1.7);
+                scale(1.8);
 
             box-shadow:
-                0 0 30px
-                rgba(139,92,246,0.9);
+                0 0 32px
+                rgba(139,92,246,0.95);
         }
 
         .experience-date {
             color: var(--accent);
 
-            font-size: 0.75rem;
+            font-size: 0.74rem;
 
-            font-weight: 700;
-
-            letter-spacing: 0.08em;
+            font-weight: 800;
 
             text-transform: uppercase;
+
+            letter-spacing: 0.08em;
 
             margin-bottom: 8px;
         }
 
         .experience-item h3 {
-            font-size: 1.35rem;
-
+            font-size: 1.32rem;
             margin-bottom: 5px;
         }
 
         .experience-company {
             color: #c3c4ca;
-
             margin-bottom: 13px;
         }
 
         .experience-item p {
-            color: var(--muted);
-
             max-width: 750px;
 
-            font-size: 0.92rem;
+            color: var(--muted);
+
+            font-size: 0.9rem;
         }
 
         /* =========================================================
@@ -1575,22 +1377,21 @@
 
         .contact-box {
             position: relative;
-
             overflow: hidden;
 
             margin-top: 45px;
 
-            padding: 50px 30px;
-
-            border-radius: 24px;
+            padding: 55px 30px;
 
             border:
                 1px solid var(--border);
 
+            border-radius: 24px;
+
             background:
                 radial-gradient(
                     circle at 50% 0%,
-                    rgba(139,92,246,0.13),
+                    rgba(139,92,246,0.15),
                     transparent 55%
                 ),
                 rgba(255,255,255,0.025);
@@ -1601,67 +1402,34 @@
                 box-shadow 0.5s ease;
         }
 
-        .contact-box::before {
-            content: "";
-
-            position: absolute;
-
-            width: 300px;
-            height: 300px;
-
-            left: 50%;
-            top: -230px;
-
-            transform:
-                translateX(-50%);
-
-            border-radius: 50%;
-
-            background:
-                radial-gradient(
-                    circle,
-                    rgba(139,92,246,0.16),
-                    transparent 70%
-                );
-
-            transition:
-                transform 0.7s ease;
-        }
-
         .contact-box:hover {
             transform:
-                translateY(-6px);
+                translateY(-7px);
 
             border-color:
                 rgba(139,92,246,0.35);
 
             box-shadow:
-                0 30px 80px
-                rgba(0,0,0,0.28);
-        }
-
-        .contact-box:hover::before {
-            transform:
-                translateX(-50%)
-                scale(1.4);
-        }
-
-        .contact-box > * {
-            position: relative;
-            z-index: 2;
+                0 35px 80px
+                rgba(0,0,0,0.3);
         }
 
         .contact-email {
             display: inline-block;
 
-            margin: 15px 0 25px;
+            margin:
+                15px 0 25px;
 
             font-size:
-                clamp(1.3rem, 4vw, 2.1rem);
+                clamp(
+                    1.25rem,
+                    4vw,
+                    2.1rem
+                );
 
-            font-weight: 700;
+            font-weight: 750;
 
-            letter-spacing: -0.03em;
+            letter-spacing: -0.035em;
 
             transition:
                 color 0.3s ease,
@@ -1687,143 +1455,43 @@
 
             color: #6f717b;
 
-            font-size: 0.75rem;
+            font-size: 0.74rem;
         }
 
         .footer-container {
             display: flex;
 
             justify-content: space-between;
+            align-items: center;
 
             gap: 20px;
-
-            align-items: center;
         }
 
         /* =========================================================
-           SCROLL REVEAL
+           ANIMATION DELAYS
         ========================================================= */
 
-        .reveal {
-            opacity: 0;
-
-            transform:
-                translateY(55px)
-                scale(0.97);
-
-            filter:
-                blur(4px);
-
-            transition:
-                opacity 0.9s
-                cubic-bezier(.2,.8,.2,1),
-
-                transform 0.9s
-                cubic-bezier(.2,.8,.2,1),
-
-                filter 0.9s ease;
+        .delay-1 {
+            transition-delay: 0.08s;
         }
 
-        .reveal.visible {
-            opacity: 1;
-
-            transform:
-                translateY(0)
-                scale(1);
-
-            filter:
-                blur(0);
+        .delay-2 {
+            transition-delay: 0.16s;
         }
 
-        /* =========================================================
-           STAGGERED ANIMATION
-        ========================================================= */
-
-        .projects-grid .project-card:nth-child(1) {
-            transition-delay: 0.05s;
-        }
-
-        .projects-grid .project-card:nth-child(2) {
-            transition-delay: 0.12s;
-        }
-
-        .projects-grid .project-card:nth-child(3) {
-            transition-delay: 0.19s;
-        }
-
-        .projects-grid .project-card:nth-child(4) {
-            transition-delay: 0.26s;
-        }
-
-        .projects-grid .project-card:nth-child(5) {
-            transition-delay: 0.33s;
-        }
-
-        .projects-grid .project-card:nth-child(6) {
-            transition-delay: 0.40s;
-        }
-
-        .skills-grid .skill:nth-child(1) {
-            transition-delay: 0.03s;
-        }
-
-        .skills-grid .skill:nth-child(2) {
-            transition-delay: 0.06s;
-        }
-
-        .skills-grid .skill:nth-child(3) {
-            transition-delay: 0.09s;
-        }
-
-        .skills-grid .skill:nth-child(4) {
-            transition-delay: 0.12s;
-        }
-
-        .skills-grid .skill:nth-child(5) {
-            transition-delay: 0.15s;
-        }
-
-        .skills-grid .skill:nth-child(6) {
-            transition-delay: 0.18s;
-        }
-
-        .skills-grid .skill:nth-child(7) {
-            transition-delay: 0.21s;
-        }
-
-        .skills-grid .skill:nth-child(8) {
+        .delay-3 {
             transition-delay: 0.24s;
         }
 
-        .skills-grid .skill:nth-child(9) {
-            transition-delay: 0.27s;
+        .delay-4 {
+            transition-delay: 0.32s;
         }
 
-        .skills-grid .skill:nth-child(10) {
-            transition-delay: 0.30s;
+        .delay-5 {
+            transition-delay: 0.40s;
         }
 
-        .skills-grid .skill:nth-child(11) {
-            transition-delay: 0.33s;
-        }
-
-        .skills-grid .skill:nth-child(12) {
-            transition-delay: 0.36s;
-        }
-
-        .skills-grid .skill:nth-child(13) {
-            transition-delay: 0.39s;
-        }
-
-        .skills-grid .skill:nth-child(14) {
-            transition-delay: 0.42s;
-        }
-
-        .skills-grid .skill:nth-child(15) {
-            transition-delay: 0.45s;
-        }
-
-        .skills-grid .skill:nth-child(16) {
+        .delay-6 {
             transition-delay: 0.48s;
         }
 
@@ -1831,13 +1499,13 @@
            KEYFRAMES
         ========================================================= */
 
-        @keyframes heroReveal {
+        @keyframes heroIn {
 
             from {
                 opacity: 0;
 
                 transform:
-                    translateY(40px);
+                    translateY(45px);
             }
 
             to {
@@ -1848,23 +1516,15 @@
             }
         }
 
-        @keyframes pulseDot {
+        @keyframes pulse {
 
             0%,
             100% {
                 transform: scale(1);
-
-                box-shadow:
-                    0 0 10px
-                    rgba(74,222,128,0.55);
             }
 
             50% {
-                transform: scale(1.25);
-
-                box-shadow:
-                    0 0 22px
-                    rgba(74,222,128,0.85);
+                transform: scale(1.3);
             }
         }
 
@@ -1903,7 +1563,7 @@
 
             to {
                 transform:
-                    translate(80px,60px)
+                    translate(90px,70px)
                     scale(1.15);
             }
         }
@@ -1914,15 +1574,14 @@
 
         @media (max-width: 900px) {
 
-            .skills-grid {
-                grid-template-columns:
-                    repeat(2, 1fr);
-            }
-
             .about-grid {
                 grid-template-columns: 1fr;
-
                 gap: 35px;
+            }
+
+            .skills-grid {
+                grid-template-columns:
+                    repeat(2,1fr);
             }
 
             .projects-grid {
@@ -1947,10 +1606,7 @@
 
             .container {
                 width:
-                    min(
-                        100% - 34px,
-                        var(--max-width)
-                    );
+                    calc(100% - 34px);
             }
 
             section {
@@ -1961,6 +1617,9 @@
             .hero {
                 min-height:
                     92vh;
+
+                padding-top:
+                    110px;
             }
 
             .hero h1 {
@@ -1992,18 +1651,27 @@
 
             .footer-container {
                 flex-direction: column;
-
                 align-items: flex-start;
             }
 
-            .cursor-glow {
-                display: none;
+            .from-left,
+            .from-right {
+                transform:
+                    translateY(70px)
+                    scale(0.95);
             }
 
-            .ambient-light {
-                opacity: 0.6;
+            .from-left.show,
+            .from-right.show {
+                transform:
+                    translateY(0)
+                    scale(1);
             }
         }
+
+        /* =========================================================
+           REDUCED MOTION
+        ========================================================= */
 
         @media (prefers-reduced-motion: reduce) {
 
@@ -2024,11 +1692,12 @@
                     0.01ms !important;
             }
 
-            .reveal {
+            .scroll-reveal,
+            .from-left,
+            .from-right,
+            .scale-reveal {
                 opacity: 1;
-
                 transform: none;
-
                 filter: none;
             }
         }
@@ -2036,18 +1705,15 @@
     </style>
 </head>
 
+
 <body>
 
-    <!-- =========================================================
-         BACKGROUND
-    ========================================================= -->
+    <!-- BACKGROUND -->
 
     <div class="background-grid"></div>
 
     <div class="ambient-light"></div>
     <div class="ambient-light two"></div>
-
-    <div class="cursor-glow" id="cursorGlow"></div>
 
 
     <!-- =========================================================
@@ -2058,43 +1724,30 @@
 
         <div class="nav-container">
 
-            <a
-                href="#home"
-                class="logo"
-            >
+            <a href="#home" class="logo">
                 Angélica<span>.</span>
             </a>
 
             <ul class="nav-links">
 
                 <li>
-                    <a href="#about">
-                        About
-                    </a>
+                    <a href="#about">About</a>
                 </li>
 
                 <li>
-                    <a href="#skills">
-                        Skills
-                    </a>
+                    <a href="#skills">Skills</a>
                 </li>
 
                 <li>
-                    <a href="#work">
-                        Work
-                    </a>
+                    <a href="#work">Work</a>
                 </li>
 
                 <li>
-                    <a href="#experience">
-                        Experience
-                    </a>
+                    <a href="#experience">Experience</a>
                 </li>
 
                 <li>
-                    <a href="#contact">
-                        Contact
-                    </a>
+                    <a href="#contact">Contact</a>
                 </li>
 
             </ul>
@@ -2108,10 +1761,7 @@
          HERO
     ========================================================= -->
 
-    <header
-        class="hero"
-        id="home"
-    >
+    <header class="hero" id="home">
 
         <div class="container">
 
@@ -2171,7 +1821,6 @@
                 <div class="stats">
 
                     <div class="stat-card">
-
                         <div class="stat-number">
                             6+
                         </div>
@@ -2179,12 +1828,10 @@
                         <div class="stat-label">
                             Years of professional experience
                         </div>
-
                     </div>
 
 
                     <div class="stat-card">
-
                         <div class="stat-number">
                             20+
                         </div>
@@ -2192,12 +1839,10 @@
                         <div class="stat-label">
                             Professional projects
                         </div>
-
                     </div>
 
 
                     <div class="stat-card">
-
                         <div class="stat-number">
                             7+
                         </div>
@@ -2205,18 +1850,12 @@
                         <div class="stat-label">
                             Core technologies & platforms
                         </div>
-
                     </div>
 
                 </div>
 
             </div>
 
-        </div>
-
-
-        <div class="scroll-indicator">
-            Scroll to explore
         </div>
 
     </header>
@@ -2230,9 +1869,11 @@
 
         <div class="container">
 
-            <div class="about-grid reveal">
+            <div class="about-grid">
 
-                <div>
+                <div
+                    class="scroll-reveal from-left"
+                >
 
                     <div class="section-label">
                         About me
@@ -2272,7 +1913,13 @@
                 </div>
 
 
-                <div class="about-highlight">
+                <div
+                    class="
+                        about-highlight
+                        scroll-reveal
+                        from-right
+                    "
+                >
 
                     <h3>
                         Industries I've worked with
@@ -2337,7 +1984,7 @@
 
         <div class="container">
 
-            <div class="reveal">
+            <div class="scroll-reveal">
 
                 <div class="section-label">
                     Skills & tools
@@ -2358,67 +2005,67 @@
 
             <div class="skills-grid">
 
-                <div class="skill reveal">
+                <div class="skill scroll-reveal delay-1">
                     WordPress
                 </div>
 
-                <div class="skill reveal">
+                <div class="skill scroll-reveal delay-2">
                     WooCommerce
                 </div>
 
-                <div class="skill reveal">
+                <div class="skill scroll-reveal delay-3">
                     Shopify
                 </div>
 
-                <div class="skill reveal">
+                <div class="skill scroll-reveal delay-4">
                     Elementor
                 </div>
 
-                <div class="skill reveal">
+                <div class="skill scroll-reveal delay-5">
                     Gutenberg
                 </div>
 
-                <div class="skill reveal">
+                <div class="skill scroll-reveal delay-6">
                     Advanced Custom Fields
                 </div>
 
-                <div class="skill reveal">
+                <div class="skill scroll-reveal delay-1">
                     Custom Post Types
                 </div>
 
-                <div class="skill reveal">
+                <div class="skill scroll-reveal delay-2">
                     PHP
                 </div>
 
-                <div class="skill reveal">
+                <div class="skill scroll-reveal delay-3">
                     JavaScript
                 </div>
 
-                <div class="skill reveal">
+                <div class="skill scroll-reveal delay-4">
                     HTML5
                 </div>
 
-                <div class="skill reveal">
+                <div class="skill scroll-reveal delay-5">
                     CSS3
                 </div>
 
-                <div class="skill reveal">
+                <div class="skill scroll-reveal delay-6">
                     SQL
                 </div>
 
-                <div class="skill reveal">
+                <div class="skill scroll-reveal delay-1">
                     SiteGround
                 </div>
 
-                <div class="skill reveal">
+                <div class="skill scroll-reveal delay-2">
                     Responsive Design
                 </div>
 
-                <div class="skill reveal">
+                <div class="skill scroll-reveal delay-3">
                     CMS Development
                 </div>
 
-                <div class="skill reveal">
+                <div class="skill scroll-reveal delay-4">
                     Website Maintenance
                 </div>
 
@@ -2437,7 +2084,7 @@
 
         <div class="container">
 
-            <div class="reveal">
+            <div class="scroll-reveal">
 
                 <div class="section-label">
                     Selected work
@@ -2459,10 +2106,14 @@
             <div class="projects-grid">
 
 
-                <!-- 01 -->
+                <!-- COLUMBUS -->
 
                 <article
-                    class="project-card reveal"
+                    class="
+                        project-card
+                        scroll-reveal
+                        from-left
+                    "
                 >
 
                     <div class="project-visual">
@@ -2492,7 +2143,6 @@
                             maintenance.
                         </p>
 
-
                         <div class="project-meta">
 
                             <span class="tag">
@@ -2517,7 +2167,6 @@
 
                         </div>
 
-
                         <a
                             href="https://columbus.edu.co/"
                             target="_blank"
@@ -2532,10 +2181,14 @@
                 </article>
 
 
-                <!-- 02 -->
+                <!-- VIVIENDAS -->
 
                 <article
-                    class="project-card reveal"
+                    class="
+                        project-card
+                        scroll-reveal
+                        from-right
+                    "
                 >
 
                     <div class="project-visual">
@@ -2564,7 +2217,6 @@
                             API beyond standard WordPress forms.
                         </p>
 
-
                         <div class="project-meta">
 
                             <span class="tag">
@@ -2585,7 +2237,6 @@
 
                         </div>
 
-
                         <a
                             href="http://viviendasyproyectos.com/"
                             target="_blank"
@@ -2600,10 +2251,14 @@
                 </article>
 
 
-                <!-- 03 -->
+                <!-- DROGUERIA -->
 
                 <article
-                    class="project-card reveal"
+                    class="
+                        project-card
+                        scroll-reveal
+                        from-left
+                    "
                 >
 
                     <div class="project-visual">
@@ -2631,7 +2286,6 @@
                             and handled a new product import.
                         </p>
 
-
                         <div class="project-meta">
 
                             <span class="tag">
@@ -2652,7 +2306,6 @@
 
                         </div>
 
-
                         <a
                             href="https://www.drogueriaetica.com/"
                             target="_blank"
@@ -2667,10 +2320,14 @@
                 </article>
 
 
-                <!-- 04 -->
+                <!-- KINKY -->
 
                 <article
-                    class="project-card reveal"
+                    class="
+                        project-card
+                        scroll-reveal
+                        from-right
+                    "
                 >
 
                     <div class="project-visual">
@@ -2699,7 +2356,6 @@
                             structure and implementation.
                         </p>
 
-
                         <div class="project-meta">
 
                             <span class="tag">
@@ -2716,7 +2372,6 @@
 
                         </div>
 
-
                         <a
                             href="https://kinkymascotas.co/"
                             target="_blank"
@@ -2731,10 +2386,14 @@
                 </article>
 
 
-                <!-- 05 -->
+                <!-- CAMPO ORIGEN -->
 
                 <article
-                    class="project-card reveal"
+                    class="
+                        project-card
+                        scroll-reveal
+                        from-left
+                    "
                 >
 
                     <div class="project-visual">
@@ -2763,7 +2422,6 @@
                             functionality using PHP and JavaScript.
                         </p>
 
-
                         <div class="project-meta">
 
                             <span class="tag">
@@ -2788,7 +2446,6 @@
 
                         </div>
 
-
                         <a
                             href="https://www.camporigen.com/"
                             target="_blank"
@@ -2803,10 +2460,14 @@
                 </article>
 
 
-                <!-- 06 -->
+                <!-- COLOR AMAZONIA -->
 
                 <article
-                    class="project-card reveal"
+                    class="
+                        project-card
+                        scroll-reveal
+                        from-right
+                    "
                 >
 
                     <div class="project-visual">
@@ -2835,7 +2496,6 @@
                             JavaScript and PHP.
                         </p>
 
-
                         <div class="project-meta">
 
                             <span class="tag">
@@ -2860,7 +2520,6 @@
 
                         </div>
 
-
                         <a
                             href="https://coloramazonia.com/"
                             target="_blank"
@@ -2881,7 +2540,12 @@
                  MORE PROJECTS
             ====================================================== -->
 
-            <div class="more-projects reveal">
+            <div
+                class="
+                    more-projects
+                    scroll-reveal
+                "
+            >
 
                 <div class="more-projects-title">
                     More professional projects
@@ -2889,7 +2553,6 @@
 
 
                 <div class="project-list">
-
 
                     <a
                         href="https://ranchera.com.co/"
@@ -2899,7 +2562,6 @@
                     >
 
                         <div>
-
                             <div class="project-list-name">
                                 Ranchera
                             </div>
@@ -2907,7 +2569,6 @@
                             <div class="project-list-type">
                                 Custom Post Types · Maintenance
                             </div>
-
                         </div>
 
                         <span class="project-list-link">
@@ -2925,7 +2586,6 @@
                     >
 
                         <div>
-
                             <div class="project-list-name">
                                 ATP
                             </div>
@@ -2933,7 +2593,6 @@
                             <div class="project-list-type">
                                 Built from scratch · Responsive
                             </div>
-
                         </div>
 
                         <span class="project-list-link">
@@ -2951,7 +2610,6 @@
                     >
 
                         <div>
-
                             <div class="project-list-name">
                                 MEBUM
                             </div>
@@ -2959,7 +2617,6 @@
                             <div class="project-list-type">
                                 Design adjustments · Responsive
                             </div>
-
                         </div>
 
                         <span class="project-list-link">
@@ -2977,7 +2634,6 @@
                     >
 
                         <div>
-
                             <div class="project-list-name">
                                 Provimarcas
                             </div>
@@ -2985,7 +2641,6 @@
                             <div class="project-list-type">
                                 Built from scratch · Forms
                             </div>
-
                         </div>
 
                         <span class="project-list-link">
@@ -3003,7 +2658,6 @@
                     >
 
                         <div>
-
                             <div class="project-list-name">
                                 Rubberfit
                             </div>
@@ -3011,7 +2665,6 @@
                             <div class="project-list-type">
                                 Built from scratch · Responsive
                             </div>
-
                         </div>
 
                         <span class="project-list-link">
@@ -3029,7 +2682,6 @@
                     >
 
                         <div>
-
                             <div class="project-list-name">
                                 Sanavet
                             </div>
@@ -3037,7 +2689,6 @@
                             <div class="project-list-type">
                                 WordPress · Responsive
                             </div>
-
                         </div>
 
                         <span class="project-list-link">
@@ -3055,7 +2706,6 @@
                     >
 
                         <div>
-
                             <div class="project-list-name">
                                 SCO
                             </div>
@@ -3063,7 +2713,6 @@
                             <div class="project-list-type">
                                 Website adjustments · Maintenance
                             </div>
-
                         </div>
 
                         <span class="project-list-link">
@@ -3081,7 +2730,6 @@
                     >
 
                         <div>
-
                             <div class="project-list-name">
                                 Tu Operación Segura
                             </div>
@@ -3089,7 +2737,6 @@
                             <div class="project-list-type">
                                 Elementor · WordPress
                             </div>
-
                         </div>
 
                         <span class="project-list-link">
@@ -3107,7 +2754,6 @@
                     >
 
                         <div>
-
                             <div class="project-list-name">
                                 HIS
                             </div>
@@ -3115,7 +2761,6 @@
                             <div class="project-list-type">
                                 Custom Post Types · ACF · Products
                             </div>
-
                         </div>
 
                         <span class="project-list-link">
@@ -3133,7 +2778,6 @@
                     >
 
                         <div>
-
                             <div class="project-list-name">
                                 Khoka Project
                             </div>
@@ -3141,7 +2785,6 @@
                             <div class="project-list-type">
                                 Elementor · Informational website
                             </div>
-
                         </div>
 
                         <span class="project-list-link">
@@ -3159,7 +2802,6 @@
                     >
 
                         <div>
-
                             <div class="project-list-name">
                                 Organic Store
                             </div>
@@ -3167,7 +2809,6 @@
                             <div class="project-list-type">
                                 E-commerce · Website migration
                             </div>
-
                         </div>
 
                         <span class="project-list-link">
@@ -3185,7 +2826,6 @@
                     >
 
                         <div>
-
                             <div class="project-list-name">
                                 Río Claro
                             </div>
@@ -3193,7 +2833,6 @@
                             <div class="project-list-type">
                                 Redesign · Desktop & Mobile
                             </div>
-
                         </div>
 
                         <span class="project-list-link">
@@ -3211,7 +2850,6 @@
                     >
 
                         <div>
-
                             <div class="project-list-name">
                                 Internodes Consulting
                             </div>
@@ -3219,7 +2857,6 @@
                             <div class="project-list-type">
                                 Gutenberg → Elementor · Rebuild
                             </div>
-
                         </div>
 
                         <span class="project-list-link">
@@ -3237,7 +2874,6 @@
                     >
 
                         <div>
-
                             <div class="project-list-name">
                                 Sostenibilidad Grupo EPM
                             </div>
@@ -3245,7 +2881,6 @@
                             <div class="project-list-type">
                                 WordPress · Maintenance
                             </div>
-
                         </div>
 
                         <span class="project-list-link">
@@ -3271,7 +2906,7 @@
 
         <div class="container">
 
-            <div class="reveal">
+            <div class="scroll-reveal">
 
                 <div class="section-label">
                     Experience
@@ -3284,8 +2919,13 @@
             </div>
 
 
-            <div class="experience-wrapper reveal">
-
+            <div
+                class="
+                    experience-wrapper
+                    scroll-reveal
+                    from-left
+                "
+            >
 
                 <div class="experience-item">
 
@@ -3356,7 +2996,13 @@
 
         <div class="container">
 
-            <div class="contact-box reveal">
+            <div
+                class="
+                    contact-box
+                    scroll-reveal
+                    scale-reveal
+                "
+            >
 
                 <div class="section-label">
                     Get in touch
@@ -3370,6 +3016,7 @@
                     I'm currently open to new opportunities
                     in WordPress, CMS and web development.
                 </p>
+
 
                 <a
                     href="mailto:angelosbuitrago@gmail.com"
@@ -3434,7 +3081,7 @@
 
         function updateNavbar() {
 
-            if (window.scrollY > 30) {
+            if (window.scrollY > 40) {
 
                 navbar.classList.add("scrolled");
 
@@ -3459,60 +3106,81 @@
 
         /* =========================================================
            SCROLL REVEAL
+           
+           This is intentionally simple and robust.
+           Elements start hidden in CSS and receive
+           .show when they enter the viewport.
         ========================================================= */
 
         const revealElements =
-            document.querySelectorAll(".reveal");
-
-
-        const revealObserver =
-            new IntersectionObserver(
-                (entries) => {
-
-                    entries.forEach(
-                        (entry) => {
-
-                            if (
-                                entry.isIntersecting
-                            ) {
-
-                                entry.target
-                                    .classList
-                                    .add("visible");
-
-                                revealObserver
-                                    .unobserve(
-                                        entry.target
-                                    );
-
-                            }
-
-                        }
-                    );
-
-                },
-                {
-                    threshold: 0.10,
-
-                    rootMargin:
-                        "0px 0px -40px 0px"
-                }
+            document.querySelectorAll(
+                ".scroll-reveal"
             );
 
 
-        revealElements.forEach(
-            (element) => {
+        function revealOnScroll() {
 
-                revealObserver.observe(
-                    element
-                );
+            const windowHeight =
+                window.innerHeight;
 
-            }
+
+            revealElements.forEach(
+                (element) => {
+
+                    const rect =
+                        element.getBoundingClientRect();
+
+
+                    /*
+                        The animation starts when the
+                        element is approximately 88% down
+                        the viewport.
+                    */
+
+                    const triggerPoint =
+                        windowHeight * 0.88;
+
+
+                    if (
+                        rect.top < triggerPoint &&
+                        rect.bottom > 0
+                    ) {
+
+                        element.classList.add("show");
+
+                    }
+
+                }
+            );
+
+        }
+
+
+        /*
+            Run immediately.
+            This prevents elements from staying hidden
+            if the page is loaded somewhere other than
+            the very top.
+        */
+
+        revealOnScroll();
+
+
+        window.addEventListener(
+            "scroll",
+            revealOnScroll,
+            { passive: true }
+        );
+
+
+        window.addEventListener(
+            "resize",
+            revealOnScroll
         );
 
 
         /* =========================================================
-           PROJECT 3D HOVER
+           PROJECT 3D EFFECT
         ========================================================= */
 
         const projectCards =
@@ -3551,33 +3219,33 @@
 
 
                         const rotateY =
-                            (percentX - 0.5) * 6;
+                            (percentX - 0.5) * 5;
 
 
                         const rotateX =
-                            (percentY - 0.5) * -6;
+                            (percentY - 0.5) * -5;
 
 
                         card.style.setProperty(
-                            "--rotate-x",
+                            "--rx",
                             `${rotateX}deg`
                         );
 
 
                         card.style.setProperty(
-                            "--rotate-y",
+                            "--ry",
                             `${rotateY}deg`
                         );
 
 
                         card.style.setProperty(
-                            "--mouse-x",
+                            "--mx",
                             `${percentX * 100}%`
                         );
 
 
                         card.style.setProperty(
-                            "--mouse-y",
+                            "--my",
                             `${percentY * 100}%`
                         );
 
@@ -3590,25 +3258,22 @@
                     () => {
 
                         card.style.setProperty(
-                            "--rotate-x",
+                            "--rx",
                             "0deg"
                         );
 
-
                         card.style.setProperty(
-                            "--rotate-y",
+                            "--ry",
                             "0deg"
                         );
 
-
                         card.style.setProperty(
-                            "--mouse-x",
+                            "--mx",
                             "50%"
                         );
 
-
                         card.style.setProperty(
-                            "--mouse-y",
+                            "--my",
                             "50%"
                         );
 
@@ -3620,63 +3285,7 @@
 
 
         /* =========================================================
-           CURSOR GLOW
-        ========================================================= */
-
-        const cursorGlow =
-            document.getElementById(
-                "cursorGlow"
-            );
-
-
-        let cursorX = 0;
-        let cursorY = 0;
-
-        let glowX = 0;
-        let glowY = 0;
-
-
-        window.addEventListener(
-            "mousemove",
-            (event) => {
-
-                cursorX = event.clientX;
-                cursorY = event.clientY;
-
-            },
-            { passive: true }
-        );
-
-
-        function animateCursor() {
-
-            glowX +=
-                (cursorX - glowX) * 0.08;
-
-            glowY +=
-                (cursorY - glowY) * 0.08;
-
-
-            cursorGlow.style.left =
-                `${glowX}px`;
-
-
-            cursorGlow.style.top =
-                `${glowY}px`;
-
-
-            requestAnimationFrame(
-                animateCursor
-            );
-
-        }
-
-
-        animateCursor();
-
-
-        /* =========================================================
-           SMOOTH INTERNAL LINKS
+           SMOOTH INTERNAL NAVIGATION
         ========================================================= */
 
         document
@@ -3697,6 +3306,7 @@
 
 
                             if (
+                                !targetId ||
                                 targetId === "#"
                             ) {
                                 return;
@@ -3727,6 +3337,89 @@
 
                 }
             );
+
+
+        /* =========================================================
+           OPTIONAL: ADD A SMALL SCROLL PROGRESS BAR
+        ========================================================= */
+
+        const progressBar =
+            document.createElement("div");
+
+
+        progressBar.style.position =
+            "fixed";
+
+        progressBar.style.top =
+            "0";
+
+        progressBar.style.left =
+            "0";
+
+        progressBar.style.height =
+            "2px";
+
+        progressBar.style.width =
+            "0%";
+
+        progressBar.style.zIndex =
+            "2000";
+
+        progressBar.style.pointerEvents =
+            "none";
+
+        progressBar.style.background =
+            "linear-gradient(90deg,#8b5cf6,#06b6d4)";
+
+        progressBar.style.transition =
+            "width 0.08s linear";
+
+
+        document.body.appendChild(
+            progressBar
+        );
+
+
+        function updateProgress() {
+
+            const scrollTop =
+                window.scrollY;
+
+
+            const documentHeight =
+                document.documentElement
+                    .scrollHeight;
+
+
+            const viewportHeight =
+                window.innerHeight;
+
+
+            const scrollable =
+                documentHeight -
+                viewportHeight;
+
+
+            const percentage =
+                scrollable > 0
+                    ? (scrollTop / scrollable) * 100
+                    : 0;
+
+
+            progressBar.style.width =
+                `${percentage}%`;
+
+        }
+
+
+        window.addEventListener(
+            "scroll",
+            updateProgress,
+            { passive: true }
+        );
+
+
+        updateProgress();
 
     </script>
 
