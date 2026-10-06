@@ -1,0 +1,1197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="Angélica Gomez — WordPress & CMS Developer with 6+ years of professional experience.">
+
+    <title>Angélica Gomez | WordPress & CMS Developer</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #0b0d12;
+            color: #f5f5f5;
+            line-height: 1.6;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .container {
+            width: min(1120px, 90%);
+            margin: auto;
+        }
+
+        /* NAVIGATION */
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(11, 13, 18, 0.9);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid #20242d;
+        }
+
+        .nav-container {
+            width: min(1120px, 90%);
+            margin: auto;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 20px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .logo span {
+            color: #8b5cf6;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #b8bdc9;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: white;
+        }
+
+        /* HERO */
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 120px 0 80px;
+        }
+
+        .hero-content {
+            max-width: 850px;
+        }
+
+        .eyebrow {
+            color: #a78bfa;
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: clamp(48px, 8vw, 88px);
+            line-height: 0.98;
+            letter-spacing: -4px;
+            margin-bottom: 28px;
+        }
+
+        .hero h1 span {
+            color: #8b5cf6;
+        }
+
+        .hero-description {
+            max-width: 700px;
+            font-size: 20px;
+            color: #aeb4c0;
+            margin-bottom: 36px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 13px 22px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .button-primary {
+            background: #8b5cf6;
+            color: white;
+        }
+
+        .button-primary:hover {
+            background: #7c3aed;
+            transform: translateY(-2px);
+        }
+
+        .button-secondary {
+            border: 1px solid #343944;
+            color: #e5e7eb;
+        }
+
+        .button-secondary:hover {
+            border-color: #8b5cf6;
+            transform: translateY(-2px);
+        }
+
+        /* SECTIONS */
+
+        section {
+            padding: 100px 0;
+            border-top: 1px solid #20242d;
+        }
+
+        .section-label {
+            color: #8b5cf6;
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 12px;
+        }
+
+        .section-title {
+            font-size: 42px;
+            letter-spacing: -1.5px;
+            margin-bottom: 25px;
+        }
+
+        .section-intro {
+            color: #aeb4c0;
+            max-width: 700px;
+            margin-bottom: 45px;
+        }
+
+        /* ABOUT */
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1.4fr 1fr;
+            gap: 70px;
+            align-items: start;
+        }
+
+        .about-text {
+            color: #b8bdc9;
+            font-size: 17px;
+        }
+
+        .about-text p {
+            margin-bottom: 18px;
+        }
+
+        .experience-box {
+            border: 1px solid #292e39;
+            border-radius: 14px;
+            padding: 30px;
+            background: #11141b;
+        }
+
+        .experience-box h3 {
+            margin-bottom: 8px;
+        }
+
+        .experience-box p {
+            color: #aeb4c0;
+        }
+
+        /* SKILLS */
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill {
+            border: 1px solid #303541;
+            background: #11141b;
+            color: #d7dae0;
+            padding: 10px 15px;
+            border-radius: 8px;
+            font-size: 14px;
+        }
+
+        /* PROJECTS */
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 22px;
+        }
+
+        .project {
+            background: #11141b;
+            border: 1px solid #292e39;
+            border-radius: 14px;
+            padding: 28px;
+            transition: 0.3s;
+            display: flex;
+            flex-direction: column;
+            min-height: 220px;
+        }
+
+        .project:hover {
+            transform: translateY(-5px);
+            border-color: #8b5cf6;
+        }
+
+        .project-number {
+            color: #8b5cf6;
+            font-size: 13px;
+            font-weight: 700;
+            margin-bottom: 18px;
+        }
+
+        .project h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        .project p {
+            color: #9da4b1;
+            font-size: 15px;
+            margin-bottom: 20px;
+        }
+
+        .project-link {
+            margin-top: auto;
+            color: #c4b5fd;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .project-link:hover {
+            color: white;
+        }
+
+        /* FEATURED */
+
+        .featured-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+            margin-bottom: 50px;
+        }
+
+        .featured-project {
+            min-height: 300px;
+            background: linear-gradient(145deg, #151821, #0f1117);
+            border: 1px solid #303541;
+            border-radius: 16px;
+            padding: 34px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            transition: 0.3s;
+        }
+
+        .featured-project:hover {
+            transform: translateY(-6px);
+            border-color: #8b5cf6;
+        }
+
+        .featured-project .tag {
+            color: #a78bfa;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 12px;
+        }
+
+        .featured-project h3 {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .featured-project p {
+            color: #aeb4c0;
+            margin-bottom: 20px;
+        }
+
+        /* EXPERIENCE */
+
+        .timeline {
+            border-left: 1px solid #343944;
+            padding-left: 30px;
+            max-width: 800px;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 35px;
+        }
+
+        .timeline-item::before {
+            content: "";
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #8b5cf6;
+            left: -36px;
+            top: 8px;
+        }
+
+        .timeline-date {
+            color: #8b5cf6;
+            font-size: 13px;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+
+        .timeline-item h3 {
+            font-size: 22px;
+            margin-bottom: 4px;
+        }
+
+        .timeline-item h4 {
+            color: #aeb4c0;
+            font-weight: 400;
+            margin-bottom: 12px;
+        }
+
+        .timeline-item p {
+            color: #9da4b1;
+        }
+
+        /* CONTACT */
+
+        .contact-box {
+            max-width: 750px;
+        }
+
+        .contact-box h2 {
+            font-size: 48px;
+            line-height: 1.05;
+            margin-bottom: 20px;
+        }
+
+        .contact-box p {
+            color: #aeb4c0;
+            font-size: 17px;
+            margin-bottom: 30px;
+        }
+
+        .contact-links {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+
+        /* FOOTER */
+
+        footer {
+            border-top: 1px solid #20242d;
+            padding: 30px 0;
+            color: #707784;
+            font-size: 13px;
+        }
+
+        /* RESPONSIVE */
+
+        @media (max-width: 800px) {
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 56px;
+                letter-spacing: -2px;
+            }
+
+            .hero-description {
+                font-size: 18px;
+            }
+
+            .about-grid,
+            .projects-grid,
+            .featured-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title {
+                font-size: 34px;
+            }
+
+            .contact-box h2 {
+                font-size: 38px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+
+    <nav>
+        <div class="nav-container">
+
+            <a href="#home" class="logo">
+                Angélica<span>.</span>
+            </a>
+
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#work">Work</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+        </div>
+    </nav>
+
+
+    <!-- HERO -->
+
+    <main>
+
+        <section class="hero" id="home">
+            <div class="container">
+
+                <div class="hero-content">
+
+                    <div class="eyebrow">
+                        WordPress & CMS Developer
+                    </div>
+
+                    <h1>
+                        Building digital experiences
+                        <span>that work.</span>
+                    </h1>
+
+                    <p class="hero-description">
+                        WordPress and CMS Developer with 6+ years of professional
+                        experience creating, customizing and maintaining websites
+                        and e-commerce solutions.
+                    </p>
+
+                    <div class="buttons">
+                        <a href="#work" class="button button-primary">
+                            View my work
+                        </a>
+
+                        <a href="#contact" class="button button-secondary">
+                            Contact me
+                        </a>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- ABOUT -->
+
+        <section id="about">
+
+            <div class="container">
+
+                <div class="section-label">
+                    About me
+                </div>
+
+                <h2 class="section-title">
+                    Professional experience, real projects.
+                </h2>
+
+                <div class="about-grid">
+
+                    <div class="about-text">
+
+                        <p>
+                            I am a Web Developer specialized in WordPress and CMS
+                            solutions, with more than six years of professional
+                            experience working on websites, e-commerce platforms
+                            and digital projects.
+                        </p>
+
+                        <p>
+                            Throughout my career, I have worked on projects for
+                            companies from different industries, contributing to
+                            website development, customization, maintenance and
+                            implementation.
+                        </p>
+
+                        <p>
+                            My experience includes WordPress, Shopify, WooCommerce,
+                            Gutenberg, HTML, CSS, JavaScript, PHP and SQL, among
+                            other web technologies and tools.
+                        </p>
+
+                    </div>
+
+                    <div class="experience-box">
+
+                        <h3>6+ Years</h3>
+
+                        <p>
+                            Professional experience in web development,
+                            WordPress and CMS projects.
+                        </p>
+
+                        <br>
+
+                        <h3>20+ Projects</h3>
+
+                        <p>
+                            Real-world projects developed during my professional
+                            experience at Pacífica Diseño.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- SKILLS -->
+
+        <section id="skills">
+
+            <div class="container">
+
+                <div class="section-label">
+                    Skills
+                </div>
+
+                <h2 class="section-title">
+                    Technologies & tools
+                </h2>
+
+                <p class="section-intro">
+                    Technologies and platforms I have worked with throughout
+                    my professional experience.
+                </p>
+
+                <div class="skills">
+
+                    <span class="skill">WordPress</span>
+                    <span class="skill">WooCommerce</span>
+                    <span class="skill">Shopify</span>
+                    <span class="skill">Gutenberg</span>
+                    <span class="skill">PHP</span>
+                    <span class="skill">JavaScript</span>
+                    <span class="skill">HTML5</span>
+                    <span class="skill">CSS3</span>
+                    <span class="skill">SQL</span>
+                    <span class="skill">SiteGround</span>
+                    <span class="skill">Responsive Design</span>
+                    <span class="skill">CMS Development</span>
+                    <span class="skill">Website Maintenance</span>
+                    <span class="skill">E-commerce</span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- FEATURED PROJECTS -->
+
+        <section id="work">
+
+            <div class="container">
+
+                <div class="section-label">
+                    Selected work
+                </div>
+
+                <h2 class="section-title">
+                    Real-world projects
+                </h2>
+
+                <p class="section-intro">
+                    Selected websites developed and maintained during my
+                    professional experience at Pacífica Diseño.
+                </p>
+
+
+                <div class="featured-grid">
+
+                    <article class="featured-project">
+
+                        <div class="tag">
+                            Education
+                        </div>
+
+                        <h3>
+                            The Columbus School
+                        </h3>
+
+                        <p>
+                            Professional website for an international school,
+                            focused on presenting its educational offering,
+                            campus and digital experience.
+                        </p>
+
+                        <a
+                            href="https://columbus.edu.co/"
+                            target="_blank"
+                            class="project-link">
+                            Visit website →
+                        </a>
+
+                    </article>
+
+
+                    <article class="featured-project">
+
+                        <div class="tag">
+                            Real Estate
+                        </div>
+
+                        <h3>
+                            Viviendas y Proyectos
+                        </h3>
+
+                        <p>
+                            Corporate website for a real estate company,
+                            showcasing residential and commercial projects.
+                        </p>
+
+                        <a
+                            href="http://viviendasyproyectos.com/"
+                            target="_blank"
+                            class="project-link">
+                            Visit website →
+                        </a>
+
+                    </article>
+
+
+                    <article class="featured-project">
+
+                        <div class="tag">
+                            E-commerce
+                        </div>
+
+                        <h3>
+                            Kinky Mascotas
+                        </h3>
+
+                        <p>
+                            E-commerce experience for a pet-focused brand
+                            with online shopping and customer support features.
+                        </p>
+
+                        <a
+                            href="https://kinkymascotas.co/"
+                            target="_blank"
+                            class="project-link">
+                            Visit website →
+                        </a>
+
+                    </article>
+
+
+                    <article class="featured-project">
+
+                        <div class="tag">
+                            E-commerce
+                        </div>
+
+                        <h3>
+                            Droguería Ética
+                        </h3>
+
+                        <p>
+                            Digital commerce platform for a Colombian
+                            pharmacy and retail business.
+                        </p>
+
+                        <a
+                            href="https://www.drogueriaetica.com/"
+                            target="_blank"
+                            class="project-link">
+                            Visit website →
+                        </a>
+
+                    </article>
+
+                </div>
+
+
+                <!-- MORE PROJECTS -->
+
+                <h3 style="font-size: 28px; margin-bottom: 25px;">
+                    More projects
+                </h3>
+
+
+                <div class="projects-grid">
+
+
+                    <article class="project">
+
+                        <div class="project-number">01</div>
+
+                        <h3>Ranchera</h3>
+
+                        <p>
+                            Corporate and brand website.
+                        </p>
+
+                        <a
+                            href="https://ranchera.com.co/"
+                            target="_blank"
+                            class="project-link">
+                            Visit website →
+                        </a>
+
+                    </article>
+
+
+                    <article class="project">
+
+                        <div class="project-number">02</div>
+
+                        <h3>ATP</h3>
+
+                        <p>
+                            Professional corporate website.
+                        </p>
+
+                        <a
+                            href="https://atp.com.co/"
+                            target="_blank"
+                            class="project-link">
+                            Visit website →
+                        </a>
+
+                    </article>
+
+
+                    <article class="project">
+
+                        <div class="project-number">03</div>
+
+                        <h3>Camporigen</h3>
+
+                        <p>
+                            Agricultural products and solutions website.
+                        </p>
+
+                        <a
+                            href="https://www.camporigen.com/"
+                            target="_blank"
+                            class="project-link">
+                            Visit website →
+                        </a>
+
+                    </article>
+
+
+                    <article class="project">
+
+                        <div class="project-number">04</div>
+
+                        <h3>MEBUM</h3>
+
+                        <p>
+                            Industrial engineering and solutions website.
+                        </p>
+
+                        <a
+                            href="https://mebum.com.co/"
+                            target="_blank"
+                            class="project-link">
+                            Visit website →
+                        </a>
+
+                    </article>
+
+
+                    <article class="project">
+
+                        <div class="project-number">05</div>
+
+                        <h3>Provimarcas</h3>
+
+                        <p>
+                            Intellectual property and corporate law website.
+                        </p>
+
+                        <a
+                            href="https://provimarcas.com.co/"
+                            target="_blank"
+                            class="project-link">
+                            Visit website →
+                        </a>
+
+                    </article>
+
+
+                    <article class="project">
+
+                        <div class="project-number">06</div>
+
+                        <h3>Rubberfit</h3>
+
+                        <p>
+                            Brand and product website.
+                        </p>
+
+                        <a
+                            href="https://rubberfit.co/"
+                            target="_blank"
+                            class="project-link">
+                            Visit website →
+                        </a>
+
+                    </article>
+
+
+                    <article class="project">
+
+                        <div class="project-number">07</div>
+
+                        <h3>Sanavet</h3>
+
+                        <p>
+                            Professional veterinary website.
+                        </p>
+
+                        <a
+                            href="https://sanavet.co/"
+                            target="_blank"
+                            class="project-link">
+                            Visit website →
+                        </a>
+
+                    </article>
+
+
+                    <article class="project">
+
+                        <div class="project-number">08</div>
+
+                        <h3>SCO</h3>
+
+                        <p>
+                            Professional organization website.
+                        </p>
+
+                        <a
+                            href="https://sco.org.co/"
+                            target="_blank"
+                            class="project-link">
+                            Visit website →
+                        </a>
+
+                    </article>
+
+
+                    <article class="project">
+
+                        <div class="project-number">09</div>
+
+                        <h3>Tu Operación Segura</h3>
+
+                        <p>
+                            Corporate safety and operations website.
+                        </p>
+
+                        <a
+                            href="https://tuoperacionsegura.com/"
+                            target="_blank"
+                            class="project-link">
+                            Visit website →
+                        </a>
+
+                    </article>
+
+
+                    <article class="project">
+
+                        <div class="project-number">10</div>
+
+                        <h3>HYS</h3>
+
+                        <p>
+                            Professional gas solutions website.
+                        </p>
+
+                        <a
+                            href="https://hyslineadegas.com/"
+                            target="_blank"
+                            class="project-link">
+                            Visit website →
+                        </a>
+
+                    </article>
+
+
+                    <article class="project">
+
+                        <div class="project-number">11</div>
+
+                        <h3>Khoka Project</h3>
+
+                        <p>
+                            Digital brand and project website.
+                        </p>
+
+                        <a
+                            href="https://khokaproject.com/"
+                            target="_blank"
+                            class="project-link">
+                            Visit website →
+                        </a>
+
+                    </article>
+
+
+                    <article class="project">
+
+                        <div class="project-number">12</div>
+
+                        <h3>Organic Store</h3>
+
+                        <p>
+                            E-commerce and organic products website.
+                        </p>
+
+                        <a
+                            href="https://organic-store.co/"
+                            target="_blank"
+                            class="project-link">
+                            Visit website →
+                        </a>
+
+                    </article>
+
+
+                    <article class="project">
+
+                        <div class="project-number">13</div>
+
+                        <h3>Río Claro</h3>
+
+                        <p>
+                            Corporate and brand website.
+                        </p>
+
+                        <a
+                            href="https://rioclaro.co/"
+                            target="_blank"
+                            class="project-link">
+                            Visit website →
+                        </a>
+
+                    </article>
+
+
+                    <article class="project">
+
+                        <div class="project-number">14</div>
+
+                        <h3>Internodes Consulting</h3>
+
+                        <p>
+                            Consulting and professional services website.
+                        </p>
+
+                        <a
+                            href="https://internodes-consulting.com/"
+                            target="_blank"
+                            class="project-link">
+                            Visit website →
+                        </a>
+
+                    </article>
+
+
+                    <article class="project">
+
+                        <div class="project-number">15</div>
+
+                        <h3>Color Amazonía</h3>
+
+                        <p>
+                            Brand and sustainability-focused website.
+                        </p>
+
+                        <a
+                            href="https://coloramazonia.com/"
+                            target="_blank"
+                            class="project-link">
+                            Visit website →
+                        </a>
+
+                    </article>
+
+
+                    <article class="project">
+
+                        <div class="project-number">16</div>
+
+                        <h3>Sostenibilidad Grupo EPM</h3>
+
+                        <p>
+                            Sustainability and corporate information website.
+                        </p>
+
+                        <a
+                            href="https://sostenibilidadgrupoepm.com.co/"
+                            target="_blank"
+                            class="project-link">
+                            Visit website →
+                        </a>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- EXPERIENCE -->
+
+        <section id="experience">
+
+            <div class="container">
+
+                <div class="section-label">
+                    Experience
+                </div>
+
+                <h2 class="section-title">
+                    Professional background
+                </h2>
+
+                <div class="timeline">
+
+                    <div class="timeline-item">
+
+                        <div class="timeline-date">
+                            2019 — Present
+                        </div>
+
+                        <h3>
+                            Web Developer
+                        </h3>
+
+                        <h4>
+                            Pacífica Diseño
+                        </h4>
+
+                        <p>
+                            Development and maintenance of professional websites
+                            and digital projects using WordPress, Shopify and
+                            other web technologies. Worked on projects across
+                            multiple industries and contributed to website
+                            customization, implementation and ongoing maintenance.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- CONTACT -->
+
+        <section id="contact">
+
+            <div class="container">
+
+                <div class="contact-box">
+
+                    <div class="section-label">
+                        Contact
+                    </div>
+
+                    <h2>
+                        Let's build something great.
+                    </h2>
+
+                    <p>
+                        I am open to new opportunities in WordPress,
+                        CMS and web development.
+                    </p>
+
+                    <div class="contact-links">
+
+                        <a
+                            href="https://github.com/angelicagomez-dev"
+                            target="_blank"
+                            class="button button-secondary">
+                            GitHub
+                        </a>
+
+                        <!-- Add your LinkedIn URL here -->
+
+                        <!--
+                        <a
+                            href="YOUR-LINKEDIN-URL"
+                            target="_blank"
+                            class="button button-secondary">
+                            LinkedIn
+                        </a>
+                        -->
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <div class="container">
+
+            © 2026 Angélica Gomez. All rights reserved.
+
+        </div>
+
+    </footer>
+
+</body>
+</html>
