@@ -4,15 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="description" content="Angélica Gomez — WordPress & CMS Developer with 6+ years of professional experience building websites, e-commerce solutions and custom WordPress experiences.">
+    <meta
+        name="description"
+        content="Angélica Gomez — WordPress & CMS Developer with 6+ years of professional experience building websites, e-commerce solutions and custom WordPress experiences."
+    >
+
     <meta name="author" content="Angélica Gomez">
 
     <title>Angélica Gomez | WordPress & CMS Developer</title>
 
     <style>
-        /* =========================
+
+        /* =========================================================
            RESET
-        ========================= */
+        ========================================================= */
 
         * {
             margin: 0;
@@ -25,11 +30,25 @@
         }
 
         body {
-            font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            font-family:
+                Inter,
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                Roboto,
+                Helvetica,
+                Arial,
+                sans-serif;
+
             background: #08090d;
             color: #f5f5f7;
             line-height: 1.6;
             overflow-x: hidden;
+        }
+
+        body::selection {
+            background: rgba(139, 92, 246, 0.45);
+            color: white;
         }
 
         a {
@@ -37,103 +56,191 @@
             text-decoration: none;
         }
 
-        img {
-            max-width: 100%;
-            display: block;
+        button,
+        a {
+            -webkit-tap-highlight-color: transparent;
         }
 
-        /* =========================
+        /* =========================================================
            VARIABLES
-        ========================= */
+        ========================================================= */
 
         :root {
             --bg: #08090d;
             --bg-soft: #0d0f15;
+
             --card: rgba(255, 255, 255, 0.045);
             --card-hover: rgba(255, 255, 255, 0.075);
+
             --border: rgba(255, 255, 255, 0.09);
+
             --text: #f5f5f7;
             --muted: #a7a9b4;
+
             --accent: #8b5cf6;
             --accent-2: #06b6d4;
             --accent-3: #ec4899;
+
             --max-width: 1180px;
         }
 
-        /* =========================
-           BACKGROUND EFFECTS
-        ========================= */
-
-        body::before {
-            content: "";
-            position: fixed;
-            width: 600px;
-            height: 600px;
-            top: -250px;
-            left: -250px;
-            background: radial-gradient(
-                circle,
-                rgba(139, 92, 246, 0.14),
-                transparent 70%
-            );
-            pointer-events: none;
-            z-index: -2;
-        }
-
-        body::after {
-            content: "";
-            position: fixed;
-            width: 600px;
-            height: 600px;
-            right: -300px;
-            bottom: -300px;
-            background: radial-gradient(
-                circle,
-                rgba(6, 182, 212, 0.10),
-                transparent 70%
-            );
-            pointer-events: none;
-            z-index: -2;
-        }
+        /* =========================================================
+           BACKGROUND
+        ========================================================= */
 
         .background-grid {
             position: fixed;
             inset: 0;
+
             background-image:
-                linear-gradient(rgba(255,255,255,0.018) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(255,255,255,0.018) 1px, transparent 1px);
+                linear-gradient(
+                    rgba(255,255,255,0.018) 1px,
+                    transparent 1px
+                ),
+                linear-gradient(
+                    90deg,
+                    rgba(255,255,255,0.018) 1px,
+                    transparent 1px
+                );
+
             background-size: 60px 60px;
-            mask-image: linear-gradient(to bottom, black, transparent 80%);
+
+            mask-image:
+                linear-gradient(
+                    to bottom,
+                    black,
+                    transparent 85%
+                );
+
             pointer-events: none;
-            z-index: -3;
+            z-index: -5;
+
+            animation: gridMove 20s linear infinite;
         }
 
-        /* =========================
+        .ambient-light {
+            position: fixed;
+            width: 500px;
+            height: 500px;
+
+            border-radius: 50%;
+
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(139, 92, 246, 0.13),
+                    transparent 68%
+                );
+
+            filter: blur(20px);
+
+            top: -220px;
+            left: -180px;
+
+            pointer-events: none;
+            z-index: -4;
+
+            animation: ambientFloat 10s ease-in-out infinite alternate;
+        }
+
+        .ambient-light.two {
+            width: 550px;
+            height: 550px;
+
+            top: auto;
+            left: auto;
+
+            right: -280px;
+            bottom: -250px;
+
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(6, 182, 212, 0.10),
+                    transparent 68%
+                );
+
+            animation-delay: -4s;
+            animation-duration: 13s;
+        }
+
+        .cursor-glow {
+            position: fixed;
+
+            width: 300px;
+            height: 300px;
+
+            border-radius: 50%;
+
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(139,92,246,0.07),
+                    transparent 70%
+                );
+
+            transform: translate(-50%, -50%);
+
+            pointer-events: none;
+
+            z-index: -2;
+
+            opacity: 0;
+
+            transition: opacity 0.4s ease;
+        }
+
+        body:hover .cursor-glow {
+            opacity: 1;
+        }
+
+        /* =========================================================
            NAVIGATION
-        ========================= */
+        ========================================================= */
 
         nav {
             position: fixed;
+
             top: 0;
             left: 0;
             right: 0;
+
             z-index: 1000;
+
             padding: 18px 24px;
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            background: rgba(8, 9, 13, 0.72);
-            border-bottom: 1px solid transparent;
-            transition: 0.3s ease;
+
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+
+            background: rgba(8, 9, 13, 0.62);
+
+            border-bottom:
+                1px solid transparent;
+
+            transition:
+                background 0.4s ease,
+                border-color 0.4s ease,
+                padding 0.4s ease,
+                box-shadow 0.4s ease;
         }
 
         nav.scrolled {
-            border-bottom-color: var(--border);
-            background: rgba(8, 9, 13, 0.9);
+            padding-top: 13px;
+            padding-bottom: 13px;
+
+            background: rgba(8, 9, 13, 0.90);
+
+            border-bottom-color:
+                rgba(255,255,255,0.08);
+
+            box-shadow:
+                0 10px 40px rgba(0,0,0,0.22);
         }
 
         .nav-container {
             max-width: var(--max-width);
             margin: auto;
+
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -141,74 +248,145 @@
 
         .logo {
             font-size: 1rem;
-            font-weight: 700;
-            letter-spacing: -0.02em;
+            font-weight: 750;
+            letter-spacing: -0.03em;
+
+            transition:
+                transform 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: translateY(-2px);
         }
 
         .logo span {
             color: var(--accent);
+
+            transition:
+                color 0.3s ease;
+        }
+
+        .logo:hover span {
+            color: var(--accent-2);
         }
 
         .nav-links {
             display: flex;
             gap: 28px;
+
             list-style: none;
         }
 
         .nav-links a {
+            position: relative;
+
             color: var(--muted);
+
             font-size: 0.9rem;
-            transition: 0.25s ease;
+
+            transition:
+                color 0.3s ease;
+        }
+
+        .nav-links a::after {
+            content: "";
+
+            position: absolute;
+
+            left: 0;
+            bottom: -6px;
+
+            width: 100%;
+            height: 1px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    var(--accent),
+                    var(--accent-2)
+                );
+
+            transform:
+                scaleX(0);
+
+            transform-origin: right;
+
+            transition:
+                transform 0.35s ease;
         }
 
         .nav-links a:hover {
-            color: var(--text);
+            color: white;
         }
 
-        /* =========================
+        .nav-links a:hover::after {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+
+        /* =========================================================
            GENERAL
-        ========================= */
+        ========================================================= */
 
         .container {
-            width: min(100% - 48px, var(--max-width));
+            width: min(
+                100% - 48px,
+                var(--max-width)
+            );
+
             margin: auto;
         }
 
         section {
             padding: 110px 0;
+            position: relative;
         }
 
         .section-label {
             color: var(--accent);
+
             text-transform: uppercase;
+
             letter-spacing: 0.16em;
+
             font-size: 0.75rem;
-            font-weight: 700;
+
+            font-weight: 750;
+
             margin-bottom: 14px;
         }
 
         .section-title {
-            font-size: clamp(2rem, 5vw, 3.2rem);
-            line-height: 1.1;
-            letter-spacing: -0.04em;
+            font-size:
+                clamp(2rem, 5vw, 3.2rem);
+
+            line-height: 1.08;
+
+            letter-spacing: -0.045em;
+
             margin-bottom: 18px;
         }
 
         .section-description {
             color: var(--muted);
+
             max-width: 650px;
+
             font-size: 1.02rem;
         }
 
-        /* =========================
+        /* =========================================================
            HERO
-        ========================= */
+        ========================================================= */
 
         .hero {
             min-height: 100vh;
+
             display: flex;
             align-items: center;
+
             padding-top: 120px;
+
             position: relative;
         }
 
@@ -218,259 +396,708 @@
 
         .hero-badge {
             display: inline-flex;
+
             align-items: center;
+
             gap: 9px;
+
             padding: 8px 14px;
-            border: 1px solid var(--border);
+
+            border:
+                1px solid var(--border);
+
             border-radius: 100px;
-            background: rgba(255,255,255,0.035);
+
+            background:
+                rgba(255,255,255,0.035);
+
             color: var(--muted);
+
             font-size: 0.82rem;
+
             margin-bottom: 28px;
-            animation: fadeUp 0.8s ease both;
+
+            opacity: 0;
+
+            animation:
+                heroReveal 0.9s
+                0.1s
+                cubic-bezier(.2,.8,.2,1)
+                forwards;
         }
 
         .status-dot {
             width: 7px;
             height: 7px;
+
             border-radius: 50%;
+
             background: #4ade80;
-            box-shadow: 0 0 12px rgba(74,222,128,0.7);
+
+            box-shadow:
+                0 0 12px
+                rgba(74,222,128,0.7);
+
+            animation:
+                pulseDot 2s ease-in-out infinite;
         }
 
         .hero h1 {
-            font-size: clamp(3.3rem, 9vw, 7rem);
+            font-size:
+                clamp(3.3rem, 9vw, 7rem);
+
             line-height: 0.95;
-            letter-spacing: -0.065em;
+
+            letter-spacing: -0.07em;
+
             margin-bottom: 28px;
-            animation: fadeUp 0.8s 0.1s ease both;
+
+            opacity: 0;
+
+            animation:
+                heroReveal 1s
+                0.22s
+                cubic-bezier(.2,.8,.2,1)
+                forwards;
         }
 
         .hero h1 .gradient {
-            background: linear-gradient(
-                110deg,
-                #fff,
-                #b7a4ff,
-                #67e8f9
-            );
+            background:
+                linear-gradient(
+                    110deg,
+                    #ffffff 10%,
+                    #b7a4ff 45%,
+                    #67e8f9 85%
+                );
+
             -webkit-background-clip: text;
             background-clip: text;
+
             color: transparent;
+
+            background-size: 220% auto;
+
+            animation:
+                gradientMove 6s
+                ease-in-out
+                infinite;
         }
 
         .hero-description {
             max-width: 700px;
+
             color: var(--muted);
-            font-size: clamp(1rem, 2vw, 1.2rem);
+
+            font-size:
+                clamp(1rem, 2vw, 1.2rem);
+
             margin-bottom: 36px;
-            animation: fadeUp 0.8s 0.2s ease both;
+
+            opacity: 0;
+
+            animation:
+                heroReveal 0.9s
+                0.4s
+                cubic-bezier(.2,.8,.2,1)
+                forwards;
         }
 
         .hero-buttons {
             display: flex;
+
             gap: 14px;
+
             flex-wrap: wrap;
-            animation: fadeUp 0.8s 0.3s ease both;
+
+            opacity: 0;
+
+            animation:
+                heroReveal 0.9s
+                0.55s
+                cubic-bezier(.2,.8,.2,1)
+                forwards;
         }
 
+        /* =========================================================
+           BUTTONS
+        ========================================================= */
+
         .btn {
+            position: relative;
+
             display: inline-flex;
+
             align-items: center;
             justify-content: center;
+
+            overflow: hidden;
+
             padding: 13px 21px;
+
             border-radius: 10px;
-            border: 1px solid var(--border);
+
+            border:
+                1px solid var(--border);
+
             font-size: 0.9rem;
-            font-weight: 600;
-            transition: 0.3s ease;
+
+            font-weight: 650;
+
+            transition:
+                transform 0.35s ease,
+                box-shadow 0.35s ease,
+                background 0.35s ease;
+        }
+
+        .btn::before {
+            content: "";
+
+            position: absolute;
+
+            top: 0;
+            left: -120%;
+
+            width: 80%;
+            height: 100%;
+
+            background:
+                linear-gradient(
+                    100deg,
+                    transparent,
+                    rgba(255,255,255,0.45),
+                    transparent
+                );
+
+            transform: skewX(-20deg);
+
+            transition:
+                left 0.7s ease;
+        }
+
+        .btn:hover::before {
+            left: 140%;
         }
 
         .btn-primary {
             background: #fff;
+
             color: #08090d;
+
             border-color: #fff;
         }
 
         .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 35px rgba(255,255,255,0.12);
+            transform: translateY(-4px);
+
+            box-shadow:
+                0 15px 40px
+                rgba(255,255,255,0.14);
         }
 
         .btn-secondary {
             color: var(--text);
-            background: rgba(255,255,255,0.035);
+
+            background:
+                rgba(255,255,255,0.035);
         }
 
         .btn-secondary:hover {
-            background: rgba(255,255,255,0.08);
-            transform: translateY(-3px);
+            background:
+                rgba(255,255,255,0.09);
+
+            transform:
+                translateY(-4px);
+
+            box-shadow:
+                0 15px 40px
+                rgba(0,0,0,0.25);
         }
 
-        .scroll-indicator {
-            position: absolute;
-            bottom: 30px;
-            left: 50%;
-            transform: translateX(-50%);
-            color: #686b76;
-            font-size: 0.72rem;
-            letter-spacing: 0.12em;
-            text-transform: uppercase;
-            animation: bounce 2s infinite;
-        }
-
-        /* =========================
+        /* =========================================================
            STATS
-        ========================= */
+        ========================================================= */
 
         .stats {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
             gap: 16px;
+
             margin-top: 80px;
+
+            opacity: 0;
+
+            animation:
+                heroReveal 1s
+                0.7s
+                cubic-bezier(.2,.8,.2,1)
+                forwards;
         }
 
         .stat-card {
+            position: relative;
+
+            overflow: hidden;
+
             padding: 25px;
-            border: 1px solid var(--border);
-            background: var(--card);
+
+            border:
+                1px solid var(--border);
+
+            background:
+                rgba(255,255,255,0.045);
+
             border-radius: 16px;
-            transition: 0.3s ease;
+
+            transition:
+                transform 0.45s ease,
+                background 0.35s ease,
+                border-color 0.35s ease,
+                box-shadow 0.45s ease;
+        }
+
+        .stat-card::after {
+            content: "";
+
+            position: absolute;
+
+            width: 100px;
+            height: 100px;
+
+            right: -45px;
+            top: -45px;
+
+            border-radius: 50%;
+
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(139,92,246,0.18),
+                    transparent 70%
+                );
+
+            transition:
+                transform 0.5s ease;
         }
 
         .stat-card:hover {
-            transform: translateY(-5px);
-            background: var(--card-hover);
-            border-color: rgba(139,92,246,0.35);
+            transform:
+                translateY(-7px);
+
+            background:
+                var(--card-hover);
+
+            border-color:
+                rgba(139,92,246,0.38);
+
+            box-shadow:
+                0 20px 50px
+                rgba(0,0,0,0.25);
+        }
+
+        .stat-card:hover::after {
+            transform:
+                scale(1.8);
         }
 
         .stat-number {
+            position: relative;
+            z-index: 2;
+
             font-size: 2rem;
+
             font-weight: 750;
+
             letter-spacing: -0.04em;
+
             margin-bottom: 5px;
         }
 
         .stat-label {
+            position: relative;
+            z-index: 2;
+
             color: var(--muted);
+
             font-size: 0.85rem;
         }
 
-        /* =========================
+        /* =========================================================
            ABOUT
-        ========================= */
+        ========================================================= */
 
         .about-grid {
             display: grid;
-            grid-template-columns: 1.15fr 0.85fr;
+
+            grid-template-columns:
+                1.15fr 0.85fr;
+
             gap: 70px;
+
             align-items: center;
         }
 
         .about-text p {
             color: var(--muted);
+
             margin-bottom: 18px;
+
             font-size: 1rem;
         }
 
         .about-highlight {
+            position: relative;
+
+            overflow: hidden;
+
             padding: 30px;
+
             border-radius: 20px;
-            border: 1px solid var(--border);
+
+            border:
+                1px solid var(--border);
+
             background:
                 linear-gradient(
                     145deg,
                     rgba(139,92,246,0.12),
                     rgba(6,182,212,0.04)
                 );
+
+            transition:
+                transform 0.5s ease,
+                border-color 0.4s ease,
+                box-shadow 0.5s ease;
+        }
+
+        .about-highlight::before {
+            content: "";
+
+            position: absolute;
+
+            width: 180px;
+            height: 180px;
+
+            top: -100px;
+            right: -70px;
+
+            border-radius: 50%;
+
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(139,92,246,0.18),
+                    transparent 70%
+                );
+
+            transition:
+                transform 0.6s ease;
+        }
+
+        .about-highlight:hover {
+            transform:
+                translateY(-7px);
+
+            border-color:
+                rgba(139,92,246,0.32);
+
+            box-shadow:
+                0 25px 60px
+                rgba(0,0,0,0.24);
+        }
+
+        .about-highlight:hover::before {
+            transform:
+                scale(1.4);
+        }
+
+        .about-highlight h3,
+        .about-highlight p,
+        .industry-list {
+            position: relative;
+            z-index: 2;
         }
 
         .about-highlight h3 {
             margin-bottom: 14px;
+
             font-size: 1.15rem;
         }
 
         .about-highlight p {
             color: var(--muted);
+
             font-size: 0.92rem;
         }
 
         .industry-list {
             display: flex;
+
             flex-wrap: wrap;
+
             gap: 9px;
+
             margin-top: 20px;
         }
 
         .industry {
-            border: 1px solid var(--border);
+            border:
+                1px solid var(--border);
+
             padding: 7px 11px;
+
             border-radius: 100px;
+
             color: #c8c9d0;
+
             font-size: 0.75rem;
-            background: rgba(255,255,255,0.03);
+
+            background:
+                rgba(255,255,255,0.03);
+
+            transition:
+                transform 0.3s ease,
+                background 0.3s ease,
+                border-color 0.3s ease;
         }
 
-        /* =========================
+        .industry:hover {
+            transform:
+                translateY(-3px);
+
+            background:
+                rgba(255,255,255,0.07);
+
+            border-color:
+                rgba(139,92,246,0.35);
+        }
+
+        /* =========================================================
            SKILLS
-        ========================= */
+        ========================================================= */
 
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
             gap: 14px;
+
             margin-top: 45px;
         }
 
         .skill {
+            position: relative;
+
+            overflow: hidden;
+
             padding: 20px;
-            border: 1px solid var(--border);
-            background: var(--card);
+
+            border:
+                1px solid var(--border);
+
+            background:
+                var(--card);
+
             border-radius: 14px;
+
             color: #d7d7dd;
+
             font-size: 0.9rem;
-            transition: 0.3s ease;
+
+            transition:
+                transform 0.4s
+                cubic-bezier(.2,.8,.2,1),
+                border-color 0.35s ease,
+                background 0.35s ease,
+                box-shadow 0.4s ease;
+        }
+
+        .skill::before {
+            content: "";
+
+            position: absolute;
+
+            width: 7px;
+            height: 7px;
+
+            border-radius: 50%;
+
+            background:
+                var(--accent);
+
+            left: 20px;
+            bottom: 13px;
+
+            opacity: 0;
+
+            transform:
+                scale(0);
+
+            transition:
+                opacity 0.3s ease,
+                transform 0.3s ease;
         }
 
         .skill:hover {
-            transform: translateY(-4px);
-            border-color: rgba(139,92,246,0.35);
-            background: var(--card-hover);
+            transform:
+                translateY(-6px);
+
+            border-color:
+                rgba(139,92,246,0.38);
+
+            background:
+                var(--card-hover);
+
+            box-shadow:
+                0 15px 40px
+                rgba(0,0,0,0.22);
         }
 
-        /* =========================
+        .skill:hover::before {
+            opacity: 1;
+
+            transform:
+                scale(1);
+        }
+
+        /* =========================================================
            PROJECTS
-        ========================= */
+        ========================================================= */
 
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
             gap: 20px;
+
             margin-top: 50px;
         }
 
         .project-card {
+            --mouse-x: 50%;
+            --mouse-y: 50%;
+
             position: relative;
+
             min-height: 360px;
-            border: 1px solid var(--border);
+
+            border:
+                1px solid var(--border);
+
             border-radius: 20px;
+
             overflow: hidden;
-            background: var(--card);
+
+            background:
+                var(--card);
+
+            transform-style:
+                preserve-3d;
+
             transition:
-                transform 0.45s cubic-bezier(.2,.8,.2,1),
-                border-color 0.3s ease,
-                box-shadow 0.4s ease;
+                transform 0.5s
+                cubic-bezier(.2,.8,.2,1),
+                border-color 0.35s ease,
+                box-shadow 0.45s ease;
+        }
+
+        /* Dynamic glow */
+
+        .project-card::before {
+            content: "";
+
+            position: absolute;
+
+            inset: 0;
+
+            background:
+                radial-gradient(
+                    220px circle at
+                    var(--mouse-x)
+                    var(--mouse-y),
+                    rgba(139,92,246,0.14),
+                    transparent 70%
+                );
+
+            opacity: 0;
+
+            transition:
+                opacity 0.4s ease;
+
+            pointer-events: none;
+
+            z-index: 5;
+        }
+
+        .project-card::after {
+            content: "";
+
+            position: absolute;
+
+            inset: 0;
+
+            border-radius: 20px;
+
+            background:
+                linear-gradient(
+                    120deg,
+                    transparent 20%,
+                    rgba(255,255,255,0.04),
+                    transparent 80%
+                );
+
+            transform:
+                translateX(-120%);
+
+            transition:
+                transform 0.9s ease;
+
+            pointer-events: none;
+
+            z-index: 6;
         }
 
         .project-card:hover {
-            transform: translateY(-8px);
-            border-color: rgba(139,92,246,0.4);
-            box-shadow: 0 25px 70px rgba(0,0,0,0.3);
+            transform:
+                translateY(-10px)
+                perspective(900px)
+                rotateX(var(--rotate-x, 0deg))
+                rotateY(var(--rotate-y, 0deg));
+
+            border-color:
+                rgba(139,92,246,0.42);
+
+            box-shadow:
+                0 30px 80px
+                rgba(0,0,0,0.35);
         }
+
+        .project-card:hover::before {
+            opacity: 1;
+        }
+
+        .project-card:hover::after {
+            transform:
+                translateX(120%);
+        }
+
+        /* =========================================================
+           PROJECT VISUAL
+        ========================================================= */
 
         .project-visual {
             height: 185px;
+
             position: relative;
+
             overflow: hidden;
+
             background:
                 radial-gradient(
                     circle at 20% 20%,
@@ -482,96 +1109,232 @@
                     #151821,
                     #0d0f15
                 );
+
+            transition:
+                transform 0.6s
+                cubic-bezier(.2,.8,.2,1);
+        }
+
+        .project-card:hover .project-visual {
+            transform:
+                scale(1.06);
         }
 
         .project-visual::before {
             content: "";
+
             position: absolute;
+
             inset: 20px;
-            border: 1px solid rgba(255,255,255,0.08);
+
+            border:
+                1px solid
+                rgba(255,255,255,0.08);
+
             border-radius: 12px;
+
+            transition:
+                inset 0.5s ease,
+                border-color 0.5s ease;
+        }
+
+        .project-card:hover
+        .project-visual::before {
+            inset: 14px;
+
+            border-color:
+                rgba(255,255,255,0.15);
         }
 
         .project-visual::after {
             content: "";
+
             position: absolute;
+
             width: 150px;
             height: 150px;
+
             border-radius: 50%;
-            background: rgba(6,182,212,0.12);
+
+            background:
+                rgba(6,182,212,0.12);
+
             filter: blur(20px);
+
             right: -40px;
             bottom: -50px;
+
+            transition:
+                transform 0.7s ease;
+        }
+
+        .project-card:hover
+        .project-visual::after {
+            transform:
+                scale(1.45)
+                translate(-20px,-10px);
         }
 
         .project-number {
             position: absolute;
+
             top: 18px;
             right: 20px;
+
             font-size: 0.7rem;
+
             color: #747783;
+
             letter-spacing: 0.12em;
+
+            z-index: 2;
         }
 
         .project-type {
             position: absolute;
+
             left: 35px;
             bottom: 25px;
-            color: rgba(255,255,255,0.5);
+
+            color:
+                rgba(255,255,255,0.5);
+
             font-size: 0.7rem;
+
             text-transform: uppercase;
+
             letter-spacing: 0.13em;
+
+            z-index: 2;
+
+            transition:
+                color 0.35s ease,
+                transform 0.35s ease;
         }
 
+        .project-card:hover
+        .project-type {
+            color:
+                rgba(255,255,255,0.78);
+
+            transform:
+                translateX(5px);
+        }
+
+        /* =========================================================
+           PROJECT CONTENT
+        ========================================================= */
+
         .project-content {
+            position: relative;
+
+            z-index: 7;
+
             padding: 25px;
+
+            background:
+                linear-gradient(
+                    to bottom,
+                    rgba(8,9,13,0.1),
+                    rgba(8,9,13,0.4)
+                );
         }
 
         .project-content h3 {
             font-size: 1.35rem;
+
             letter-spacing: -0.025em;
+
             margin-bottom: 9px;
+
+            transition:
+                transform 0.35s ease;
+        }
+
+        .project-card:hover
+        .project-content h3 {
+            transform:
+                translateX(3px);
         }
 
         .project-content p {
             color: var(--muted);
+
             font-size: 0.85rem;
+
             min-height: 48px;
         }
 
         .project-meta {
             display: flex;
+
             flex-wrap: wrap;
+
             gap: 7px;
+
             margin-top: 18px;
         }
 
         .tag {
             font-size: 0.68rem;
+
             color: #b9bac4;
-            border: 1px solid var(--border);
+
+            border:
+                1px solid var(--border);
+
             border-radius: 100px;
+
             padding: 5px 9px;
-            background: rgba(255,255,255,0.025);
+
+            background:
+                rgba(255,255,255,0.025);
+
+            transition:
+                transform 0.3s ease,
+                background 0.3s ease,
+                border-color 0.3s ease;
+        }
+
+        .project-card:hover .tag {
+            background:
+                rgba(255,255,255,0.045);
+        }
+
+        .tag:hover {
+            transform:
+                translateY(-2px);
+
+            border-color:
+                rgba(139,92,246,0.35);
         }
 
         .project-link {
             display: inline-flex;
+
             margin-top: 18px;
+
             color: #b9a8ff;
+
             font-size: 0.78rem;
-            font-weight: 600;
-            transition: 0.25s ease;
+
+            font-weight: 650;
+
+            transition:
+                color 0.3s ease,
+                transform 0.3s ease;
         }
 
         .project-link:hover {
-            color: #fff;
-            transform: translateX(4px);
+            color: white;
+
+            transform:
+                translateX(7px);
         }
 
-        /* =========================
+        /* =========================================================
            MORE PROJECTS
-        ========================= */
+        ========================================================= */
 
         .more-projects {
             margin-top: 70px;
@@ -579,120 +1342,251 @@
 
         .more-projects-title {
             color: #d9dae0;
+
             font-size: 1.1rem;
+
             margin-bottom: 20px;
         }
 
         .project-list {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
             gap: 10px;
         }
 
         .project-list-item {
+            position: relative;
+
+            overflow: hidden;
+
             display: flex;
+
             justify-content: space-between;
+
             align-items: center;
+
             gap: 20px;
+
             padding: 17px 19px;
-            border: 1px solid var(--border);
-            background: rgba(255,255,255,0.025);
+
+            border:
+                1px solid var(--border);
+
+            background:
+                rgba(255,255,255,0.025);
+
             border-radius: 12px;
-            transition: 0.3s ease;
+
+            transition:
+                transform 0.35s ease,
+                background 0.35s ease,
+                border-color 0.35s ease,
+                box-shadow 0.35s ease;
+        }
+
+        .project-list-item::before {
+            content: "";
+
+            position: absolute;
+
+            left: 0;
+            top: 0;
+
+            width: 2px;
+            height: 100%;
+
+            background:
+                linear-gradient(
+                    to bottom,
+                    var(--accent),
+                    var(--accent-2)
+                );
+
+            transform:
+                scaleY(0);
+
+            transform-origin:
+                bottom;
+
+            transition:
+                transform 0.35s ease;
         }
 
         .project-list-item:hover {
-            background: rgba(255,255,255,0.055);
-            transform: translateX(4px);
-            border-color: rgba(139,92,246,0.3);
+            background:
+                rgba(255,255,255,0.055);
+
+            transform:
+                translateX(6px);
+
+            border-color:
+                rgba(139,92,246,0.3);
+
+            box-shadow:
+                0 12px 35px
+                rgba(0,0,0,0.18);
+        }
+
+        .project-list-item:hover::before {
+            transform:
+                scaleY(1);
+
+            transform-origin:
+                top;
         }
 
         .project-list-name {
             font-weight: 600;
+
             font-size: 0.9rem;
         }
 
         .project-list-type {
             color: #777984;
+
             font-size: 0.72rem;
+
             margin-top: 3px;
         }
 
         .project-list-link {
             color: #a99aff;
+
             font-size: 0.75rem;
+
             white-space: nowrap;
+
+            transition:
+                transform 0.3s ease,
+                color 0.3s ease;
         }
 
-        /* =========================
+        .project-list-item:hover
+        .project-list-link {
+            color: white;
+
+            transform:
+                translateX(4px);
+        }
+
+        /* =========================================================
            EXPERIENCE
-        ========================= */
+        ========================================================= */
 
         .experience-wrapper {
             margin-top: 50px;
-            border-left: 1px solid var(--border);
+
+            border-left:
+                1px solid var(--border);
+
             padding-left: 30px;
         }
 
         .experience-item {
             position: relative;
+
             padding-bottom: 45px;
         }
 
         .experience-item::before {
             content: "";
+
             position: absolute;
+
             width: 9px;
             height: 9px;
+
             border-radius: 50%;
-            background: var(--accent);
+
+            background:
+                var(--accent);
+
             left: -35px;
             top: 8px;
-            box-shadow: 0 0 20px rgba(139,92,246,0.6);
+
+            box-shadow:
+                0 0 20px
+                rgba(139,92,246,0.6);
+
+            transition:
+                transform 0.35s ease,
+                box-shadow 0.35s ease;
+        }
+
+        .experience-item:hover::before {
+            transform:
+                scale(1.7);
+
+            box-shadow:
+                0 0 30px
+                rgba(139,92,246,0.9);
         }
 
         .experience-date {
             color: var(--accent);
+
             font-size: 0.75rem;
+
             font-weight: 700;
+
             letter-spacing: 0.08em;
+
             text-transform: uppercase;
+
             margin-bottom: 8px;
         }
 
         .experience-item h3 {
             font-size: 1.35rem;
+
             margin-bottom: 5px;
         }
 
         .experience-company {
             color: #c3c4ca;
+
             margin-bottom: 13px;
         }
 
         .experience-item p {
             color: var(--muted);
+
             max-width: 750px;
+
             font-size: 0.92rem;
         }
 
-        /* =========================
+        /* =========================================================
            CONTACT
-        ========================= */
+        ========================================================= */
 
         .contact-section {
             text-align: center;
         }
 
-        .contact-section .section-description {
-            margin: 0 auto 30px;
+        .contact-section
+        .section-description {
+            margin:
+                0 auto 30px;
         }
 
         .contact-box {
+            position: relative;
+
+            overflow: hidden;
+
             margin-top: 45px;
+
             padding: 50px 30px;
+
             border-radius: 24px;
-            border: 1px solid var(--border);
+
+            border:
+                1px solid var(--border);
+
             background:
                 radial-gradient(
                     circle at 50% 0%,
@@ -700,93 +1594,334 @@
                     transparent 55%
                 ),
                 rgba(255,255,255,0.025);
+
+            transition:
+                transform 0.5s ease,
+                border-color 0.4s ease,
+                box-shadow 0.5s ease;
+        }
+
+        .contact-box::before {
+            content: "";
+
+            position: absolute;
+
+            width: 300px;
+            height: 300px;
+
+            left: 50%;
+            top: -230px;
+
+            transform:
+                translateX(-50%);
+
+            border-radius: 50%;
+
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(139,92,246,0.16),
+                    transparent 70%
+                );
+
+            transition:
+                transform 0.7s ease;
+        }
+
+        .contact-box:hover {
+            transform:
+                translateY(-6px);
+
+            border-color:
+                rgba(139,92,246,0.35);
+
+            box-shadow:
+                0 30px 80px
+                rgba(0,0,0,0.28);
+        }
+
+        .contact-box:hover::before {
+            transform:
+                translateX(-50%)
+                scale(1.4);
+        }
+
+        .contact-box > * {
+            position: relative;
+            z-index: 2;
         }
 
         .contact-email {
             display: inline-block;
+
             margin: 15px 0 25px;
-            font-size: clamp(1.3rem, 4vw, 2.1rem);
+
+            font-size:
+                clamp(1.3rem, 4vw, 2.1rem);
+
             font-weight: 700;
+
             letter-spacing: -0.03em;
+
+            transition:
+                color 0.3s ease,
+                transform 0.3s ease;
         }
 
         .contact-email:hover {
             color: #b9a8ff;
+
+            transform:
+                translateY(-2px);
         }
 
-        /* =========================
+        /* =========================================================
            FOOTER
-        ========================= */
+        ========================================================= */
 
         footer {
             padding: 35px 0;
-            border-top: 1px solid var(--border);
+
+            border-top:
+                1px solid var(--border);
+
             color: #6f717b;
+
             font-size: 0.75rem;
         }
 
         .footer-container {
             display: flex;
+
             justify-content: space-between;
+
             gap: 20px;
+
             align-items: center;
         }
 
-        /* =========================
+        /* =========================================================
            SCROLL REVEAL
-        ========================= */
+        ========================================================= */
 
         .reveal {
             opacity: 0;
-            transform: translateY(35px);
+
+            transform:
+                translateY(55px)
+                scale(0.97);
+
+            filter:
+                blur(4px);
+
             transition:
-                opacity 0.8s ease,
-                transform 0.8s cubic-bezier(.2,.8,.2,1);
+                opacity 0.9s
+                cubic-bezier(.2,.8,.2,1),
+
+                transform 0.9s
+                cubic-bezier(.2,.8,.2,1),
+
+                filter 0.9s ease;
         }
 
         .reveal.visible {
             opacity: 1;
-            transform: translateY(0);
+
+            transform:
+                translateY(0)
+                scale(1);
+
+            filter:
+                blur(0);
         }
 
-        /* =========================
-           ANIMATIONS
-        ========================= */
+        /* =========================================================
+           STAGGERED ANIMATION
+        ========================================================= */
 
-        @keyframes fadeUp {
+        .projects-grid .project-card:nth-child(1) {
+            transition-delay: 0.05s;
+        }
+
+        .projects-grid .project-card:nth-child(2) {
+            transition-delay: 0.12s;
+        }
+
+        .projects-grid .project-card:nth-child(3) {
+            transition-delay: 0.19s;
+        }
+
+        .projects-grid .project-card:nth-child(4) {
+            transition-delay: 0.26s;
+        }
+
+        .projects-grid .project-card:nth-child(5) {
+            transition-delay: 0.33s;
+        }
+
+        .projects-grid .project-card:nth-child(6) {
+            transition-delay: 0.40s;
+        }
+
+        .skills-grid .skill:nth-child(1) {
+            transition-delay: 0.03s;
+        }
+
+        .skills-grid .skill:nth-child(2) {
+            transition-delay: 0.06s;
+        }
+
+        .skills-grid .skill:nth-child(3) {
+            transition-delay: 0.09s;
+        }
+
+        .skills-grid .skill:nth-child(4) {
+            transition-delay: 0.12s;
+        }
+
+        .skills-grid .skill:nth-child(5) {
+            transition-delay: 0.15s;
+        }
+
+        .skills-grid .skill:nth-child(6) {
+            transition-delay: 0.18s;
+        }
+
+        .skills-grid .skill:nth-child(7) {
+            transition-delay: 0.21s;
+        }
+
+        .skills-grid .skill:nth-child(8) {
+            transition-delay: 0.24s;
+        }
+
+        .skills-grid .skill:nth-child(9) {
+            transition-delay: 0.27s;
+        }
+
+        .skills-grid .skill:nth-child(10) {
+            transition-delay: 0.30s;
+        }
+
+        .skills-grid .skill:nth-child(11) {
+            transition-delay: 0.33s;
+        }
+
+        .skills-grid .skill:nth-child(12) {
+            transition-delay: 0.36s;
+        }
+
+        .skills-grid .skill:nth-child(13) {
+            transition-delay: 0.39s;
+        }
+
+        .skills-grid .skill:nth-child(14) {
+            transition-delay: 0.42s;
+        }
+
+        .skills-grid .skill:nth-child(15) {
+            transition-delay: 0.45s;
+        }
+
+        .skills-grid .skill:nth-child(16) {
+            transition-delay: 0.48s;
+        }
+
+        /* =========================================================
+           KEYFRAMES
+        ========================================================= */
+
+        @keyframes heroReveal {
+
             from {
                 opacity: 0;
-                transform: translateY(25px);
+
+                transform:
+                    translateY(40px);
             }
 
             to {
                 opacity: 1;
-                transform: translateY(0);
+
+                transform:
+                    translateY(0);
             }
         }
 
-        @keyframes bounce {
-            0%, 100% {
-                transform: translate(-50%, 0);
+        @keyframes pulseDot {
+
+            0%,
+            100% {
+                transform: scale(1);
+
+                box-shadow:
+                    0 0 10px
+                    rgba(74,222,128,0.55);
             }
 
             50% {
-                transform: translate(-50%, 8px);
+                transform: scale(1.25);
+
+                box-shadow:
+                    0 0 22px
+                    rgba(74,222,128,0.85);
             }
         }
 
-        /* =========================
+        @keyframes gradientMove {
+
+            0%,
+            100% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+        }
+
+        @keyframes gridMove {
+
+            from {
+                transform:
+                    translateY(0);
+            }
+
+            to {
+                transform:
+                    translateY(60px);
+            }
+        }
+
+        @keyframes ambientFloat {
+
+            from {
+                transform:
+                    translate(0,0)
+                    scale(1);
+            }
+
+            to {
+                transform:
+                    translate(80px,60px)
+                    scale(1.15);
+            }
+        }
+
+        /* =========================================================
            RESPONSIVE
-        ========================= */
+        ========================================================= */
 
         @media (max-width: 900px) {
 
             .skills-grid {
-                grid-template-columns: repeat(2, 1fr);
+                grid-template-columns:
+                    repeat(2, 1fr);
             }
 
             .about-grid {
                 grid-template-columns: 1fr;
+
                 gap: 35px;
             }
 
@@ -802,7 +1937,8 @@
         @media (max-width: 650px) {
 
             nav {
-                padding: 16px 18px;
+                padding:
+                    16px 18px;
             }
 
             .nav-links {
@@ -810,23 +1946,35 @@
             }
 
             .container {
-                width: min(100% - 34px, var(--max-width));
+                width:
+                    min(
+                        100% - 34px,
+                        var(--max-width)
+                    );
             }
 
             section {
-                padding: 80px 0;
+                padding:
+                    80px 0;
             }
 
             .hero {
-                min-height: 92vh;
+                min-height:
+                    92vh;
             }
 
             .hero h1 {
-                font-size: clamp(3rem, 16vw, 5rem);
+                font-size:
+                    clamp(
+                        3rem,
+                        16vw,
+                        5rem
+                    );
             }
 
             .stats {
                 grid-template-columns: 1fr;
+
                 margin-top: 55px;
             }
 
@@ -844,11 +1992,16 @@
 
             .footer-container {
                 flex-direction: column;
+
                 align-items: flex-start;
             }
 
-            .scroll-indicator {
+            .cursor-glow {
                 display: none;
+            }
+
+            .ambient-light {
+                opacity: 0.6;
             }
         }
 
@@ -861,104 +2014,198 @@
             *,
             *::before,
             *::after {
-                animation-duration: 0.01ms !important;
-                animation-iteration-count: 1 !important;
-                transition-duration: 0.01ms !important;
+                animation-duration:
+                    0.01ms !important;
+
+                animation-iteration-count:
+                    1 !important;
+
+                transition-duration:
+                    0.01ms !important;
             }
 
             .reveal {
                 opacity: 1;
+
                 transform: none;
+
+                filter: none;
             }
         }
+
     </style>
 </head>
 
 <body>
 
+    <!-- =========================================================
+         BACKGROUND
+    ========================================================= -->
+
     <div class="background-grid"></div>
 
-    <!-- =========================
+    <div class="ambient-light"></div>
+    <div class="ambient-light two"></div>
+
+    <div class="cursor-glow" id="cursorGlow"></div>
+
+
+    <!-- =========================================================
          NAVIGATION
-    ========================= -->
+    ========================================================= -->
 
     <nav id="navbar">
+
         <div class="nav-container">
 
-            <a href="#home" class="logo">
+            <a
+                href="#home"
+                class="logo"
+            >
                 Angélica<span>.</span>
             </a>
 
             <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#work">Work</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#contact">Contact</a></li>
+
+                <li>
+                    <a href="#about">
+                        About
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#skills">
+                        Skills
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#work">
+                        Work
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#experience">
+                        Experience
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#contact">
+                        Contact
+                    </a>
+                </li>
+
             </ul>
 
         </div>
+
     </nav>
 
 
-    <!-- =========================
+    <!-- =========================================================
          HERO
-    ========================= -->
+    ========================================================= -->
 
-    <header class="hero" id="home">
+    <header
+        class="hero"
+        id="home"
+    >
 
         <div class="container">
 
             <div class="hero-content">
 
                 <div class="hero-badge">
+
                     <span class="status-dot"></span>
+
                     Available for new opportunities
+
                 </div>
 
+
                 <h1>
+
                     WordPress &
-                    <span class="gradient">CMS Developer</span>
+
+                    <span class="gradient">
+                        CMS Developer
+                    </span>
+
                 </h1>
 
+
                 <p class="hero-description">
+
                     Building digital experiences that work.
-                    WordPress and CMS Developer with 6+ years of professional
-                    experience creating, customizing and maintaining websites
+
+                    WordPress and CMS Developer with 6+ years
+                    of professional experience creating,
+                    customizing and maintaining websites
                     and e-commerce solutions.
+
                 </p>
 
+
                 <div class="hero-buttons">
-                    <a href="#work" class="btn btn-primary">
+
+                    <a
+                        href="#work"
+                        class="btn btn-primary"
+                    >
                         Explore my work
                     </a>
 
-                    <a href="#contact" class="btn btn-secondary">
+                    <a
+                        href="#contact"
+                        class="btn btn-secondary"
+                    >
                         Let's connect
                     </a>
+
                 </div>
+
 
                 <div class="stats">
 
                     <div class="stat-card">
-                        <div class="stat-number">6+</div>
+
+                        <div class="stat-number">
+                            6+
+                        </div>
+
                         <div class="stat-label">
                             Years of professional experience
                         </div>
+
                     </div>
 
+
                     <div class="stat-card">
-                        <div class="stat-number">20+</div>
+
+                        <div class="stat-number">
+                            20+
+                        </div>
+
                         <div class="stat-label">
                             Professional projects
                         </div>
+
                     </div>
 
+
                     <div class="stat-card">
-                        <div class="stat-number">7+</div>
+
+                        <div class="stat-number">
+                            7+
+                        </div>
+
                         <div class="stat-label">
                             Core technologies & platforms
                         </div>
+
                     </div>
 
                 </div>
@@ -967,6 +2214,7 @@
 
         </div>
 
+
         <div class="scroll-indicator">
             Scroll to explore
         </div>
@@ -974,9 +2222,9 @@
     </header>
 
 
-    <!-- =========================
+    <!-- =========================================================
          ABOUT
-    ========================= -->
+    ========================================================= -->
 
     <section id="about">
 
@@ -997,28 +2245,32 @@
                     <div class="about-text">
 
                         <p>
-                            I am a WordPress and CMS Developer with more than
-                            six years of professional experience working on
-                            websites, e-commerce platforms and custom digital
-                            solutions.
+                            I am a WordPress and CMS Developer
+                            with more than six years of professional
+                            experience working on websites,
+                            e-commerce platforms and custom
+                            digital solutions.
                         </p>
 
                         <p>
-                            My experience includes building websites from
-                            scratch, redesigning existing platforms,
-                            migrating content, implementing responsive
-                            interfaces and maintaining production websites.
+                            My experience includes building
+                            websites from scratch, redesigning
+                            existing platforms, migrating content,
+                            implementing responsive interfaces
+                            and maintaining production websites.
                         </p>
 
                         <p>
-                            I enjoy turning designs and business requirements
-                            into functional, accessible and maintainable
+                            I enjoy turning designs and business
+                            requirements into functional,
+                            accessible and maintainable
                             digital experiences.
                         </p>
 
                     </div>
 
                 </div>
+
 
                 <div class="about-highlight">
 
@@ -1027,20 +2279,44 @@
                     </h3>
 
                     <p>
-                        Experience across different types of businesses and
-                        digital products.
+                        Experience across different types
+                        of businesses and digital products.
                     </p>
+
 
                     <div class="industry-list">
 
-                        <span class="industry">Education</span>
-                        <span class="industry">E-commerce</span>
-                        <span class="industry">Real Estate</span>
-                        <span class="industry">Healthcare</span>
-                        <span class="industry">Sustainability</span>
-                        <span class="industry">Industrial</span>
-                        <span class="industry">Professional Services</span>
-                        <span class="industry">Pet Care</span>
+                        <span class="industry">
+                            Education
+                        </span>
+
+                        <span class="industry">
+                            E-commerce
+                        </span>
+
+                        <span class="industry">
+                            Real Estate
+                        </span>
+
+                        <span class="industry">
+                            Healthcare
+                        </span>
+
+                        <span class="industry">
+                            Sustainability
+                        </span>
+
+                        <span class="industry">
+                            Industrial
+                        </span>
+
+                        <span class="industry">
+                            Professional Services
+                        </span>
+
+                        <span class="industry">
+                            Pet Care
+                        </span>
 
                     </div>
 
@@ -1053,9 +2329,9 @@
     </section>
 
 
-    <!-- =========================
+    <!-- =========================================================
          SKILLS
-    ========================= -->
+    ========================================================= -->
 
     <section id="skills">
 
@@ -1072,33 +2348,79 @@
                 </h2>
 
                 <p class="section-description">
-                    A practical combination of CMS platforms, front-end
-                    technologies and WordPress development tools.
+                    A practical combination of CMS platforms,
+                    front-end technologies and WordPress
+                    development tools.
                 </p>
 
             </div>
 
-            <div class="skills-grid reveal">
 
-                <div class="skill">WordPress</div>
-                <div class="skill">WooCommerce</div>
-                <div class="skill">Shopify</div>
-                <div class="skill">Elementor</div>
+            <div class="skills-grid">
 
-                <div class="skill">Gutenberg</div>
-                <div class="skill">Advanced Custom Fields</div>
-                <div class="skill">Custom Post Types</div>
-                <div class="skill">PHP</div>
+                <div class="skill reveal">
+                    WordPress
+                </div>
 
-                <div class="skill">JavaScript</div>
-                <div class="skill">HTML5</div>
-                <div class="skill">CSS3</div>
-                <div class="skill">SQL</div>
+                <div class="skill reveal">
+                    WooCommerce
+                </div>
 
-                <div class="skill">SiteGround</div>
-                <div class="skill">Responsive Design</div>
-                <div class="skill">CMS Development</div>
-                <div class="skill">Website Maintenance</div>
+                <div class="skill reveal">
+                    Shopify
+                </div>
+
+                <div class="skill reveal">
+                    Elementor
+                </div>
+
+                <div class="skill reveal">
+                    Gutenberg
+                </div>
+
+                <div class="skill reveal">
+                    Advanced Custom Fields
+                </div>
+
+                <div class="skill reveal">
+                    Custom Post Types
+                </div>
+
+                <div class="skill reveal">
+                    PHP
+                </div>
+
+                <div class="skill reveal">
+                    JavaScript
+                </div>
+
+                <div class="skill reveal">
+                    HTML5
+                </div>
+
+                <div class="skill reveal">
+                    CSS3
+                </div>
+
+                <div class="skill reveal">
+                    SQL
+                </div>
+
+                <div class="skill reveal">
+                    SiteGround
+                </div>
+
+                <div class="skill reveal">
+                    Responsive Design
+                </div>
+
+                <div class="skill reveal">
+                    CMS Development
+                </div>
+
+                <div class="skill reveal">
+                    Website Maintenance
+                </div>
 
             </div>
 
@@ -1107,9 +2429,9 @@
     </section>
 
 
-    <!-- =========================
+    <!-- =========================================================
          SELECTED WORK
-    ========================= -->
+    ========================================================= -->
 
     <section id="work">
 
@@ -1126,9 +2448,9 @@
                 </h2>
 
                 <p class="section-description">
-                    A selection of professional projects developed,
-                    redesigned or maintained during my experience at
-                    Pacífica Diseño.
+                    A selection of professional projects
+                    developed, redesigned or maintained
+                    during my experience at Pacífica Diseño.
                 </p>
 
             </div>
@@ -1137,32 +2459,64 @@
             <div class="projects-grid">
 
 
-                <!-- COLUMBUS -->
+                <!-- 01 -->
 
-                <article class="project-card reveal">
+                <article
+                    class="project-card reveal"
+                >
 
                     <div class="project-visual">
-                        <span class="project-number">01</span>
-                        <span class="project-type">Education · WordPress</span>
+
+                        <span class="project-number">
+                            01
+                        </span>
+
+                        <span class="project-type">
+                            Education · WordPress
+                        </span>
+
                     </div>
+
 
                     <div class="project-content">
 
-                        <h3>Columbus School</h3>
+                        <h3>
+                            Columbus School
+                        </h3>
 
                         <p>
-                            Participated in the migration from Gutenberg to
-                            Elementor, implemented custom job listings and
-                            forms, and handled ongoing maintenance.
+                            Participated in the migration
+                            from Gutenberg to Elementor,
+                            implemented custom job listings
+                            and forms, and handled ongoing
+                            maintenance.
                         </p>
 
+
                         <div class="project-meta">
-                            <span class="tag">WordPress</span>
-                            <span class="tag">Elementor</span>
-                            <span class="tag">ACF</span>
-                            <span class="tag">Custom Post Types</span>
-                            <span class="tag">Responsive</span>
+
+                            <span class="tag">
+                                WordPress
+                            </span>
+
+                            <span class="tag">
+                                Elementor
+                            </span>
+
+                            <span class="tag">
+                                ACF
+                            </span>
+
+                            <span class="tag">
+                                Custom Post Types
+                            </span>
+
+                            <span class="tag">
+                                Responsive
+                            </span>
+
                         </div>
+
 
                         <a
                             href="https://columbus.edu.co/"
@@ -1178,31 +2532,59 @@
                 </article>
 
 
-                <!-- VIVIENDAS -->
+                <!-- 02 -->
 
-                <article class="project-card reveal">
+                <article
+                    class="project-card reveal"
+                >
 
                     <div class="project-visual">
-                        <span class="project-number">02</span>
-                        <span class="project-type">Real Estate · CMS</span>
+
+                        <span class="project-number">
+                            02
+                        </span>
+
+                        <span class="project-type">
+                            Real Estate · CMS
+                        </span>
+
                     </div>
+
 
                     <div class="project-content">
 
-                        <h3>Viviendas y Proyectos</h3>
+                        <h3>
+                            Viviendas y Proyectos
+                        </h3>
 
                         <p>
-                            Built and redesigned project pages with individual
-                            templates and integrated an external forms API
-                            beyond standard WordPress forms.
+                            Built and redesigned project
+                            pages with individual templates
+                            and integrated an external forms
+                            API beyond standard WordPress forms.
                         </p>
 
+
                         <div class="project-meta">
-                            <span class="tag">WordPress</span>
-                            <span class="tag">Elementor</span>
-                            <span class="tag">API Integration</span>
-                            <span class="tag">Responsive</span>
+
+                            <span class="tag">
+                                WordPress
+                            </span>
+
+                            <span class="tag">
+                                Elementor
+                            </span>
+
+                            <span class="tag">
+                                API Integration
+                            </span>
+
+                            <span class="tag">
+                                Responsive
+                            </span>
+
                         </div>
+
 
                         <a
                             href="http://viviendasyproyectos.com/"
@@ -1218,31 +2600,58 @@
                 </article>
 
 
-                <!-- DROGUERIA -->
+                <!-- 03 -->
 
-                <article class="project-card reveal">
+                <article
+                    class="project-card reveal"
+                >
 
                     <div class="project-visual">
-                        <span class="project-number">03</span>
-                        <span class="project-type">E-commerce</span>
+
+                        <span class="project-number">
+                            03
+                        </span>
+
+                        <span class="project-type">
+                            E-commerce
+                        </span>
+
                     </div>
+
 
                     <div class="project-content">
 
-                        <h3>Droguería Ética</h3>
+                        <h3>
+                            Droguería Ética
+                        </h3>
 
                         <p>
-                            Redesigned an existing e-commerce website,
-                            implemented a new theme and handled a new
-                            product import.
+                            Redesigned an existing e-commerce
+                            website, implemented a new theme
+                            and handled a new product import.
                         </p>
 
+
                         <div class="project-meta">
-                            <span class="tag">WordPress</span>
-                            <span class="tag">E-commerce</span>
-                            <span class="tag">Product Import</span>
-                            <span class="tag">Responsive</span>
+
+                            <span class="tag">
+                                WordPress
+                            </span>
+
+                            <span class="tag">
+                                E-commerce
+                            </span>
+
+                            <span class="tag">
+                                Product Import
+                            </span>
+
+                            <span class="tag">
+                                Responsive
+                            </span>
+
                         </div>
+
 
                         <a
                             href="https://www.drogueriaetica.com/"
@@ -1258,30 +2667,55 @@
                 </article>
 
 
-                <!-- KINKY -->
+                <!-- 04 -->
 
-                <article class="project-card reveal">
+                <article
+                    class="project-card reveal"
+                >
 
                     <div class="project-visual">
-                        <span class="project-number">04</span>
-                        <span class="project-type">E-commerce · Pets</span>
+
+                        <span class="project-number">
+                            04
+                        </span>
+
+                        <span class="project-type">
+                            E-commerce · Pets
+                        </span>
+
                     </div>
+
 
                     <div class="project-content">
 
-                        <h3>Kinky Mascotas</h3>
+                        <h3>
+                            Kinky Mascotas
+                        </h3>
 
                         <p>
-                            Initially built the e-commerce website at
-                            Pacífica Diseño, creating the original site
+                            Initially built the e-commerce
+                            website at Pacífica Diseño,
+                            creating the original site
                             structure and implementation.
                         </p>
 
+
                         <div class="project-meta">
-                            <span class="tag">WordPress</span>
-                            <span class="tag">E-commerce</span>
-                            <span class="tag">Responsive</span>
+
+                            <span class="tag">
+                                WordPress
+                            </span>
+
+                            <span class="tag">
+                                E-commerce
+                            </span>
+
+                            <span class="tag">
+                                Responsive
+                            </span>
+
                         </div>
+
 
                         <a
                             href="https://kinkymascotas.co/"
@@ -1297,32 +2731,63 @@
                 </article>
 
 
-                <!-- CAMPO ORIGEN -->
+                <!-- 05 -->
 
-                <article class="project-card reveal">
+                <article
+                    class="project-card reveal"
+                >
 
                     <div class="project-visual">
-                        <span class="project-number">05</span>
-                        <span class="project-type">Corporate · WordPress</span>
+
+                        <span class="project-number">
+                            05
+                        </span>
+
+                        <span class="project-type">
+                            Corporate · WordPress
+                        </span>
+
                     </div>
+
 
                     <div class="project-content">
 
-                        <h3>Campo Origen</h3>
+                        <h3>
+                            Campo Origen
+                        </h3>
 
                         <p>
-                            My first project at Pacífica Diseño. Participated
-                            in the complete layout and implemented custom
-                            hierarchy functionality using PHP and JavaScript.
+                            My first project at Pacífica Diseño.
+                            Participated in the complete layout
+                            and implemented custom hierarchy
+                            functionality using PHP and JavaScript.
                         </p>
 
+
                         <div class="project-meta">
-                            <span class="tag">WordPress</span>
-                            <span class="tag">Gutenberg</span>
-                            <span class="tag">PHP</span>
-                            <span class="tag">JavaScript</span>
-                            <span class="tag">Responsive</span>
+
+                            <span class="tag">
+                                WordPress
+                            </span>
+
+                            <span class="tag">
+                                Gutenberg
+                            </span>
+
+                            <span class="tag">
+                                PHP
+                            </span>
+
+                            <span class="tag">
+                                JavaScript
+                            </span>
+
+                            <span class="tag">
+                                Responsive
+                            </span>
+
                         </div>
+
 
                         <a
                             href="https://www.camporigen.com/"
@@ -1338,32 +2803,63 @@
                 </article>
 
 
-                <!-- COLOR AMAZONIA -->
+                <!-- 06 -->
 
-                <article class="project-card reveal">
+                <article
+                    class="project-card reveal"
+                >
 
                     <div class="project-visual">
-                        <span class="project-number">06</span>
-                        <span class="project-type">Creative · Interactive</span>
+
+                        <span class="project-number">
+                            06
+                        </span>
+
+                        <span class="project-type">
+                            Creative · Interactive
+                        </span>
+
                     </div>
+
 
                     <div class="project-content">
 
-                        <h3>Color Amazonía</h3>
+                        <h3>
+                            Color Amazonía
+                        </h3>
 
                         <p>
-                            Built from scratch with a custom interactive
-                            gallery, including customized pop-ups using
+                            Built from scratch with a custom
+                            interactive gallery, including
+                            customized pop-ups using
                             JavaScript and PHP.
                         </p>
 
+
                         <div class="project-meta">
-                            <span class="tag">WordPress</span>
-                            <span class="tag">JavaScript</span>
-                            <span class="tag">PHP</span>
-                            <span class="tag">Custom Gallery</span>
-                            <span class="tag">Responsive</span>
+
+                            <span class="tag">
+                                WordPress
+                            </span>
+
+                            <span class="tag">
+                                JavaScript
+                            </span>
+
+                            <span class="tag">
+                                PHP
+                            </span>
+
+                            <span class="tag">
+                                Custom Gallery
+                            </span>
+
+                            <span class="tag">
+                                Responsive
+                            </span>
+
                         </div>
+
 
                         <a
                             href="https://coloramazonia.com/"
@@ -1381,15 +2877,16 @@
             </div>
 
 
-            <!-- =========================
+            <!-- =====================================================
                  MORE PROJECTS
-            ========================= -->
+            ====================================================== -->
 
             <div class="more-projects reveal">
 
                 <div class="more-projects-title">
                     More professional projects
                 </div>
+
 
                 <div class="project-list">
 
@@ -1400,18 +2897,23 @@
                         rel="noopener"
                         class="project-list-item"
                     >
+
                         <div>
+
                             <div class="project-list-name">
                                 Ranchera
                             </div>
+
                             <div class="project-list-type">
                                 Custom Post Types · Maintenance
                             </div>
+
                         </div>
 
                         <span class="project-list-link">
                             View →
                         </span>
+
                     </a>
 
 
@@ -1421,18 +2923,23 @@
                         rel="noopener"
                         class="project-list-item"
                     >
+
                         <div>
+
                             <div class="project-list-name">
                                 ATP
                             </div>
+
                             <div class="project-list-type">
                                 Built from scratch · Responsive
                             </div>
+
                         </div>
 
                         <span class="project-list-link">
                             View →
                         </span>
+
                     </a>
 
 
@@ -1442,18 +2949,23 @@
                         rel="noopener"
                         class="project-list-item"
                     >
+
                         <div>
+
                             <div class="project-list-name">
                                 MEBUM
                             </div>
+
                             <div class="project-list-type">
                                 Design adjustments · Responsive
                             </div>
+
                         </div>
 
                         <span class="project-list-link">
                             View →
                         </span>
+
                     </a>
 
 
@@ -1463,18 +2975,23 @@
                         rel="noopener"
                         class="project-list-item"
                     >
+
                         <div>
+
                             <div class="project-list-name">
                                 Provimarcas
                             </div>
+
                             <div class="project-list-type">
                                 Built from scratch · Forms
                             </div>
+
                         </div>
 
                         <span class="project-list-link">
                             View →
                         </span>
+
                     </a>
 
 
@@ -1484,18 +3001,23 @@
                         rel="noopener"
                         class="project-list-item"
                     >
+
                         <div>
+
                             <div class="project-list-name">
                                 Rubberfit
                             </div>
+
                             <div class="project-list-type">
                                 Built from scratch · Responsive
                             </div>
+
                         </div>
 
                         <span class="project-list-link">
                             View →
                         </span>
+
                     </a>
 
 
@@ -1505,18 +3027,23 @@
                         rel="noopener"
                         class="project-list-item"
                     >
+
                         <div>
+
                             <div class="project-list-name">
                                 Sanavet
                             </div>
+
                             <div class="project-list-type">
                                 WordPress · Responsive
                             </div>
+
                         </div>
 
                         <span class="project-list-link">
                             View →
                         </span>
+
                     </a>
 
 
@@ -1526,18 +3053,23 @@
                         rel="noopener"
                         class="project-list-item"
                     >
+
                         <div>
+
                             <div class="project-list-name">
                                 SCO
                             </div>
+
                             <div class="project-list-type">
                                 Website adjustments · Maintenance
                             </div>
+
                         </div>
 
                         <span class="project-list-link">
                             View →
                         </span>
+
                     </a>
 
 
@@ -1547,18 +3079,23 @@
                         rel="noopener"
                         class="project-list-item"
                     >
+
                         <div>
+
                             <div class="project-list-name">
                                 Tu Operación Segura
                             </div>
+
                             <div class="project-list-type">
                                 Elementor · WordPress
                             </div>
+
                         </div>
 
                         <span class="project-list-link">
                             View →
                         </span>
+
                     </a>
 
 
@@ -1568,18 +3105,23 @@
                         rel="noopener"
                         class="project-list-item"
                     >
+
                         <div>
+
                             <div class="project-list-name">
                                 HIS
                             </div>
+
                             <div class="project-list-type">
                                 Custom Post Types · ACF · Products
                             </div>
+
                         </div>
 
                         <span class="project-list-link">
                             View →
                         </span>
+
                     </a>
 
 
@@ -1589,18 +3131,23 @@
                         rel="noopener"
                         class="project-list-item"
                     >
+
                         <div>
+
                             <div class="project-list-name">
                                 Khoka Project
                             </div>
+
                             <div class="project-list-type">
                                 Elementor · Informational website
                             </div>
+
                         </div>
 
                         <span class="project-list-link">
                             View →
                         </span>
+
                     </a>
 
 
@@ -1610,18 +3157,23 @@
                         rel="noopener"
                         class="project-list-item"
                     >
+
                         <div>
+
                             <div class="project-list-name">
                                 Organic Store
                             </div>
+
                             <div class="project-list-type">
                                 E-commerce · Website migration
                             </div>
+
                         </div>
 
                         <span class="project-list-link">
                             View →
                         </span>
+
                     </a>
 
 
@@ -1631,18 +3183,23 @@
                         rel="noopener"
                         class="project-list-item"
                     >
+
                         <div>
+
                             <div class="project-list-name">
                                 Río Claro
                             </div>
+
                             <div class="project-list-type">
                                 Redesign · Desktop & Mobile
                             </div>
+
                         </div>
 
                         <span class="project-list-link">
                             View →
                         </span>
+
                     </a>
 
 
@@ -1652,18 +3209,23 @@
                         rel="noopener"
                         class="project-list-item"
                     >
+
                         <div>
+
                             <div class="project-list-name">
                                 Internodes Consulting
                             </div>
+
                             <div class="project-list-type">
                                 Gutenberg → Elementor · Rebuild
                             </div>
+
                         </div>
 
                         <span class="project-list-link">
                             View →
                         </span>
+
                     </a>
 
 
@@ -1673,18 +3235,23 @@
                         rel="noopener"
                         class="project-list-item"
                     >
+
                         <div>
+
                             <div class="project-list-name">
                                 Sostenibilidad Grupo EPM
                             </div>
+
                             <div class="project-list-type">
                                 WordPress · Maintenance
                             </div>
+
                         </div>
 
                         <span class="project-list-link">
                             View →
                         </span>
+
                     </a>
 
                 </div>
@@ -1696,9 +3263,9 @@
     </section>
 
 
-    <!-- =========================
+    <!-- =========================================================
          EXPERIENCE
-    ========================= -->
+    ========================================================= -->
 
     <section id="experience">
 
@@ -1716,7 +3283,9 @@
 
             </div>
 
+
             <div class="experience-wrapper reveal">
+
 
                 <div class="experience-item">
 
@@ -1733,11 +3302,13 @@
                     </div>
 
                     <p>
-                        Developed, redesigned and maintained professional
-                        websites and e-commerce solutions for clients across
-                        different industries. Worked extensively with
-                        WordPress, Elementor, Gutenberg, WooCommerce, ACF,
-                        Custom Post Types, PHP, JavaScript, HTML and CSS.
+                        Developed, redesigned and maintained
+                        professional websites and e-commerce
+                        solutions for clients across different
+                        industries. Worked extensively with
+                        WordPress, Elementor, Gutenberg,
+                        WooCommerce, ACF, Custom Post Types,
+                        PHP, JavaScript, HTML and CSS.
                     </p>
 
                 </div>
@@ -1758,9 +3329,11 @@
                     </div>
 
                     <p>
-                        Experience working on websites, CMS platforms and
-                        e-commerce projects, translating design requirements
-                        into responsive and functional digital experiences.
+                        Experience working on websites,
+                        CMS platforms and e-commerce projects,
+                        translating design requirements into
+                        responsive and functional digital
+                        experiences.
                     </p>
 
                 </div>
@@ -1772,11 +3345,14 @@
     </section>
 
 
-    <!-- =========================
+    <!-- =========================================================
          CONTACT
-    ========================= -->
+    ========================================================= -->
 
-    <section id="contact" class="contact-section">
+    <section
+        id="contact"
+        class="contact-section"
+    >
 
         <div class="container">
 
@@ -1791,8 +3367,8 @@
                 </h2>
 
                 <p class="section-description">
-                    I'm currently open to new opportunities in WordPress,
-                    CMS and web development.
+                    I'm currently open to new opportunities
+                    in WordPress, CMS and web development.
                 </p>
 
                 <a
@@ -1802,13 +3378,16 @@
                     angelosbuitrago@gmail.com
                 </a>
 
+
                 <div>
+
                     <a
                         href="mailto:angelosbuitrago@gmail.com"
                         class="btn btn-primary"
                     >
                         Contact me
                     </a>
+
                 </div>
 
             </div>
@@ -1818,9 +3397,9 @@
     </section>
 
 
-    <!-- =========================
+    <!-- =========================================================
          FOOTER
-    ========================= -->
+    ========================================================= -->
 
     <footer>
 
@@ -1839,108 +3418,315 @@
     </footer>
 
 
-    <!-- =========================
+    <!-- =========================================================
          JAVASCRIPT
-    ========================= -->
+    ========================================================= -->
 
     <script>
 
-        /* =========================
-           NAVBAR ON SCROLL
-        ========================= */
+        /* =========================================================
+           NAVBAR
+        ========================================================= */
 
-        const navbar = document.getElementById("navbar");
+        const navbar =
+            document.getElementById("navbar");
 
-        window.addEventListener("scroll", () => {
+
+        function updateNavbar() {
 
             if (window.scrollY > 30) {
+
                 navbar.classList.add("scrolled");
+
             } else {
+
                 navbar.classList.remove("scrolled");
+
             }
 
-        });
+        }
 
 
-        /* =========================
+        window.addEventListener(
+            "scroll",
+            updateNavbar,
+            { passive: true }
+        );
+
+
+        updateNavbar();
+
+
+        /* =========================================================
            SCROLL REVEAL
-        ========================= */
+        ========================================================= */
 
         const revealElements =
             document.querySelectorAll(".reveal");
+
 
         const revealObserver =
             new IntersectionObserver(
                 (entries) => {
 
-                    entries.forEach((entry) => {
+                    entries.forEach(
+                        (entry) => {
 
-                        if (entry.isIntersecting) {
+                            if (
+                                entry.isIntersecting
+                            ) {
 
-                            entry.target.classList.add("visible");
+                                entry.target
+                                    .classList
+                                    .add("visible");
 
-                            revealObserver.unobserve(entry.target);
+                                revealObserver
+                                    .unobserve(
+                                        entry.target
+                                    );
+
+                            }
 
                         }
-
-                    });
+                    );
 
                 },
                 {
-                    threshold: 0.12
+                    threshold: 0.10,
+
+                    rootMargin:
+                        "0px 0px -40px 0px"
                 }
             );
 
 
-        revealElements.forEach((element) => {
+        revealElements.forEach(
+            (element) => {
 
-            revealObserver.observe(element);
+                revealObserver.observe(
+                    element
+                );
 
-        });
+            }
+        );
 
 
-        /* =========================
-           PROJECT HOVER DEPTH
-        ========================= */
+        /* =========================================================
+           PROJECT 3D HOVER
+        ========================================================= */
 
         const projectCards =
-            document.querySelectorAll(".project-card");
-
-        projectCards.forEach((card) => {
-
-            card.addEventListener("mousemove", (event) => {
-
-                const rect =
-                    card.getBoundingClientRect();
-
-                const x =
-                    event.clientX - rect.left;
-
-                const y =
-                    event.clientY - rect.top;
-
-                const rotateX =
-                    ((y / rect.height) - 0.5) * -4;
-
-                const rotateY =
-                    ((x / rect.width) - 0.5) * 4;
-
-                card.style.transform =
-                    `translateY(-8px)
-                     perspective(800px)
-                     rotateX(${rotateX}deg)
-                     rotateY(${rotateY}deg)`;
-
-            });
+            document.querySelectorAll(
+                ".project-card"
+            );
 
 
-            card.addEventListener("mouseleave", () => {
+        projectCards.forEach(
+            (card) => {
 
-                card.style.transform = "";
+                card.addEventListener(
+                    "mousemove",
+                    (event) => {
 
-            });
+                        const rect =
+                            card.getBoundingClientRect();
 
-        });
+
+                        const x =
+                            event.clientX -
+                            rect.left;
+
+
+                        const y =
+                            event.clientY -
+                            rect.top;
+
+
+                        const percentX =
+                            x / rect.width;
+
+
+                        const percentY =
+                            y / rect.height;
+
+
+                        const rotateY =
+                            (percentX - 0.5) * 6;
+
+
+                        const rotateX =
+                            (percentY - 0.5) * -6;
+
+
+                        card.style.setProperty(
+                            "--rotate-x",
+                            `${rotateX}deg`
+                        );
+
+
+                        card.style.setProperty(
+                            "--rotate-y",
+                            `${rotateY}deg`
+                        );
+
+
+                        card.style.setProperty(
+                            "--mouse-x",
+                            `${percentX * 100}%`
+                        );
+
+
+                        card.style.setProperty(
+                            "--mouse-y",
+                            `${percentY * 100}%`
+                        );
+
+                    }
+                );
+
+
+                card.addEventListener(
+                    "mouseleave",
+                    () => {
+
+                        card.style.setProperty(
+                            "--rotate-x",
+                            "0deg"
+                        );
+
+
+                        card.style.setProperty(
+                            "--rotate-y",
+                            "0deg"
+                        );
+
+
+                        card.style.setProperty(
+                            "--mouse-x",
+                            "50%"
+                        );
+
+
+                        card.style.setProperty(
+                            "--mouse-y",
+                            "50%"
+                        );
+
+                    }
+                );
+
+            }
+        );
+
+
+        /* =========================================================
+           CURSOR GLOW
+        ========================================================= */
+
+        const cursorGlow =
+            document.getElementById(
+                "cursorGlow"
+            );
+
+
+        let cursorX = 0;
+        let cursorY = 0;
+
+        let glowX = 0;
+        let glowY = 0;
+
+
+        window.addEventListener(
+            "mousemove",
+            (event) => {
+
+                cursorX = event.clientX;
+                cursorY = event.clientY;
+
+            },
+            { passive: true }
+        );
+
+
+        function animateCursor() {
+
+            glowX +=
+                (cursorX - glowX) * 0.08;
+
+            glowY +=
+                (cursorY - glowY) * 0.08;
+
+
+            cursorGlow.style.left =
+                `${glowX}px`;
+
+
+            cursorGlow.style.top =
+                `${glowY}px`;
+
+
+            requestAnimationFrame(
+                animateCursor
+            );
+
+        }
+
+
+        animateCursor();
+
+
+        /* =========================================================
+           SMOOTH INTERNAL LINKS
+        ========================================================= */
+
+        document
+            .querySelectorAll(
+                'a[href^="#"]'
+            )
+            .forEach(
+                (link) => {
+
+                    link.addEventListener(
+                        "click",
+                        (event) => {
+
+                            const targetId =
+                                link.getAttribute(
+                                    "href"
+                                );
+
+
+                            if (
+                                targetId === "#"
+                            ) {
+                                return;
+                            }
+
+
+                            const target =
+                                document.querySelector(
+                                    targetId
+                                );
+
+
+                            if (!target) {
+                                return;
+                            }
+
+
+                            event.preventDefault();
+
+
+                            target.scrollIntoView({
+                                behavior: "smooth",
+                                block: "start"
+                            });
+
+                        }
+                    );
+
+                }
+            );
 
     </script>
 
