@@ -1051,6 +1051,46 @@
                 rgba(255,255,255,0.16);
         }
 
+        .project-image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.project-image picture,
+.project-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.project-image img {
+    object-fit: cover;
+    object-position: top center;
+    transition: transform 0.7s cubic-bezier(.2,.8,.2,1);
+}
+
+.project-card:hover .project-image img {
+    transform: scale(1.06);
+}
+
+.project-image::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(8,9,13,0.05) 0%,
+            rgba(8,9,13,0.08) 45%,
+            rgba(8,9,13,0.72) 100%
+        );
+    pointer-events: none;
+}
+
         .project-number {
             position: absolute;
 
@@ -2136,15 +2176,31 @@
 
                     <div class="project-visual">
 
-                        <span class="project-number">
-                            01
-                        </span>
+    <div class="project-image">
 
-                        <span class="project-type">
-                            Education · WordPress
-                        </span>
+        <picture>
+            <source
+                media="(max-width: 768px)"
+                srcset="images/columbus-mobile.png"
+            >
 
-                    </div>
+            <img
+                src="images/columbus-desktop.png"
+                alt="Columbus School website"
+            >
+        </picture>
+
+    </div>
+
+    <span class="project-number">
+        01
+    </span>
+
+    <span class="project-type">
+        Education · WordPress
+    </span>
+
+</div>
 
 
                     <div class="project-content">
