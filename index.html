@@ -1,20 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta
-        name="description"
-        content="Angélica Gomez — WordPress & CMS Developer with 6+ years of professional experience."
-    >
+    <meta name="description"
+        content="Angélica Gomez — WordPress & CMS Developer with 6+ years of professional experience.">
 
     <meta name="author" content="Angélica Gomez">
 
     <title>Angélica Gomez | WordPress & CMS Developer</title>
 
     <style>
-
         /* =========================================================
            RESET
         ========================================================= */
@@ -59,9 +57,9 @@
         :root {
             --bg: #08090d;
             --bg-soft: #0d0f15;
-            --card: rgba(255,255,255,0.045);
-            --card-hover: rgba(255,255,255,0.075);
-            --border: rgba(255,255,255,0.09);
+            --card: rgba(255, 255, 255, 0.045);
+            --card-hover: rgba(255, 255, 255, 0.075);
+            --border: rgba(255, 255, 255, 0.09);
             --text: #f5f5f7;
             --muted: #a7a9b4;
             --accent: #8b5cf6;
@@ -80,24 +78,18 @@
             pointer-events: none;
 
             background-image:
-                linear-gradient(
-                    rgba(255,255,255,0.018) 1px,
-                    transparent 1px
-                ),
-                linear-gradient(
-                    90deg,
-                    rgba(255,255,255,0.018) 1px,
-                    transparent 1px
-                );
+                linear-gradient(rgba(255, 255, 255, 0.018) 1px,
+                    transparent 1px),
+                linear-gradient(90deg,
+                    rgba(255, 255, 255, 0.018) 1px,
+                    transparent 1px);
 
             background-size: 60px 60px;
 
             mask-image:
-                linear-gradient(
-                    to bottom,
+                linear-gradient(to bottom,
                     black 0%,
-                    transparent 90%
-                );
+                    transparent 90%);
 
             animation: gridMove 18s linear infinite;
         }
@@ -112,11 +104,9 @@
             left: -220px;
 
             background:
-                radial-gradient(
-                    circle,
-                    rgba(139,92,246,0.14),
-                    transparent 68%
-                );
+                radial-gradient(circle,
+                    rgba(139, 92, 246, 0.14),
+                    transparent 68%);
 
             filter: blur(15px);
             z-index: -9;
@@ -137,11 +127,9 @@
             bottom: -300px;
 
             background:
-                radial-gradient(
-                    circle,
-                    rgba(6,182,212,0.10),
-                    transparent 68%
-                );
+                radial-gradient(circle,
+                    rgba(6, 182, 212, 0.10),
+                    transparent 68%);
 
             animation-delay: -4s;
             animation-duration: 14s;
@@ -162,7 +150,7 @@
             padding: 19px 24px;
 
             background:
-                rgba(8,9,13,0.55);
+                rgba(8, 9, 13, 0.55);
 
             backdrop-filter: blur(18px);
             -webkit-backdrop-filter: blur(18px);
@@ -182,13 +170,13 @@
             padding-bottom: 12px;
 
             background:
-                rgba(8,9,13,0.92);
+                rgba(8, 9, 13, 0.92);
 
             border-color:
-                rgba(255,255,255,0.08);
+                rgba(255, 255, 255, 0.08);
 
             box-shadow:
-                0 12px 40px rgba(0,0,0,0.28);
+                0 12px 40px rgba(0, 0, 0, 0.28);
         }
 
         .nav-container {
@@ -252,11 +240,9 @@
             height: 1px;
 
             background:
-                linear-gradient(
-                    90deg,
+                linear-gradient(90deg,
                     var(--accent),
-                    var(--accent-2)
-                );
+                    var(--accent-2));
 
             transform: scaleX(0);
             transform-origin: right;
@@ -280,10 +266,8 @@
 
         .container {
             width:
-                min(
-                    calc(100% - 48px),
-                    var(--max-width)
-                );
+                min(calc(100% - 48px),
+                    var(--max-width));
 
             margin: auto;
         }
@@ -309,7 +293,7 @@
 
         .section-title {
             font-size:
-                clamp(2rem,5vw,3.2rem);
+                clamp(2rem, 5vw, 3.2rem);
 
             line-height: 1.08;
 
@@ -358,7 +342,7 @@
             border-radius: 999px;
 
             background:
-                rgba(255,255,255,0.035);
+                rgba(255, 255, 255, 0.035);
 
             color: var(--muted);
 
@@ -367,10 +351,7 @@
             margin-bottom: 28px;
 
             animation:
-                heroIn 0.8s
-                0.1s
-                both
-                cubic-bezier(.2,.8,.2,1);
+                heroIn 0.8s 0.1s both cubic-bezier(.2, .8, .2, 1);
         }
 
         .status-dot {
@@ -382,8 +363,7 @@
             background: #4ade80;
 
             box-shadow:
-                0 0 14px
-                rgba(74,222,128,0.75);
+                0 0 14px rgba(74, 222, 128, 0.75);
 
             animation:
                 pulse 2s ease-in-out infinite;
@@ -391,7 +371,7 @@
 
         .hero h1 {
             font-size:
-                clamp(3.2rem,9vw,7rem);
+                clamp(3.2rem, 9vw, 7rem);
 
             line-height: 0.94;
 
@@ -400,22 +380,17 @@
             margin-bottom: 30px;
 
             animation:
-                heroIn 0.9s
-                0.2s
-                both
-                cubic-bezier(.2,.8,.2,1);
+                heroIn 0.9s 0.2s both cubic-bezier(.2, .8, .2, 1);
         }
 
         .gradient {
             display: inline-block;
 
             background:
-                linear-gradient(
-                    110deg,
+                linear-gradient(110deg,
                     #ffffff 5%,
                     #b7a4ff 45%,
-                    #67e8f9 90%
-                );
+                    #67e8f9 90%);
 
             background-size: 220% auto;
 
@@ -434,15 +409,12 @@
             color: var(--muted);
 
             font-size:
-                clamp(1rem,2vw,1.18rem);
+                clamp(1rem, 2vw, 1.18rem);
 
             margin-bottom: 35px;
 
             animation:
-                heroIn 0.9s
-                0.35s
-                both
-                cubic-bezier(.2,.8,.2,1);
+                heroIn 0.9s 0.35s both cubic-bezier(.2, .8, .2, 1);
         }
 
         .hero-buttons {
@@ -451,10 +423,7 @@
             flex-wrap: wrap;
 
             animation:
-                heroIn 0.9s
-                0.5s
-                both
-                cubic-bezier(.2,.8,.2,1);
+                heroIn 0.9s 0.5s both cubic-bezier(.2, .8, .2, 1);
         }
 
         /* =========================================================
@@ -498,12 +467,10 @@
             height: 100%;
 
             background:
-                linear-gradient(
-                    100deg,
+                linear-gradient(100deg,
                     transparent,
-                    rgba(255,255,255,0.55),
-                    transparent
-                );
+                    rgba(255, 255, 255, 0.55),
+                    transparent);
 
             transform: skewX(-20deg);
 
@@ -525,24 +492,22 @@
             transform: translateY(-4px);
 
             box-shadow:
-                0 18px 45px
-                rgba(255,255,255,0.15);
+                0 18px 45px rgba(255, 255, 255, 0.15);
         }
 
         .btn-secondary {
             background:
-                rgba(255,255,255,0.035);
+                rgba(255, 255, 255, 0.035);
         }
 
         .btn-secondary:hover {
             background:
-                rgba(255,255,255,0.09);
+                rgba(255, 255, 255, 0.09);
 
             transform: translateY(-4px);
 
             box-shadow:
-                0 18px 45px
-                rgba(0,0,0,0.25);
+                0 18px 45px rgba(0, 0, 0, 0.25);
         }
 
         /* =========================================================
@@ -552,17 +517,14 @@
         .stats {
             display: grid;
             grid-template-columns:
-                repeat(3,1fr);
+                repeat(3, 1fr);
 
             gap: 15px;
 
             margin-top: 80px;
 
             animation:
-                heroIn 0.9s
-                0.65s
-                both
-                cubic-bezier(.2,.8,.2,1);
+                heroIn 0.9s 0.65s both cubic-bezier(.2, .8, .2, 1);
         }
 
         .stat-card {
@@ -577,7 +539,7 @@
             border-radius: 16px;
 
             background:
-                rgba(255,255,255,0.045);
+                rgba(255, 255, 255, 0.045);
 
             transition:
                 transform 0.45s ease,
@@ -590,14 +552,13 @@
             transform: translateY(-8px);
 
             background:
-                rgba(255,255,255,0.075);
+                rgba(255, 255, 255, 0.075);
 
             border-color:
-                rgba(139,92,246,0.4);
+                rgba(139, 92, 246, 0.4);
 
             box-shadow:
-                0 25px 60px
-                rgba(0,0,0,0.28);
+                0 25px 60px rgba(0, 0, 0, 0.28);
         }
 
         .stat-number {
@@ -631,11 +592,9 @@
             filter: none;
 
             transition:
-                opacity 0.85s
-                cubic-bezier(.2,.8,.2,1),
+                opacity 0.85s cubic-bezier(.2, .8, .2, 1),
 
-                transform 0.85s
-                cubic-bezier(.2,.8,.2,1),
+                transform 0.85s cubic-bezier(.2, .8, .2, 1),
 
                 filter 0.85s ease;
         }
@@ -644,8 +603,7 @@
             opacity: 0;
 
             transform:
-                translate3d(0,70px,0)
-                scale(0.96);
+                translate3d(0, 70px, 0) scale(0.96);
 
             filter: blur(7px);
 
@@ -659,8 +617,7 @@
             opacity: 1;
 
             transform:
-                translate3d(0,0,0)
-                scale(1);
+                translate3d(0, 0, 0) scale(1);
 
             filter: blur(0);
         }
@@ -669,28 +626,24 @@
 
         body.js-enabled .from-left {
             transform:
-                translate3d(-90px,25px,0)
-                scale(0.96);
+                translate3d(-90px, 25px, 0) scale(0.96);
         }
 
         body.js-enabled .from-left.is-visible {
             transform:
-                translate3d(0,0,0)
-                scale(1);
+                translate3d(0, 0, 0) scale(1);
         }
 
         /* RIGHT */
 
         body.js-enabled .from-right {
             transform:
-                translate3d(90px,25px,0)
-                scale(0.96);
+                translate3d(90px, 25px, 0) scale(0.96);
         }
 
         body.js-enabled .from-right.is-visible {
             transform:
-                translate3d(0,0,0)
-                scale(1);
+                translate3d(0, 0, 0) scale(1);
         }
 
         /* SCALE */
@@ -772,11 +725,9 @@
             border-radius: 20px;
 
             background:
-                linear-gradient(
-                    145deg,
-                    rgba(139,92,246,0.12),
-                    rgba(6,182,212,0.04)
-                );
+                linear-gradient(145deg,
+                    rgba(139, 92, 246, 0.12),
+                    rgba(6, 182, 212, 0.04));
 
             transition:
                 transform 0.5s ease,
@@ -788,11 +739,10 @@
             transform: translateY(-8px);
 
             border-color:
-                rgba(139,92,246,0.35);
+                rgba(139, 92, 246, 0.35);
 
             box-shadow:
-                0 30px 70px
-                rgba(0,0,0,0.27);
+                0 30px 70px rgba(0, 0, 0, 0.27);
         }
 
         .about-highlight h3 {
@@ -826,7 +776,7 @@
             font-size: 0.73rem;
 
             background:
-                rgba(255,255,255,0.03);
+                rgba(255, 255, 255, 0.03);
 
             transition:
                 transform 0.3s ease,
@@ -838,10 +788,10 @@
             transform: translateY(-3px);
 
             background:
-                rgba(255,255,255,0.075);
+                rgba(255, 255, 255, 0.075);
 
             border-color:
-                rgba(139,92,246,0.35);
+                rgba(139, 92, 246, 0.35);
         }
 
         /* =========================================================
@@ -852,7 +802,7 @@
             display: grid;
 
             grid-template-columns:
-                repeat(4,1fr);
+                repeat(4, 1fr);
 
             gap: 14px;
 
@@ -878,8 +828,7 @@
             font-size: 0.88rem;
 
             transition:
-                transform 0.45s
-                cubic-bezier(.2,.8,.2,1),
+                transform 0.45s cubic-bezier(.2, .8, .2, 1),
 
                 background 0.35s ease,
 
@@ -890,18 +839,16 @@
 
         .skill:hover {
             transform:
-                translateY(-7px)
-                scale(1.02);
+                translateY(-7px) scale(1.02);
 
             background:
                 var(--card-hover);
 
             border-color:
-                rgba(139,92,246,0.4);
+                rgba(139, 92, 246, 0.4);
 
             box-shadow:
-                0 18px 45px
-                rgba(0,0,0,0.25);
+                0 18px 45px rgba(0, 0, 0, 0.25);
         }
 
         /* =========================================================
@@ -912,7 +859,7 @@
             display: grid;
 
             grid-template-columns:
-                repeat(2,1fr);
+                repeat(2, 1fr);
 
             gap: 22px;
 
@@ -932,13 +879,12 @@
             border-radius: 20px;
 
             background:
-                rgba(255,255,255,0.045);
+                rgba(255, 255, 255, 0.045);
 
             transform-style: preserve-3d;
 
             transition:
-                transform 0.5s
-                cubic-bezier(.2,.8,.2,1),
+                transform 0.5s cubic-bezier(.2, .8, .2, 1),
 
                 border-color 0.35s ease,
 
@@ -947,16 +893,13 @@
 
         .project-card:hover {
             transform:
-                translateY(-12px)
-                rotateX(var(--rx,0deg))
-                rotateY(var(--ry,0deg));
+                translateY(-12px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
 
             border-color:
-                rgba(139,92,246,0.45);
+                rgba(139, 92, 246, 0.45);
 
             box-shadow:
-                0 35px 80px
-                rgba(0,0,0,0.38);
+                0 35px 80px rgba(0, 0, 0, 0.38);
         }
 
         .project-card::before {
@@ -966,13 +909,9 @@
             inset: 0;
 
             background:
-                radial-gradient(
-                    250px circle at
-                    var(--mx,50%)
-                    var(--my,50%),
-                    rgba(139,92,246,0.17),
-                    transparent 70%
-                );
+                radial-gradient(250px circle at var(--mx, 50%) var(--my, 50%),
+                    rgba(139, 92, 246, 0.17),
+                    transparent 70%);
 
             opacity: 0;
 
@@ -1000,25 +939,18 @@
             overflow: hidden;
 
             background:
-                radial-gradient(
-                    circle at 15% 25%,
-                    rgba(139,92,246,0.38),
-                    transparent 34%
-                ),
-                radial-gradient(
-                    circle at 85% 75%,
-                    rgba(6,182,212,0.18),
-                    transparent 35%
-                ),
-                linear-gradient(
-                    135deg,
+                radial-gradient(circle at 15% 25%,
+                    rgba(139, 92, 246, 0.38),
+                    transparent 34%),
+                radial-gradient(circle at 85% 75%,
+                    rgba(6, 182, 212, 0.18),
+                    transparent 35%),
+                linear-gradient(135deg,
                     #161923,
-                    #0d0f15
-                );
+                    #0d0f15);
 
             transition:
-                transform 0.65s
-                cubic-bezier(.2,.8,.2,1);
+                transform 0.65s cubic-bezier(.2, .8, .2, 1);
         }
 
         .project-card:hover .project-visual {
@@ -1033,8 +965,7 @@
             inset: 20px;
 
             border:
-                1px solid
-                rgba(255,255,255,0.08);
+                1px solid rgba(255, 255, 255, 0.08);
 
             border-radius: 12px;
 
@@ -1043,53 +974,50 @@
                 border-color 0.5s ease;
         }
 
-        .project-card:hover
-        .project-visual::before {
+        .project-card:hover .project-visual::before {
             inset: 13px;
 
             border-color:
-                rgba(255,255,255,0.16);
+                rgba(255, 255, 255, 0.16);
         }
 
         .project-image {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    z-index: 1;
-}
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 1;
+        }
 
-.project-image picture,
-.project-image img {
-    display: block;
-    width: 100%;
-    height: 100%;
-}
+        .project-image picture,
+        .project-image img {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
 
-.project-image img {
-    object-fit: cover;
-    object-position: top center;
-    transition: transform 0.7s cubic-bezier(.2,.8,.2,1);
-}
+        .project-image img {
+            object-fit: cover;
+            object-position: top center;
+            transition: transform 0.7s cubic-bezier(.2, .8, .2, 1);
+        }
 
-.project-card:hover .project-image img {
-    transform: scale(1.06);
-}
+        .project-card:hover .project-image img {
+            transform: scale(1.06);
+        }
 
-.project-image::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background:
-        linear-gradient(
-            to bottom,
-            rgba(8,9,13,0.05) 0%,
-            rgba(8,9,13,0.08) 45%,
-            rgba(8,9,13,0.72) 100%
-        );
-    pointer-events: none;
-}
+        .project-image::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background:
+                linear-gradient(to bottom,
+                    rgba(8, 9, 13, 0.05) 0%,
+                    rgba(8, 9, 13, 0.08) 45%,
+                    rgba(8, 9, 13, 0.72) 100%);
+            pointer-events: none;
+        }
 
         .project-number {
             position: absolute;
@@ -1113,7 +1041,7 @@
             bottom: 25px;
 
             color:
-                rgba(255,255,255,0.5);
+                rgba(255, 255, 255, 0.5);
 
             font-size: 0.68rem;
 
@@ -1130,7 +1058,7 @@
 
         .project-card:hover .project-type {
             color:
-                rgba(255,255,255,0.82);
+                rgba(255, 255, 255, 0.82);
 
             transform:
                 translateX(6px);
@@ -1158,8 +1086,7 @@
                 transform 0.35s ease;
         }
 
-        .project-card:hover
-        .project-content h3 {
+        .project-card:hover .project-content h3 {
             transform:
                 translateX(4px);
         }
@@ -1193,7 +1120,7 @@
             color: #b9bac4;
 
             background:
-                rgba(255,255,255,0.025);
+                rgba(255, 255, 255, 0.025);
 
             font-size: 0.67rem;
 
@@ -1205,7 +1132,7 @@
 
         .project-card:hover .tag {
             background:
-                rgba(255,255,255,0.05);
+                rgba(255, 255, 255, 0.05);
         }
 
         .tag:hover {
@@ -1213,7 +1140,7 @@
                 translateY(-2px);
 
             border-color:
-                rgba(139,92,246,0.4);
+                rgba(139, 92, 246, 0.4);
         }
 
         .project-link {
@@ -1259,7 +1186,7 @@
             display: grid;
 
             grid-template-columns:
-                repeat(2,1fr);
+                repeat(2, 1fr);
 
             gap: 10px;
         }
@@ -1283,7 +1210,7 @@
             border-radius: 12px;
 
             background:
-                rgba(255,255,255,0.025);
+                rgba(255, 255, 255, 0.025);
 
             transition:
                 transform 0.35s ease,
@@ -1297,14 +1224,13 @@
                 translateX(7px);
 
             background:
-                rgba(255,255,255,0.06);
+                rgba(255, 255, 255, 0.06);
 
             border-color:
-                rgba(139,92,246,0.32);
+                rgba(139, 92, 246, 0.32);
 
             box-shadow:
-                0 15px 40px
-                rgba(0,0,0,0.2);
+                0 15px 40px rgba(0, 0, 0, 0.2);
         }
 
         .project-list-name {
@@ -1332,8 +1258,7 @@
                 color 0.3s ease;
         }
 
-        .project-list-item:hover
-        .project-list-link {
+        .project-list-item:hover .project-list-link {
             color: white;
 
             transform:
@@ -1376,8 +1301,7 @@
                 var(--accent);
 
             box-shadow:
-                0 0 20px
-                rgba(139,92,246,0.65);
+                0 0 20px rgba(139, 92, 246, 0.65);
 
             transition:
                 transform 0.35s ease,
@@ -1389,21 +1313,15 @@
                 scale(1.8);
 
             box-shadow:
-                0 0 32px
-                rgba(139,92,246,0.95);
+                0 0 32px rgba(139, 92, 246, 0.95);
         }
 
         .experience-date {
             color: var(--accent);
-
             font-size: 0.74rem;
-
             font-weight: 800;
-
             text-transform: uppercase;
-
             letter-spacing: 0.08em;
-
             margin-bottom: 8px;
         }
 
@@ -1433,8 +1351,7 @@
             text-align: center;
         }
 
-        .contact-section
-        .section-description {
+        .contact-section .section-description {
             margin:
                 0 auto 30px;
         }
@@ -1453,12 +1370,10 @@
             border-radius: 24px;
 
             background:
-                radial-gradient(
-                    circle at 50% 0%,
-                    rgba(139,92,246,0.15),
-                    transparent 55%
-                ),
-                rgba(255,255,255,0.025);
+                radial-gradient(circle at 50% 0%,
+                    rgba(139, 92, 246, 0.15),
+                    transparent 55%),
+                rgba(255, 255, 255, 0.025);
 
             transition:
                 transform 0.5s ease,
@@ -1471,11 +1386,10 @@
                 translateY(-7px);
 
             border-color:
-                rgba(139,92,246,0.35);
+                rgba(139, 92, 246, 0.35);
 
             box-shadow:
-                0 35px 80px
-                rgba(0,0,0,0.3);
+                0 35px 80px rgba(0, 0, 0, 0.3);
         }
 
         .contact-email {
@@ -1485,11 +1399,9 @@
                 15px 0 25px;
 
             font-size:
-                clamp(
-                    1.25rem,
+                clamp(1.25rem,
                     4vw,
-                    2.1rem
-                );
+                    2.1rem);
 
             font-weight: 750;
 
@@ -1593,14 +1505,12 @@
 
             from {
                 transform:
-                    translate(0,0)
-                    scale(1);
+                    translate(0, 0) scale(1);
             }
 
             to {
                 transform:
-                    translate(90px,70px)
-                    scale(1.15);
+                    translate(90px, 70px) scale(1.15);
             }
         }
 
@@ -1617,7 +1527,7 @@
 
             .skills-grid {
                 grid-template-columns:
-                    repeat(2,1fr);
+                    repeat(2, 1fr);
             }
 
             .projects-grid {
@@ -1660,11 +1570,9 @@
 
             .hero h1 {
                 font-size:
-                    clamp(
-                        3rem,
+                    clamp(3rem,
                         16vw,
-                        5rem
-                    );
+                        5rem);
             }
 
             .stats {
@@ -1693,15 +1601,13 @@
             body.js-enabled .from-left,
             body.js-enabled .from-right {
                 transform:
-                    translate3d(0,70px,0)
-                    scale(0.96);
+                    translate3d(0, 70px, 0) scale(0.96);
             }
 
             body.js-enabled .from-left.is-visible,
             body.js-enabled .from-right.is-visible {
                 transform:
-                    translate3d(0,0,0)
-                    scale(1);
+                    translate3d(0, 0, 0) scale(1);
             }
 
         }
@@ -1738,7 +1644,6 @@
                 filter: none;
             }
         }
-
     </style>
 </head>
 
@@ -1750,7 +1655,6 @@
     ========================================================== -->
 
     <div class="background-grid"></div>
-
     <div class="ambient-light"></div>
     <div class="ambient-light two"></div>
 
@@ -1760,49 +1664,16 @@
     ========================================================== -->
 
     <nav id="navbar">
-
         <div class="nav-container">
-
-            <a href="#home" class="logo">
-                Angélica<span>.</span>
-            </a>
-
+            <a href="#home" class="logo">Angélica<span>.</span></a>
             <ul class="nav-links">
-
-                <li>
-                    <a href="#about">
-                        About
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#skills">
-                        Skills
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#work">
-                        Work
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#experience">
-                        Experience
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#contact">
-                        Contact
-                    </a>
-                </li>
-
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#work">Work</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
-
         </div>
-
     </nav>
 
 
@@ -1811,108 +1682,44 @@
     ========================================================== -->
 
     <header class="hero" id="home">
-
         <div class="container">
-
             <div class="hero-content">
-
                 <div class="hero-badge">
-
                     <span class="status-dot"></span>
-
                     Available for new opportunities
-
                 </div>
 
+                <h1>WordPress & <span class="gradient">CMS Developer</span></h1>
 
-                <h1>
-
-                    WordPress &
-
-                    <span class="gradient">
-                        CMS Developer
-                    </span>
-
-                </h1>
-
-
-                <p class="hero-description">
-
-                    Building digital experiences that work.
-
+                <p class="hero-description">Building digital experiences that work.
                     WordPress and CMS Developer with 6+ years
                     of professional experience creating,
                     customizing and maintaining websites
-                    and e-commerce solutions.
-
-                </p>
-
+                    and e-commerce solutions.</p>
 
                 <div class="hero-buttons">
-
-                    <a
-                        href="#work"
-                        class="btn btn-primary"
-                    >
-                        Explore my work
-                    </a>
-
-                    <a
-                        href="#contact"
-                        class="btn btn-secondary"
-                    >
-                        Let's connect
-                    </a>
-
+                    <a href="#work" class="btn btn-primary">Explore my work</a>
+                    <a href="#contact" class="btn btn-secondary">Let's connect</a>
                 </div>
-
 
                 <div class="stats">
-
                     <div class="stat-card">
-
-                        <div class="stat-number">
-                            6+
-                        </div>
-
-                        <div class="stat-label">
-                            Years of professional experience
-                        </div>
-
+                        <div class="stat-number">6+</div>
+                        <div class="stat-label">Years of professional experience</div>
                     </div>
 
-
                     <div class="stat-card">
-
-                        <div class="stat-number">
-                            20+
-                        </div>
-
-                        <div class="stat-label">
-                            Professional projects
-                        </div>
-
+                        <div class="stat-number">20+</div>
+                        <div class="stat-label">Professional projects</div>
                     </div>
 
-
                     <div class="stat-card">
-
-                        <div class="stat-number">
-                            7+
-                        </div>
-
-                        <div class="stat-label">
-                            Core technologies & platforms
-                        </div>
-
+                        <div class="stat-number">7+</div>
+                        <div class="stat-label">Core technologies & platforms</div>
                     </div>
-
                 </div>
-
             </div>
-
         </div>
-
     </header>
 
 
@@ -1921,116 +1728,47 @@
     ========================================================== -->
 
     <section id="about">
-
         <div class="container">
-
             <div class="about-grid">
-
-                <div
-                    class="
-                        scroll-reveal
-                        from-left
-                    "
-                >
-
-                    <div class="section-label">
-                        About me
-                    </div>
-
-                    <h2 class="section-title">
-                        Websites built with purpose.
-                    </h2>
-
+                <div class="scroll-reveal from-left">
+                    <div class="section-label">About me</div>
+                    <h2 class="section-title">Websites built with purpose.</h2>
                     <div class="about-text">
 
-                        <p>
-                            I am a WordPress and CMS Developer
+                        <p>I am a WordPress and CMS Developer
                             with more than six years of professional
                             experience working on websites,
                             e-commerce platforms and custom
-                            digital solutions.
-                        </p>
-
-                        <p>
-                            My experience includes building
+                            digital solutions.</p>
+                        <p>My experience includes building
                             websites from scratch, redesigning
                             existing platforms, migrating content,
                             implementing responsive interfaces
-                            and maintaining production websites.
-                        </p>
-
-                        <p>
-                            I enjoy turning designs and business
+                            and maintaining production websites.</p>
+                        <p>I enjoy turning designs and business
                             requirements into functional,
                             accessible and maintainable
-                            digital experiences.
-                        </p>
-
+                            digital experiences.</p>
                     </div>
-
                 </div>
 
-
-                <div
-                    class="
-                        about-highlight
-                        scroll-reveal
-                        from-right
-                    "
-                >
-
-                    <h3>
-                        Industries I've worked with
-                    </h3>
-
-                    <p>
-                        Experience across different types
-                        of businesses and digital products.
-                    </p>
-
-
+                <div class="about-highlight scroll-reveal from-right">
+                    <h3>Industries I've worked with</h3>
+                    <p>Experience across different types
+                        of businesses and digital products.</p>
                     <div class="industry-list">
-
-                        <span class="industry">
-                            Education
-                        </span>
-
-                        <span class="industry">
-                            E-commerce
-                        </span>
-
-                        <span class="industry">
-                            Real Estate
-                        </span>
-
-                        <span class="industry">
-                            Healthcare
-                        </span>
-
-                        <span class="industry">
-                            Sustainability
-                        </span>
-
-                        <span class="industry">
-                            Industrial
-                        </span>
-
-                        <span class="industry">
-                            Professional Services
-                        </span>
-
-                        <span class="industry">
-                            Pet Care
-                        </span>
-
+                        <span class="industry">Education</span>
+                        <span class="industry">E-commerce</span>
+                        <span class="industry">Real Estate</span>
+                        <span class="industry">Healthcare</span>
+                        <span class="industry">Sustainability</span>
+                        <span class="industry">Industrial</span>
+                        <span class="industry">Professional Services</span>
+                        <span class="industry">Pet Care</span>
                     </div>
-
                 </div>
-
             </div>
-
         </div>
-
     </section>
 
 
@@ -2041,94 +1779,32 @@
     <section id="skills">
 
         <div class="container">
-
             <div class="scroll-reveal">
-
-                <div class="section-label">
-                    Skills & tools
-                </div>
-
-                <h2 class="section-title">
-                    What I work with.
-                </h2>
-
-                <p class="section-description">
-                    A practical combination of CMS platforms,
+                <div class="section-label">Skills & tools</div>
+                <h2 class="section-title">What I work with.</h2>
+                <p class="section-description">A practical combination of CMS platforms,
                     front-end technologies and WordPress
-                    development tools.
-                </p>
-
+                    development tools.</p>
             </div>
-
 
             <div class="skills-grid">
-
-                <div class="skill scroll-reveal delay-1">
-                    WordPress
-                </div>
-
-                <div class="skill scroll-reveal delay-2">
-                    WooCommerce
-                </div>
-
-                <div class="skill scroll-reveal delay-3">
-                    Shopify
-                </div>
-
-                <div class="skill scroll-reveal delay-4">
-                    Elementor
-                </div>
-
-                <div class="skill scroll-reveal delay-5">
-                    Gutenberg
-                </div>
-
-                <div class="skill scroll-reveal delay-6">
-                    Advanced Custom Fields
-                </div>
-
-                <div class="skill scroll-reveal delay-1">
-                    Custom Post Types
-                </div>
-
-                <div class="skill scroll-reveal delay-2">
-                    PHP
-                </div>
-
-                <div class="skill scroll-reveal delay-3">
-                    JavaScript
-                </div>
-
-                <div class="skill scroll-reveal delay-4">
-                    HTML5
-                </div>
-
-                <div class="skill scroll-reveal delay-5">
-                    CSS3
-                </div>
-
-                <div class="skill scroll-reveal delay-6">
-                    SQL
-                </div>
-
-                <div class="skill scroll-reveal delay-1">
-                    SiteGround
-                </div>
-
-                <div class="skill scroll-reveal delay-2">
-                    Responsive Design
-                </div>
-
-                <div class="skill scroll-reveal delay-3">
-                    CMS Development
-                </div>
-
-                <div class="skill scroll-reveal delay-4">
-                    Website Maintenance
-                </div>
-
+                <div class="skill scroll-reveal delay-1">WordPress</div>
+                <div class="skill scroll-reveal delay-2">WooCommerce</div>
+                <div class="skill scroll-reveal delay-3">Shopify</div>
+                <div class="skill scroll-reveal delay-4">Elementor</div>
+                <div class="skill scroll-reveal delay-5">Gutenberg</div>
+                <div class="skill scroll-reveal delay-6">Advanced Custom Fields</div>
+                <div class="skill scroll-reveal delay-1">Custom Post Types</div>
+                <div class="skill scroll-reveal delay-2">PHP</div>
+                <div class="skill scroll-reveal delay-3">JavaScript</div>
+                <div class="skill scroll-reveal delay-4">HTML5</div>
+                <div class="skill scroll-reveal delay-5">CSS3</div>
+                <div class="skill scroll-reveal delay-6">SQL</div>
+                <div class="skill scroll-reveal delay-1">SiteGround</div>
+                <div class="skill scroll-reveal delay-2">Responsive Design</div>
+                <div class="skill scroll-reveal delay-3">CMS Development</div>
+                <div class="skill scroll-reveal delay-4">Website Maintenance</div>
             </div>
-
         </div>
 
     </section>
@@ -2139,25 +1815,13 @@
     ========================================================== -->
 
     <section id="work">
-
         <div class="container">
-
             <div class="scroll-reveal">
-
-                <div class="section-label">
-                    Selected work
-                </div>
-
-                <h2 class="section-title">
-                    Real projects. Real experience.
-                </h2>
-
-                <p class="section-description">
-                    A selection of professional projects
+                <div class="section-label">Selected work</div>
+                <h2 class="section-title">Real projects. Real experience.</h2>
+                <p class="section-description">A selection of professional projects
                     developed, redesigned or maintained
-                    during my experience at Pacífica Diseño.
-                </p>
-
+                    during my experience at Pacífica Diseño.</p>
             </div>
 
 
@@ -2166,445 +1830,169 @@
 
                 <!-- 01 COLUMBUS -->
 
-                <article
-                    class="
-                        project-card
-                        scroll-reveal
-                        from-left
-                    "
-                >
-
+                <article class="project-card scroll-reveal from-left">
                     <div class="project-visual">
-
-    <div class="project-image">
-
-        <picture>
-            <source
-                media="(max-width: 768px)"
-                srcset="images/columbus-mob.png"
-            >
-
-            <img
-                src="images/columbus-desk.png"
-                alt="Columbus School website"
-            >
-        </picture>
-
-    </div>
-
-    <span class="project-number">
-        01
-    </span>
-
-    <span class="project-type">
-        Education · WordPress
-    </span>
-
-</div>
-
-
-                    <div class="project-content">
-
-                        <h3>
-                            Columbus School
-                        </h3>
-
-                        <p>
-                            Participated in the migration
-                            from Gutenberg to Elementor,
-                            implemented custom job listings
-                            and forms, and handled ongoing
-                            maintenance.
-                        </p>
-
-                        <div class="project-meta">
-
-                            <span class="tag">
-                                WordPress
-                            </span>
-
-                            <span class="tag">
-                                Elementor
-                            </span>
-
-                            <span class="tag">
-                                ACF
-                            </span>
-
-                            <span class="tag">
-                                Custom Post Types
-                            </span>
-
-                            <span class="tag">
-                                Responsive
-                            </span>
-
+                        <div class="project-image">
+                            <picture>
+                                <source media="(max-width: 768px)" srcset="images/columbus-mob.png">
+                                <img src="images/columbus-desk.png" alt="Columbus School website">
+                            </picture>
                         </div>
-
-                        <a
-                            href="https://columbus.edu.co/"
-                            target="_blank"
-                            rel="noopener"
-                            class="project-link"
-                        >
-                            Visit website →
-                        </a>
-
+                        <span class="project-number">01</span>
+                        <span class="project-type">Education · WordPress</span>
                     </div>
-
+                    <div class="project-content">
+                        <h3>Columbus School</h3>
+                        <p>Participated in the migration from Gutenberg to Elementor, implemented custom job listings and forms, and handled ongoing maintenance.</p>
+                        <div class="project-meta">
+                            <span class="tag">WordPress</span>
+                            <span class="tag">Elementor</span>
+                            <span class="tag">ACF</span>
+                            <span class="tag">Custom Post Types</span>
+                            <span class="tag">Responsive</span>
+                        </div>
+                        <a href="https://columbus.edu.co/" target="_blank" rel="noopener" class="project-link">Visit website →</a>
+                    </div>
                 </article>
 
 
                 <!-- 02 VIVIENDAS -->
 
-                <article
-                    class="
-                        project-card
-                        scroll-reveal
-                        from-right
-                    "
-                >
-
+                <article class="project-card scroll-reveal from-right">
                     <div class="project-visual">
-
-                        <span class="project-number">
-                            02
-                        </span>
-
-                        <span class="project-type">
-                            Real Estate · CMS
-                        </span>
-
-                    </div>
-
-
-                    <div class="project-content">
-
-                        <h3>
-                            Viviendas y Proyectos
-                        </h3>
-
-                        <p>
-                            Built and redesigned project
-                            pages with individual templates
-                            and integrated an external forms
-                            API beyond standard WordPress forms.
-                        </p>
-
-                        <div class="project-meta">
-
-                            <span class="tag">
-                                WordPress
-                            </span>
-
-                            <span class="tag">
-                                Elementor
-                            </span>
-
-                            <span class="tag">
-                                API Integration
-                            </span>
-
-                            <span class="tag">
-                                Responsive
-                            </span>
-
+                        <div class="project-image">
+                            <picture>
+                                <source media="(max-width: 768px)" srcset="images/coloramazonia-mob.png">
+                                <img src="images/coloramazonia-desk.png" alt="Color Amazonia website">
+                            </picture>
                         </div>
-
-                        <a
-                            href="http://viviendasyproyectos.com/"
-                            target="_blank"
-                            rel="noopener"
-                            class="project-link"
-                        >
-                            Visit website →
-                        </a>
-
+                        <span class="project-number">02</span>
+                        <span class="project-type">Real Estate · CMS</span>
                     </div>
-
+                    <div class="project-content">
+                        <h3>Viviendas y Proyectos</h3>
+                        <p>Built and redesigned project pages with individual templates and integrated an external forms API beyond standard WordPress forms.</p>
+                        <div class="project-meta">
+                            <span class="tag">WordPress</span>
+                            <span class="tag">Elementor</span>
+                            <span class="tag">API Integration</span>
+                            <span class="tag">Responsive</span>
+                        </div>
+                        <a href="http://viviendasyproyectos.com/" target="_blank" rel="noopener" class="project-link">Visit website →</a>
+                    </div>
                 </article>
 
 
                 <!-- 03 DROGUERIA -->
 
-                <article
-                    class="
-                        project-card
-                        scroll-reveal
-                        from-left
-                    "
-                >
-
+                <article class="project-card scroll-reveal from-left">
                     <div class="project-visual">
-
-                        <span class="project-number">
-                            03
-                        </span>
-
-                        <span class="project-type">
-                            E-commerce
-                        </span>
-
-                    </div>
-
-
-                    <div class="project-content">
-
-                        <h3>
-                            Droguería Ética
-                        </h3>
-
-                        <p>
-                            Redesigned an existing e-commerce
-                            website, implemented a new theme
-                            and handled a new product import.
-                        </p>
-
-                        <div class="project-meta">
-
-                            <span class="tag">
-                                WordPress
-                            </span>
-
-                            <span class="tag">
-                                E-commerce
-                            </span>
-
-                            <span class="tag">
-                                Product Import
-                            </span>
-
-                            <span class="tag">
-                                Responsive
-                            </span>
-
+                        <div class="project-image">
+                            <picture>
+                                <source media="(max-width: 768px)" srcset="images/drogueriaetica-mob.png">
+                                <img src="images/drogueriaetica-desk.png" alt="Drogueria Ética website">
+                            </picture>
                         </div>
-
-                        <a
-                            href="https://www.drogueriaetica.com/"
-                            target="_blank"
-                            rel="noopener"
-                            class="project-link"
-                        >
-                            Visit website →
-                        </a>
-
+                        <span class="project-number">03</span>
+                        <span class="project-type">E-commerce</span>
                     </div>
-
+                    <div class="project-content">
+                        <h3>Droguería Ética</h3>
+                        <p>Redesigned an existing e-commerce
+                            website, implemented a new theme
+                            and handled a new product import.</p>
+                        <div class="project-meta">
+                            <span class="tag">WordPress</span>
+                            <span class="tag">E-commerce</span>
+                            <span class="tag">Product Import</span>
+                            <span class="tag">Responsive</span>
+                        </div>
+                        <a href="https://www.drogueriaetica.com/" target="_blank" rel="noopener" class="project-link">Visit website →</a>
+                    </div>
                 </article>
 
 
                 <!-- 04 KINKY -->
 
-                <article
-                    class="
-                        project-card
-                        scroll-reveal
-                        from-right
-                    "
-                >
-
+                <article class="project-card scroll-reveal from-right">
                     <div class="project-visual">
-
-                        <span class="project-number">
-                            04
-                        </span>
-
-                        <span class="project-type">
-                            E-commerce · Pets
-                        </span>
-
+                        <div class="project-image">
+                            <picture>
+                                <source media="(max-width: 768px)" srcset="images/kinkymascotas-mob.png">
+                                <img src="images/kinkymascotas-desk.png" alt="Kinky Mascotas website">
+                            </picture>
+                        </div>
+                        <span class="project-number">04</span>
+                        <span class="project-type">E-commerce · Pets</span>
                     </div>
-
-
                     <div class="project-content">
-
-                        <h3>
-                            Kinky Mascotas
-                        </h3>
-
-                        <p>
-                            Initially built the e-commerce
+                        <h3>Kinky Mascotas</h3>
+                        <p>Initially built the e-commerce
                             website at Pacífica Diseño,
                             creating the original site
-                            structure and implementation.
-                        </p>
-
+                            structure and implementation.</p>
                         <div class="project-meta">
-
-                            <span class="tag">
-                                WordPress
-                            </span>
-
-                            <span class="tag">
-                                E-commerce
-                            </span>
-
-                            <span class="tag">
-                                Responsive
-                            </span>
-
+                            <span class="tag">WordPress</span>
+                            <span class="tag">E-commerce</span>
+                            <span class="tag">Responsive</span>
                         </div>
-
-                        <a
-                            href="https://kinkymascotas.co/"
-                            target="_blank"
-                            rel="noopener"
-                            class="project-link"
-                        >
-                            Visit website →
-                        </a>
-
+                        <a href="https://kinkymascotas.co/" target="_blank" rel="noopener" class="project-link">Visit website →</a>
                     </div>
-
                 </article>
 
 
                 <!-- 05 CAMPO ORIGEN -->
 
-                <article
-                    class="
-                        project-card
-                        scroll-reveal
-                        from-left
-                    "
-                >
-
+                <article class="project-card scroll-reveal from-left">
                     <div class="project-visual">
-
-                        <span class="project-number">
-                            05
-                        </span>
-
-                        <span class="project-type">
-                            Corporate · WordPress
-                        </span>
-
-                    </div>
-
-
-                    <div class="project-content">
-
-                        <h3>
-                            Campo Origen
-                        </h3>
-
-                        <p>
-                            My first project at Pacífica Diseño.
-                            Participated in the complete layout
-                            and implemented custom hierarchy
-                            functionality using PHP and JavaScript.
-                        </p>
-
-                        <div class="project-meta">
-
-                            <span class="tag">
-                                WordPress
-                            </span>
-
-                            <span class="tag">
-                                Gutenberg
-                            </span>
-
-                            <span class="tag">
-                                PHP
-                            </span>
-
-                            <span class="tag">
-                                JavaScript
-                            </span>
-
-                            <span class="tag">
-                                Responsive
-                            </span>
-
+                        <div class="project-image">
+                            <picture>
+                                <source media="(max-width: 768px)" srcset="images/camporigen-mob.png">
+                                <img src="images/camporigen-desk.png" alt="Campo Origen website">
+                            </picture>
                         </div>
-
-                        <a
-                            href="https://www.camporigen.com/"
-                            target="_blank"
-                            rel="noopener"
-                            class="project-link"
-                        >
-                            Visit website →
-                        </a>
-
+                        <span class="project-number">05</span>
+                        <span class="project-type">Corporate · WordPress</span>
                     </div>
-
+                    <div class="project-content">
+                        <h3>Campo Origen</h3>
+                        <p>My first project at Pacífica Diseño. Participated in the complete layout and implemented custom hierarchy functionality using PHP and JavaScript.</p>
+                        <div class="project-meta">
+                            <span class="tag">WordPress</span>
+                            <span class="tag">Gutenberg</span>
+                            <span class="tag">PHP</span>
+                            <span class="tag">JavaScript</span>
+                            <span class="tag">Responsive</span>
+                        </div>
+                        <a href="https://www.camporigen.com/" target="_blank" rel="noopener" class="project-link">Visit website →</a>
+                    </div>
                 </article>
-
 
                 <!-- 06 COLOR AMAZONIA -->
 
-                <article
-                    class="
-                        project-card
-                        scroll-reveal
-                        from-right
-                    "
-                >
-
+                <article class="project-card scroll-reveal from-right">
                     <div class="project-visual">
-
-                        <span class="project-number">
-                            06
-                        </span>
-
-                        <span class="project-type">
-                            Creative · Interactive
-                        </span>
-
-                    </div>
-
-
-                    <div class="project-content">
-
-                        <h3>
-                            Color Amazonía
-                        </h3>
-
-                        <p>
-                            Built from scratch with a custom
-                            interactive gallery, including
-                            customized pop-ups using
-                            JavaScript and PHP.
-                        </p>
-
-                        <div class="project-meta">
-
-                            <span class="tag">
-                                WordPress
-                            </span>
-
-                            <span class="tag">
-                                JavaScript
-                            </span>
-
-                            <span class="tag">
-                                PHP
-                            </span>
-
-                            <span class="tag">
-                                Custom Gallery
-                            </span>
-
-                            <span class="tag">
-                                Responsive
-                            </span>
-
+                        <div class="project-image">
+                            <picture>
+                                <source media="(max-width: 768px)" srcset="images/coloramazonia-mob.png">
+                                <img src="images/coloramazonia-desk.png" alt="Color Amazoní website">
+                            </picture>
                         </div>
-
-                        <a
-                            href="https://coloramazonia.com/"
-                            target="_blank"
-                            rel="noopener"
-                            class="project-link"
-                        >
-                            Visit website →
-                        </a>
-
+                        <span class="project-number">06</span>
+                        <span class="project-type">Creative · Interactive</span>
                     </div>
-
+                    <div class="project-content">
+                        <h3>Color Amazonía</h3>
+                        <p>Built from scratch with a custom interactive gallery, including customized pop-ups using JavaScript and PHP.</p>
+                        <div class="project-meta">
+                            <span class="tag">WordPress</span>
+                            <span class="tag">JavaScript</span>
+                            <span class="tag">PHP</span>
+                            <span class="tag">Custom Gallery</span>
+                            <span class="tag">Responsive</span>
+                        </div>
+                        <a href="https://coloramazonia.com/" target="_blank" rel="noopener" class="project-link">Visit website →</a>
+                    </div>
                 </article>
 
             </div>
@@ -2614,384 +2002,122 @@
                  MORE PROJECTS
             ====================================================== -->
 
-            <div
-                class="
-                    more-projects
-                    scroll-reveal
-                "
-            >
+            <div class="more-projects scroll-reveal">
 
-                <div class="more-projects-title">
-                    More professional projects
-                </div>
-
+                <div class="more-projects-title">More professional projects</div>
 
                 <div class="project-list">
-
-
-                    <a
-                        href="https://ranchera.com.co/"
-                        target="_blank"
-                        rel="noopener"
-                        class="project-list-item"
-                    >
-
+                    <a href="https://ranchera.com.co/" target="_blank" rel="noopener" class="project-list-item">
                         <div>
-
-                            <div class="project-list-name">
-                                Ranchera
-                            </div>
-
-                            <div class="project-list-type">
-                                Custom Post Types · Maintenance
-                            </div>
-
+                            <div class="project-list-name">Ranchera</div>
+                            <div class="project-list-type">Custom Post Types · Maintenance</div>
                         </div>
-
-                        <span class="project-list-link">
-                            View →
-                        </span>
-
+                        <span class="project-list-link">View →</span>
                     </a>
 
-
-                    <a
-                        href="https://atp.com.co/"
-                        target="_blank"
-                        rel="noopener"
-                        class="project-list-item"
-                    >
-
+                    <a href="https://atp.com.co/" target="_blank" rel="noopener" class="project-list-item">
                         <div>
-
-                            <div class="project-list-name">
-                                ATP
-                            </div>
-
-                            <div class="project-list-type">
-                                Built from scratch · Responsive
-                            </div>
-
+                            <div class="project-list-name">ATP</div>
+                            <div class="project-list-type">Built from scratch · Responsive</div>
                         </div>
-
-                        <span class="project-list-link">
-                            View →
-                        </span>
-
+                        <span class="project-list-link">View →</span>
                     </a>
 
-
-                    <a
-                        href="https://mebum.com.co/"
-                        target="_blank"
-                        rel="noopener"
-                        class="project-list-item"
-                    >
-
+                    <a href="https://mebum.com.co/" target="_blank" rel="noopener" class="project-list-item">
                         <div>
-
-                            <div class="project-list-name">
-                                MEBUM
-                            </div>
-
-                            <div class="project-list-type">
-                                Design adjustments · Responsive
-                            </div>
-
+                            <div class="project-list-name">MEBUM</div>
+                            <div class="project-list-type">Design adjustments · Responsive</div>
                         </div>
-
-                        <span class="project-list-link">
-                            View →
-                        </span>
-
+                        <span class="project-list-link">View →</span>
                     </a>
 
-
-                    <a
-                        href="https://provimarcas.com.co/"
-                        target="_blank"
-                        rel="noopener"
-                        class="project-list-item"
-                    >
-
-                        <div>
-
-                            <div class="project-list-name">
-                                Provimarcas
-                            </div>
-
-                            <div class="project-list-type">
-                                Built from scratch · Forms
-                            </div>
-
+                    <a href="https://provimarcas.com.co/" target="_blank" rel="noopener" class="project-list-item">
+                       <div>
+                            <div class="project-list-name">Provimarcas</div>
+                            <div class="project-list-type">Built from scratch · Forms</div>
                         </div>
-
-                        <span class="project-list-link">
-                            View →
-                        </span>
-
+                        <span class="project-list-link">View →</span>
                     </a>
 
-
-                    <a
-                        href="https://rubberfit.co/"
-                        target="_blank"
-                        rel="noopener"
-                        class="project-list-item"
-                    >
-
+                    <a href="https://rubberfit.co/" target="_blank" rel="noopener" class="project-list-item">
                         <div>
-
-                            <div class="project-list-name">
-                                Rubberfit
-                            </div>
-
-                            <div class="project-list-type">
-                                Built from scratch · Responsive
-                            </div>
-
+                            <div class="project-list-name">Rubberfit</div>
+                            <div class="project-list-type">Built from scratch · Responsive</div>
                         </div>
-
-                        <span class="project-list-link">
-                            View →
-                        </span>
-
+                        <span class="project-list-link">View →</span>
                     </a>
 
-
-                    <a
-                        href="https://sanavet.co/"
-                        target="_blank"
-                        rel="noopener"
-                        class="project-list-item"
-                    >
-
+                    <a href="https://sanavet.co/" target="_blank" rel="noopener" class="project-list-item">
                         <div>
-
-                            <div class="project-list-name">
-                                Sanavet
-                            </div>
-
-                            <div class="project-list-type">
-                                WordPress · Responsive
-                            </div>
-
+                            <div class="project-list-name">Sanavet</div>
+                            <div class="project-list-type">WordPress · Responsive</div>
                         </div>
-
-                        <span class="project-list-link">
-                            View →
-                        </span>
-
+                        <span class="project-list-link">View →</span>
                     </a>
 
-
-                    <a
-                        href="https://sco.org.co/"
-                        target="_blank"
-                        rel="noopener"
-                        class="project-list-item"
-                    >
-
+                    <a href="https://sco.org.co/" target="_blank" rel="noopener" class="project-list-item">
                         <div>
-
-                            <div class="project-list-name">
-                                SCO
-                            </div>
-
-                            <div class="project-list-type">
-                                Website adjustments · Maintenance
-                            </div>
-
+                            <div class="project-list-name">SCO</div>
+                            <div class="project-list-type">Website adjustments · Maintenance</div>
                         </div>
-
-                        <span class="project-list-link">
-                            View →
-                        </span>
-
+                        <span class="project-list-link">View →</span>
                     </a>
 
-
-                    <a
-                        href="https://tuoperacionsegura.com/"
-                        target="_blank"
-                        rel="noopener"
-                        class="project-list-item"
-                    >
-
+                    <a href="https://tuoperacionsegura.com/" target="_blank" rel="noopener" class="project-list-item">
                         <div>
-
-                            <div class="project-list-name">
-                                Tu Operación Segura
-                            </div>
-
-                            <div class="project-list-type">
-                                Elementor · WordPress
-                            </div>
-
+                            <div class="project-list-name">Tu Operación Segura</div>
+                            <div class="project-list-type">Elementor · WordPress</div>
                         </div>
-
-                        <span class="project-list-link">
-                            View →
-                        </span>
-
+                        <span class="project-list-link">View →</span>
                     </a>
 
-
-                    <a
-                        href="https://hyslineadegas.com/"
-                        target="_blank"
-                        rel="noopener"
-                        class="project-list-item"
-                    >
-
+                    <a href="https://hyslineadegas.com/" target="_blank" rel="noopener" class="project-list-item">
                         <div>
-
-                            <div class="project-list-name">
-                                HIS
-                            </div>
-
-                            <div class="project-list-type">
-                                Custom Post Types · ACF · Products
-                            </div>
-
+                            <div class="project-list-name">HIS</div>
+                            <div class="project-list-type">Custom Post Types · ACF · Products</div>
                         </div>
-
-                        <span class="project-list-link">
-                            View →
-                        </span>
-
+                        <span class="project-list-link">View →</span>
                     </a>
 
-
-                    <a
-                        href="https://khokaproject.com/"
-                        target="_blank"
-                        rel="noopener"
-                        class="project-list-item"
-                    >
-
+                    <a href="https://khokaproject.com/" target="_blank" rel="noopener" class="project-list-item">
                         <div>
-
-                            <div class="project-list-name">
-                                Khoka Project
-                            </div>
-
-                            <div class="project-list-type">
-                                Elementor · Informational website
-                            </div>
-
+                            <div class="project-list-name">Khoka Project</div>
+                            <div class="project-list-type">Elementor · Informational website</div>
                         </div>
-
-                        <span class="project-list-link">
-                            View →
-                        </span>
-
+                        <span class="project-list-link">View →</span>
                     </a>
 
-
-                    <a
-                        href="https://organic-store.co/"
-                        target="_blank"
-                        rel="noopener"
-                        class="project-list-item"
-                    >
-
+                    <a href="https://organic-store.co/" target="_blank" rel="noopener" class="project-list-item">
                         <div>
-
-                            <div class="project-list-name">
-                                Organic Store
-                            </div>
-
-                            <div class="project-list-type">
-                                E-commerce · Website migration
-                            </div>
-
+                            <div class="project-list-name">Organic Store</div>
+                            <div class="project-list-type">E-commerce · Website migration</div>
                         </div>
-
-                        <span class="project-list-link">
-                            View →
-                        </span>
-
+                        <span class="project-list-link">View →</span>
                     </a>
 
-
-                    <a
-                        href="https://rioclaro.co/"
-                        target="_blank"
-                        rel="noopener"
-                        class="project-list-item"
-                    >
-
+                    <a href="https://rioclaro.co/" target="_blank" rel="noopener" class="project-list-item">
                         <div>
-
-                            <div class="project-list-name">
-                                Río Claro
-                            </div>
-
-                            <div class="project-list-type">
-                                Redesign · Desktop & Mobile
-                            </div>
-
+                            <div class="project-list-name">Río Claro</div>
+                            <div class="project-list-type">Redesign · Desktop & Mobile</div>
                         </div>
-
-                        <span class="project-list-link">
-                            View →
-                        </span>
-
+                        <span class="project-list-link">View →</span>
                     </a>
 
-
-                    <a
-                        href="https://internodes-consulting.com/"
-                        target="_blank"
-                        rel="noopener"
-                        class="project-list-item"
-                    >
-
+                    <a href="https://internodes-consulting.com/" target="_blank" rel="noopener" class="project-list-item">
                         <div>
-
-                            <div class="project-list-name">
-                                Internodes Consulting
-                            </div>
-
-                            <div class="project-list-type">
-                                Gutenberg → Elementor · Rebuild
-                            </div>
-
+                            <div class="project-list-name">Internodes Consulting</div>
+                            <div class="project-list-type">Gutenberg → Elementor · Rebuild</div>
                         </div>
-
-                        <span class="project-list-link">
-                            View →
-                        </span>
-
+                        <span class="project-list-link">View →</span>
                     </a>
 
-
-                    <a
-                        href="https://sostenibilidadgrupoepm.com.co/"
-                        target="_blank"
-                        rel="noopener"
-                        class="project-list-item"
-                    >
-
+                    <a href="https://sostenibilidadgrupoepm.com.co/" target="_blank" rel="noopener"class="project-list-item">
                         <div>
-
-                            <div class="project-list-name">
-                                Sostenibilidad Grupo EPM
-                            </div>
-
-                            <div class="project-list-type">
-                                WordPress · Maintenance
-                            </div>
-
+                            <div class="project-list-name">Sostenibilidad Grupo EPM</div>
+                            <div class="project-list-type">WordPress · Maintenance</div>
                         </div>
-
-                        <span class="project-list-link">
-                            View →
-                        </span>
-
+                        <span class="project-list-link">View →</span>
                     </a>
-
                 </div>
 
             </div>
@@ -3011,73 +2137,47 @@
 
             <div class="scroll-reveal">
 
-                <div class="section-label">
-                    Experience
-                </div>
+                <div class="section-label">Experience</div>
 
-                <h2 class="section-title">
-                    Professional journey.
-                </h2>
+                <h2 class="section-title">Professional journey.</h2>
 
             </div>
 
 
-            <div
-                class="
-                    experience-wrapper
-                    scroll-reveal
-                    from-left
-                "
-            >
+            <div class="experience-wrapper scroll-reveal from-left">
 
                 <div class="experience-item">
 
-                    <div class="experience-date">
-                        2019 — 2026
-                    </div>
+                    <div class="experience-date">2019 — 2026</div>
 
-                    <h3>
-                        WordPress & Web Developer
-                    </h3>
+                    <h3>WordPress & Web Developer</h3>
 
-                    <div class="experience-company">
-                        Pacífica Diseño
-                    </div>
+                    <div class="experience-company">Pacífica Diseño</div>
 
-                    <p>
-                        Developed, redesigned and maintained
+                    <p>Developed, redesigned and maintained
                         professional websites and e-commerce
                         solutions for clients across different
                         industries. Worked extensively with
                         WordPress, Elementor, Gutenberg,
                         WooCommerce, ACF, Custom Post Types,
-                        PHP, JavaScript, HTML and CSS.
-                    </p>
+                        PHP, JavaScript, HTML and CSS.</p>
 
                 </div>
 
 
                 <div class="experience-item">
 
-                    <div class="experience-date">
-                        6+ years
-                    </div>
+                    <div class="experience-date">6+ years</div>
 
-                    <h3>
-                        Freelance & Agency Projects
-                    </h3>
+                    <h3>Freelance & Agency Projects</h3>
 
-                    <div class="experience-company">
-                        Web Development
-                    </div>
+                    <div class="experience-company">Web Development</div>
 
-                    <p>
-                        Experience working on websites,
+                    <p>Experience working on websites,
                         CMS platforms and e-commerce projects,
                         translating design requirements into
                         responsive and functional digital
-                        experiences.
-                    </p>
+                        experiences.</p>
 
                 </div>
 
@@ -3092,52 +2192,22 @@
          CONTACT
     ========================================================== -->
 
-    <section
-        id="contact"
-        class="contact-section"
-    >
+    <section id="contact" class="contact-section">
 
         <div class="container">
 
-            <div
-                class="
-                    contact-box
-                    scroll-reveal
-                    scale-reveal
-                "
-            >
+            <div class="contact-box scroll-reveal scale-reveal">
 
-                <div class="section-label">
-                    Get in touch
-                </div>
+                <div class="section-label">Get in touch</div>
 
-                <h2 class="section-title">
-                    Let's build something useful.
-                </h2>
+                <h2 class="section-title">Let's build something useful.</h2>
 
-                <p class="section-description">
-                    I'm currently open to new opportunities
-                    in WordPress, CMS and web development.
-                </p>
+                <p class="section-description">I'm currently open to new opportunities in WordPress, CMS and web development.</p>
 
-
-                <a
-                    href="mailto:angelosbuitrago@gmail.com"
-                    class="contact-email"
-                >
-                    angelosbuitrago@gmail.com
-                </a>
-
+                <a href="mailto:angelosbuitrago@gmail.com" class="contact-email">angelosbuitrago@gmail.com</a>
 
                 <div>
-
-                    <a
-                        href="mailto:angelosbuitrago@gmail.com"
-                        class="btn btn-primary"
-                    >
-                        Contact me
-                    </a>
-
+                    <a href="mailto:angelosbuitrago@gmail.com" class="btn btn-primary">Contact me</a>
                 </div>
 
             </div>
@@ -3152,19 +2222,10 @@
     ========================================================== -->
 
     <footer>
-
         <div class="container footer-container">
-
-            <span>
-                © 2026 Angélica Gomez
-            </span>
-
-            <span>
-                WordPress & CMS Developer
-            </span>
-
+            <span>© 2026 Angélica Gomez</span>
+            <span>WordPress & CMS Developer</span>
         </div>
-
     </footer>
 
 
@@ -3230,7 +2291,7 @@
         window.addEventListener(
             "scroll",
             updateNavbar,
-            { passive: true }
+            {passive: true}
         );
 
 
@@ -3691,4 +2752,5 @@
     </script>
 
 </body>
+
 </html>
