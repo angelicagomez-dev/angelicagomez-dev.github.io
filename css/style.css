@@ -459,9 +459,19 @@ nav a:hover {
     background: #2b2040
 }
 
-.lg svg {
+.lg img {
     width: 46px;
-    height: 46px
+    height: 46px;
+    object-fit: contain
+}
+
+.lg.wide img {
+    width: 62px
+}
+
+.lg .fb {
+    font: 800 .85rem var(--display);
+    color: var(--cyan)
 }
 
 .lg span {
@@ -1634,9 +1644,13 @@ nav>b {
         height: 64px
     }
 
-    .lg svg {
+    .lg img {
         width: 40px;
         height: 40px
+    }
+
+    .lg.wide img {
+        width: 54px
     }
 
     .wygrid {
