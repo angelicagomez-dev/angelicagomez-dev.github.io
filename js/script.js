@@ -1,90 +1,68 @@
+
 (function () {
   'use strict';
+
   const IMG_DIR = 'images/';
+
   const PROJECTS = [
-    {
-      name: 'Columbus School', url: 'https://columbus.edu.co/', img: 'columbus-desk.png', hue: 215,
-      cat: { en: 'Education, WordPress', es: 'Educación, WordPress' },
-      desc: {
-        en: 'Migration from Gutenberg to Elementor, custom job listings and forms, ongoing maintenance.',
-        es: 'Migración de Gutenberg a Elementor, listados de empleo y formularios a medida, mantenimiento continuo.'
-      }
-    },
-    {
-      name: 'Viviendas y Proyectos', url: 'http://viviendasyproyectos.com/', img: 'viviendasyproyectos-desk.png', hue: 20,
-      cat: { en: 'Real estate, CMS', es: 'Inmobiliaria, CMS' },
-      desc: {
-        en: 'Redesigned project pages with individual templates and an external forms API integration.',
-        es: 'Rediseño de páginas de proyecto con plantillas individuales e integración con una API externa de formularios.'
-      }
-    },
-    {
-      name: 'Droguería Ética', url: 'https://www.drogueriaetica.com/', img: 'drogueriaetica-desk.png', hue: 160,
-      cat: { en: 'E-commerce, WordPress', es: 'E-commerce, WordPress' },
-      desc: {
-        en: 'Redesigned the store, implemented a new theme and managed a new product import.',
-        es: 'Rediseño de la tienda, implementación de un tema nuevo y gestión de una nueva importación de productos.'
-      }
-    },
-    {
-      name: 'Kinky Mascotas', url: 'https://kinkymascotas.co/', img: 'kinkymascotas-desk.png', hue: 330,
-      cat: { en: 'E-commerce, pets', es: 'E-commerce, mascotas' },
-      desc: {
-        en: 'Built the original e-commerce site structure and implementation.',
-        es: 'Construcción de la estructura y la implementación original del sitio de e-commerce.'
-      }
-    },
-    {
-      name: 'Campo Origen', url: 'https://www.camporigen.com/', img: 'camporigen-desk.png', hue: 100,
-      cat: { en: 'Corporate, WordPress', es: 'Corporativo, WordPress' },
-      desc: {
-        en: 'Complete layout plus custom hierarchy functionality with PHP and JavaScript.',
-        es: 'Maquetación completa más funcionalidad de jerarquía a medida con PHP y JavaScript.'
-      }
-    },
-    {
-      name: 'Color Amazonía', url: 'https://coloramazonia.com/', img: 'coloramazonia-desk.png', hue: 280,
-      cat: { en: 'Creative, interactive', es: 'Creativo, interactivo' },
-      desc: {
-        en: 'Built from scratch with a custom interactive gallery and pop-ups in JavaScript and PHP.',
-        es: 'Construido desde cero con una galería interactiva a medida y ventanas emergentes en JavaScript y PHP.'
-      }
-    },
-    {
-      name: 'Malena Golden Roses', url: '', img: 'malena-desk.png', hue: 350,
-      cat: { en: 'E-commerce, Shopify', es: 'E-commerce, Shopify' },
-      desc: { en: 'Archived Shopify storefront (no longer live).', es: 'Tienda Shopify archivada (ya no está en línea).' }
-    },
-    {
-      name: 'Macaria', url: '', img: 'macaria-desk.png', hue: 40,
-      cat: { en: 'E-commerce, Shopify', es: 'E-commerce, Shopify' },
-      desc: { en: 'Archived Shopify storefront (no longer live).', es: 'Tienda Shopify archivada (ya no está en línea).' }
-    }
+    { name: 'Columbus School', url: 'https://columbus.edu.co/', img: 'columbus-desk.png', hue: 215,
+      cat:  { en: 'Education, WordPress', es: 'Educación, WordPress' },
+      desc: { en: 'Migration from Gutenberg to Elementor, custom job listings and forms, ongoing maintenance.',
+              es: 'Migración de Gutenberg a Elementor, listados de empleo y formularios a medida, mantenimiento continuo.' } },
+    { name: 'Viviendas y Proyectos', url: 'http://viviendasyproyectos.com/', img: 'viviendasyproyectos-desk.png', hue: 20,
+      cat:  { en: 'Real estate, CMS', es: 'Inmobiliaria, CMS' },
+      desc: { en: 'Redesigned project pages with individual templates and an external forms API integration.',
+              es: 'Rediseño de páginas de proyecto con plantillas individuales e integración con una API externa de formularios.' } },
+    { name: 'Droguería Ética', url: 'https://www.drogueriaetica.com/', img: 'drogueriaetica-desk.png', hue: 160,
+      cat:  { en: 'E-commerce, WordPress', es: 'E-commerce, WordPress' },
+      desc: { en: 'Redesigned the store, implemented a new theme and managed a new product import.',
+              es: 'Rediseño de la tienda, implementación de un tema nuevo y gestión de una nueva importación de productos.' } },
+    { name: 'Kinky Mascotas', url: 'https://kinkymascotas.co/', img: 'kinkymascotas-desk.png', hue: 330,
+      cat:  { en: 'E-commerce, pets', es: 'E-commerce, mascotas' },
+      desc: { en: 'Built the original e-commerce site structure and implementation.',
+              es: 'Construcción de la estructura y la implementación original del sitio de e-commerce.' } },
+    { name: 'Campo Origen', url: 'https://www.camporigen.com/', img: 'camporigen-desk.png', hue: 100,
+      cat:  { en: 'Corporate, WordPress', es: 'Corporativo, WordPress' },
+      desc: { en: 'Complete layout plus custom hierarchy functionality with PHP and JavaScript.',
+              es: 'Maquetación completa más funcionalidad de jerarquía a medida con PHP y JavaScript.' } },
+    { name: 'Color Amazonía', url: 'https://coloramazonia.com/', img: 'coloramazonia-desk.png', hue: 280,
+      cat:  { en: 'Creative, interactive', es: 'Creativo, interactivo' },
+      desc: { en: 'Built from scratch with a custom interactive gallery and pop-ups in JavaScript and PHP.',
+              es: 'Construido desde cero con una galería interactiva a medida y ventanas emergentes en JavaScript y PHP.' } },
+    { name: 'Malena Golden Roses', url: '', img: 'malena-desk.png', hue: 350,
+      cat:  { en: 'E-commerce, Shopify', es: 'E-commerce, Shopify' },
+      desc: { en: 'Archived Shopify storefront (no longer live).', es: 'Tienda Shopify archivada (ya no está en línea).' } },
+    { name: 'Macaria', url: '', img: 'macaria-desk.png', hue: 40,
+      cat:  { en: 'E-commerce, Shopify', es: 'E-commerce, Shopify' },
+      desc: { en: 'Archived Shopify storefront (no longer live).', es: 'Tienda Shopify archivada (ya no está en línea).' } }
   ];
 
+
   const TOOLS = [
-    { name: 'WordPress', file: 'wordpress.svg' },
-    { name: 'Shopify', file: 'shopify.svg' },
+    { name: 'WordPress',   file: 'wordpress.svg' },
+    { name: 'Shopify',     file: 'shopify.svg' },
     { name: 'WooCommerce', file: 'woocommerce.svg', wide: true },
-    { name: 'Elementor', file: 'elementor.svg' },
-    { name: 'ACF', file: 'acf.svg' },
-    { name: 'PHP', file: 'php.svg' },
-    { name: 'JavaScript', file: 'javascript.svg' },
-    { name: 'React', file: 'react.svg' },
-    { name: 'Python', file: 'python.svg' },
-    { name: 'Git', file: 'git.svg' },
-    { name: 'HTML5', file: 'html5.svg' },
-    { name: 'CSS3', file: 'css.svg' },
-    { name: 'Bootstrap', file: 'bootstrap.svg' },
-    { name: 'MySQL', file: 'mysql.svg' },
-    { name: 'SiteGround', file: 'siteground.svg' },
-    { name: 'cPanel', file: 'cpanel.svg', wide: true }
+    { name: 'Elementor',   file: 'elementor.svg' },
+    { name: 'ACF',         file: 'acf.svg' },
+    { name: 'PHP',         file: 'php.svg' },
+    { name: 'JavaScript',  file: 'javascript.svg' },
+    { name: 'React',       file: 'react.svg' },
+    { name: 'Python',      file: 'python.svg' },
+    { name: 'Git',         file: 'git.svg' },
+    { name: 'HTML5',       file: 'html5.svg' },
+    { name: 'CSS3',        file: 'css.svg' },
+    { name: 'Bootstrap',   file: 'bootstrap.svg' },
+    { name: 'MySQL',       file: 'mysql.svg' },
+    { name: 'SiteGround',  file: 'siteground.svg' },
+    { name: 'cPanel',      file: 'cpanel.svg', wide: true }
   ];
+
 
   const MARQUEE_ROWS = [
     ['WordPress', 'Shopify', 'WooCommerce', 'Elementor', 'Gutenberg', 'SiteGround', 'cPanel'],
     ['ACF', 'PHP', 'JavaScript', 'React', 'Python', 'Git', 'HTML5', 'CSS3', 'Bootstrap', 'SQL']
   ];
+
 
   const ROLES = {
     en: ['custom WordPress themes', 'Shopify storefronts', 'WooCommerce stores', 'ACF and custom post types', 'API integrations'],
@@ -97,8 +75,9 @@
     name: '',                      
     role: '',                      
     company: 'Pacífica Diseño',
-    linkedin: ''                   
+    linkedin: ''                  
   };
+
 
   const ES = {
 
@@ -185,8 +164,9 @@
     "conversion tracking": "seguimiento de conversiones",
   };
 
-  
+
   const NO_TRANSLATE = '.mbtn,.lng,#tw,#scrub,#lt,#lName,#lDesc,#list,#ldn,#rtxt,#tmq,#tmn,#tmr,#tmi,.card,script,style,noscript';
+
 
   const $ = (sel, root) => (root || document).querySelector(sel);
   const $$ = (sel, root) => Array.from((root || document).querySelectorAll(sel));
@@ -206,7 +186,9 @@
   }
 
 
-  let lang = 'en';  
+  let lang = 'en';   
+
+
 
   function initLoader() {
     const overlay = byId('ld'), ring = byId('ldc'), label = byId('ldn');
@@ -259,9 +241,11 @@
     menuBtn.addEventListener('click', () => setMenu(!menuPanel.classList.contains('open')));
     menuPanel.addEventListener('click', (e) => { if (e.target.tagName === 'A') setMenu(false); });
   }
+  
   function updateProgressBar() {
     progressBar.style.transform = 'scaleX(' + (scrollY / (document.documentElement.scrollHeight - innerHeight)) + ')';
   }
+
 
   function initCursor() {
     if (!matchMedia('(hover:hover) and (pointer:fine)').matches) return;
@@ -283,13 +267,14 @@
       el.addEventListener('pointermove', (e) => {
         const r = el.getBoundingClientRect();
         el.style.transform = 'translate(' + ((e.clientX - r.left - r.width / 2) * 0.3) + 'px,' +
-          ((e.clientY - r.top - r.height / 2) * 0.4) + 'px)';
+                                            ((e.clientY - r.top - r.height / 2) * 0.4) + 'px)';
       });
       el.addEventListener('pointerleave', () => { el.style.transform = ''; });
     });
   }
 
 
+  
   const typer = { el: byId('tw'), i: 0, chars: 0, deleting: false };
 
   function typerStep() {
@@ -337,7 +322,7 @@
     swirlCtx.fillStyle = '#0a080d';
     swirlCtx.fillRect(0, 0, swirl.w, swirl.h);
   }
-
+  
   function drawSwirl() {
     const { w, h, points } = swirl, c = swirlCtx;
     swirl.time += 0.004;
@@ -374,6 +359,7 @@
     revealTitle.style.transform = 'scale(' + (1 + e * 1.4) + ')';
   }
 
+  
   const scrubEl = byId('scrub');
   const SCRUB_EN = scrubEl.textContent;       
   const SCRUB_ES = 'Convierto diseños y requerimientos de negocio en sitios web responsivos y fáciles de mantener. Seis años en una misma agencia, más de 50 proyectos en educación, inmobiliaria, salud, e-commerce y más, desde el primer diseño hasta el mantenimiento a largo plazo.';
@@ -386,6 +372,7 @@
     for (let i = 0; i < words.length; i++) words[i].style.opacity = q * words.length > i ? 1 : 0.18;
   }
 
+  
   function initCounters() {
     const io = new IntersectionObserver((entries) => {
       entries.forEach((en) => {
@@ -414,7 +401,6 @@
   }
 
 
-
   function initTools() {
     const grid = byId('tgrid');
     TOOLS.forEach((t, i) => {
@@ -436,7 +422,7 @@
       logos.forEach((l) => {
         const r = l.getBoundingClientRect();
         const dx = r.left + r.width / 2 - e.clientX, dy = r.top + 38 - e.clientY;
-        const d = Math.hypot(dx, dy), k = Math.max(0, 1 - d / 150);   
+        const d = Math.hypot(dx, dy), k = Math.max(0, 1 - d / 150);   // 1 = encima del cursor
         l.firstChild.style.transform = 'translate(' + (dx / (d || 1) * k * 34) + 'px,' + (dy / (d || 1) * k * 34) + 'px) scale(' + (1 + k * 0.18) + ')';
       });
     });
@@ -444,10 +430,12 @@
   }
 
 
+
   const whySec = byId('why');
   const whyCards = $$('.wy');
   const whyGrid = $('.wygrid');
 
+ 
   function initWhy() {
     onceVisible(whySec, () => whySec.classList.add('in'), { rootMargin: '0px 0px -22% 0px' });
 
@@ -462,18 +450,21 @@
     whyCards.forEach((card, i) => {
       card.style.setProperty('--i', i);   
 
+      
       card.addEventListener('pointermove', (e) => {
         const r = card.getBoundingClientRect();
         card.style.transform = 'perspective(700px) rotateX(' + ((0.5 - (e.clientY - r.top) / r.height) * 14) + 'deg) rotateY(' + (((e.clientX - r.left) / r.width - 0.5) * 14) + 'deg)';
       });
       card.addEventListener('pointerleave', () => { card.style.transform = ''; });
 
+      
       const h3 = $('h3', card), p = $('p', card), evidence = $('small', card).textContent.split(' · ').join('<br>');
       card.innerHTML = '<div class="f"><div class="fr"></div><div class="bk"><h3>Where you can see it</h3><small>' + evidence + '</small></div></div>';
       const front = $('.fr', card);
       front.appendChild(h3); front.appendChild(p);
       front.insertAdjacentHTML('beforeend', '<em class="hnt">Click to flip ↻</em>');
 
+      
       card.tabIndex = 0; card.setAttribute('role', 'button');
       card.addEventListener('click', () => card.classList.toggle('flip'));
       card.addEventListener('keydown', (e) => {
@@ -482,6 +473,7 @@
     });
   }
 
+  
   const FACE_NORMALS = [[0, 0, 1], [0, 0, -1], [1, 0, 0], [-1, 0, 0], [0, -1, 0], [0, 1, 0]];
   const FACE_TARGETS = [[0, 0], [0, 180], [0, -90], [0, 90], [-90, 0], [90, 0]];
   const cube = {
@@ -494,6 +486,7 @@
     active: -1                
   };
 
+  
   function frontFace() {
     const a = cube.rx * Math.PI / 180, b = cube.ry * Math.PI / 180;
     let best = -9, index = 0;
@@ -528,21 +521,24 @@
     });
     w.addEventListener('pointerup', () => {
       cube.dragging = false; cube.idle = 0;
-      if (cube.moved < 6 && cube.pressedFace) {          
+      if (cube.moved < 6 && cube.pressedFace) {          // clic sin arrastrar
         const i = +cube.pressedFace.dataset.i;
         rotateCubeTo(i); whyCards[i].classList.toggle('flip');
       }
     });
+    /* Al pasar el mouse por una tarjeta, el cubo gira a su cara. */
     whyCards.forEach((c, i) => c.addEventListener('pointerenter', (e) => { if (!isTouch(e)) rotateCubeTo(i); }));
 
     (function frame() {
       if (!cube.dragging) {
         if (cube.target) {
+          /* Gira por el camino más corto hacia la cara elegida. */
           const ty = cube.target[1] + 360 * Math.round((cube.ry - cube.target[1]) / 360);
           const tx = cube.target[0] + 360 * Math.round((cube.rx - cube.target[0]) / 360);
           cube.rx += (tx - cube.rx) * 0.1; cube.ry += (ty - cube.ry) * 0.1;
           if (Math.abs(tx - cube.rx) + Math.abs(ty - cube.ry) < 0.4) { cube.rx = tx; cube.ry = ty; cube.target = null; }
         } else {
+          /* Inercia con fricción; si nadie lo toca, gira despacio solo. */
           cube.rx += cube.vx; cube.ry += cube.vy; cube.vx *= 0.94; cube.vy *= 0.94; cube.idle++;
           if (cube.idle > 140 && Math.abs(cube.vx) + Math.abs(cube.vy) < 0.05) cube.ry += 0.3;
         }
@@ -566,7 +562,6 @@
       card.style.transform = 'perspective(1100px) translateY(' + (d * d * 90 - 40) + 'px) rotateZ(' + (d * 10) + 'deg) rotateY(' + (-d * 18) + 'deg) scale(' + (1 - Math.min(0.22, Math.abs(d) * 0.11)) + ')';
     });
   }
-
 
 
   const whereSec = byId('where');
@@ -595,11 +590,12 @@
   }
 
 
+
   const worksSec = byId('works');
   const ring = byId('ring');
   const projList = byId('list');
   const projName = byId('lName'), projDesc = byId('lDesc'), projLink = byId('lLink');
-  const STEP = 360 / PROJECTS.length;                                  // grados entre tarjetas
+  const STEP = 360 / PROJECTS.length;                                  
   const CARD_W = Math.min(300, innerWidth * 0.64);
   const RADIUS = Math.round(CARD_W / 2 / Math.tan(Math.PI / PROJECTS.length)) + 30;
   const projCards = [], projItems = [];
@@ -623,7 +619,6 @@
       btn.textContent = p.name; btn.onclick = () => scrollToProject(i);
       li.appendChild(btn); projList.appendChild(li); projItems.push(li);
     });
-    /* Con el mouse, el anillo se inclina un poco hacia el cursor. */
     $('.stage').addEventListener('pointermove', (e) => {
       ringTiltY = (e.clientY / innerHeight - 0.5) * -6;
       ringTiltX = (e.clientX / innerWidth - 0.5) * 8;
@@ -640,6 +635,7 @@
     if (p.url) { projLink.href = p.url; projLink.style.display = ''; } else projLink.style.display = 'none';
     projItems.forEach((li, k) => { li.className = k === i ? 'on' : ''; });
   }
+ 
   function refreshProjectTexts() {
     projCards.forEach((c, i) => { $('small', c).textContent = PROJECTS[i].cat[lang]; });
     activeProject = -1;
@@ -668,13 +664,13 @@
     let quote = t.quote[lang] || t.quote.en || t.quote.es, name = t.name, role = t.role;
     if (!quote && demo) {   
       quote = lang === 'es' ? 'Texto de ejemplo: aquí aparecerá el testimonio de tu jefe, con sus palabras reales.'
-        : 'Sample text: this is where your manager’s testimonial will appear, in their own words.';
+                            : 'Sample text: this is where your manager’s testimonial will appear, in their own words.';
       name = name || 'Name Surname'; role = role || (lang === 'es' ? 'Cargo' : 'Role');
     }
     if (!quote) { tmSec.hidden = true; return; }
     tmSec.hidden = false;
     const q = byId('tmq'); q.textContent = '';
-    quote.split(' ').forEach((word, k) => {  
+    quote.split(' ').forEach((word, k) => {   
       const outer = document.createElement('span'), inner = document.createElement('span');
       outer.className = 'tw'; inner.style.setProperty('--k', k); inner.textContent = word;
       outer.appendChild(inner); q.appendChild(outer); q.appendChild(document.createTextNode(' '));
@@ -694,6 +690,7 @@
   const netCtx = netCanvas.getContext('2d');
   const net = { w: 0, h: 0, points: [], mx: -999, my: -999, visible: false, running: false };
   let talkLetters = [];
+
 
   function buildTalkTitle(text) {
     let k = 0;
@@ -766,6 +763,7 @@
   }
 
 
+
   const originals = new Map();
 
   function detectLang() {
@@ -799,11 +797,11 @@
     resetTyper();
     refreshProjectTexts();
     setMenu(menuPanel.classList.contains('open'));
-    const spans = $$('.lng span');                      
+    const spans = $$('.lng span');                       
     spans[0].className = target === 'en' ? 'on' : '';
     spans[1].className = target === 'es' ? 'on' : '';
     document.title = target === 'es' ? 'Angélica Gómez | Desarrolladora Web WordPress y Shopify'
-      : 'Angélica Gómez | WordPress, Shopify & Web Developer';
+                                     : 'Angélica Gómez | WordPress, Shopify & Web Developer';
     try { localStorage.setItem('lang', target); } catch (e) { /* sin acceso */ }
     renderTestimonial();
     updateAll();
@@ -812,7 +810,6 @@
     $('.lng').addEventListener('click', () => applyLang(lang === 'es' ? 'en' : 'es'));
     applyLang(detectLang());
   }
-
 
 
   let scrollTicking = false;
@@ -830,6 +827,7 @@
     scrollTicking = true;
     requestAnimationFrame(() => { scrollTicking = false; updateAll(); });
   }
+
 
   function init() {
     initLoader();
@@ -853,4 +851,3 @@
   init();
 
 })();
-
